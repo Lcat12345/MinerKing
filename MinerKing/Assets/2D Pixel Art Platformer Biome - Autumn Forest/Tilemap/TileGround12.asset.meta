@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a123b93783b42804aafbc6decfcdf600
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254379
+  packageName: 2D Pixel Art Platformer | Biome - Autumn Forest
+  packageVersion: 1.0
+  assetPath: Assets/2D Pixel Art Platformer Biome - Autumn Forest/Tilemap/TileGround12.asset
+  uploadId: 596160
