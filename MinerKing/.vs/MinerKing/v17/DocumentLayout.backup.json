@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "G:\\MinerKingProject\\MinerKing\\MinerKing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\background.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\background.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\cainos\\pixel art platformer - village props\\changelog.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\cainos\\pixel art platformer - village props\\changelog.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BackGround.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\BackGround.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BackGround.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\BackGround.cs*",
+              "RelativeToolTip": "Assets\\Script\\BackGround.cs*",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:15:12.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Changelog.txt",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Cainos\\Pixel Art Platformer - Village Props\\Changelog.txt",
               "RelativeDocumentMoniker": "Assets\\Cainos\\Pixel Art Platformer - Village Props\\Changelog.txt",
