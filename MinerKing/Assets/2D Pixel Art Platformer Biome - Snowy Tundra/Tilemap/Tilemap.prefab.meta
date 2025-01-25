@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aaf8b2fb33ce5544b8989473a3675e67
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255409
+  packageName: 2D Pixel Art Platformer | Biome - Snowy Tundra
+  packageVersion: 1.0
+  assetPath: Assets/2D Pixel Art Platformer Biome - Snowy Tundra/Tilemap/Tilemap.prefab
+  uploadId: 596716

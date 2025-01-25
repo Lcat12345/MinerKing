@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e0cbbcfda446f634a91e1654e2ef2750
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4343727234628468602
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 255409
+  packageName: 2D Pixel Art Platformer | Biome - Snowy Tundra
+  packageVersion: 1.0
+  assetPath: Assets/2D Pixel Art Platformer Biome - Snowy Tundra/Atlas.spriteatlas
+  uploadId: 596716
