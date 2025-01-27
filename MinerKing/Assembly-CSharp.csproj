@@ -71,6 +71,8 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\RequiredAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GroupAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Enum.cs" />
+    <Compile Include="Assets\Script\TouchScreen.cs" />
+    <Compile Include="Assets\Script\IntroImage.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ShowInInspectorAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\SectionHeaderAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\BoxGroupAttribute.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ButtonAttribute.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Platformer - Village Props\Script\Chest.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\GUIColorAttribute.cs" />
+    <Compile Include="Assets\Script\CloseArea.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\OnValueChangedAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\Attributes\ReadOnlyAttribute.cs" />
     <Compile Include="Assets\Cainos\Third Party\Lucid Editor\Runtime\PropertyGroupAttribute.cs" />
