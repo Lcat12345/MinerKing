@@ -12,12 +12,24 @@ public class CameraController : MonoBehaviour
     public int mapWidth = 121;
 
     public InputAction tmpInputProceedAction;
-    public InputAction tmpInputMapChangeAction;
+    public InputAction tmpInputMap1Action;
+    public InputAction tmpInputMap2Action;
+    public InputAction tmpInputMap3Action;
+    public InputAction tmpInputMap4Action;
+    public InputAction tmpInputMap5Action;
+
+    private GameObject curMapObject;
     private int lastIdxMap;
 
     void Start()
     {
         lastIdxMap = idxMap;
+        SyncMapObjectWithIndex();
+        foreach (Transform child in curMapObject.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        curMapObject.GetComponent<MapController>().GenerateRocks();
     }
 
     void LateUpdate()
@@ -56,22 +68,64 @@ public class CameraController : MonoBehaviour
             ++minedBlocks;
         }
 
-        if (tmpInputMapChangeAction.WasPressedThisFrame())
+        bool wasMapChanged = false;
+
+        if (tmpInputMap1Action.WasPressedThisFrame())
         {
-            ++idxMap;
+            idxMap = 0;
+            wasMapChanged = lastIdxMap != idxMap;
         }
+        else if (tmpInputMap2Action.WasPressedThisFrame())
+        {
+            idxMap = 1;
+            wasMapChanged = lastIdxMap != idxMap;
+        }
+        else if (tmpInputMap3Action.WasPressedThisFrame())
+        {
+            idxMap = 2;
+            wasMapChanged = lastIdxMap != idxMap;
+        }
+        else if (tmpInputMap4Action.WasPressedThisFrame())
+        {
+            idxMap = 3;
+            wasMapChanged = lastIdxMap != idxMap;
+        }
+        else if (tmpInputMap5Action.WasPressedThisFrame())
+        {
+            idxMap = 4;
+            wasMapChanged = lastIdxMap != idxMap;
+        }
+
+        if (wasMapChanged)
+        {
+            curMapObject.GetComponent<MapController>().ChangeMap(idxMap);
+            SyncMapObjectWithIndex();
+        }
+    }
+
+    void SyncMapObjectWithIndex()
+    {
+        curMapObject = GameObject.Find("PMap" + (idxMap + 1));
     }
 
     void OnEnable()
     {
         tmpInputProceedAction.Enable();
-        tmpInputMapChangeAction.Enable();
+        tmpInputMap1Action.Enable();
+        tmpInputMap2Action.Enable();
+        tmpInputMap3Action.Enable();
+        tmpInputMap4Action.Enable();
+        tmpInputMap5Action.Enable();
     }
 
 
     void OnDisable()
     {
         tmpInputProceedAction.Disable();
-        tmpInputMapChangeAction.Disable();
+        tmpInputMap1Action.Disable();
+        tmpInputMap2Action.Disable();
+        tmpInputMap3Action.Disable();
+        tmpInputMap4Action.Disable();
+        tmpInputMap5Action.Disable();
     }
 }
