@@ -158,6 +158,9 @@ public class PickaxeData : SingletonLazy<PickaxeData>
 
 public class Mining : MonoBehaviour
 {
+    private float elapsedTime = 0.0f;
+    private float targetTime = 0.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -170,4 +173,6 @@ public class Mining : MonoBehaviour
     {
         
     }
+
+
 }
