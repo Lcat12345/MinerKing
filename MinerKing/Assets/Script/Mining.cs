@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public enum Jewels
 {
@@ -158,24 +159,86 @@ public class PickaxeData : SingletonLazy<PickaxeData>
 
 public class Mining : MonoBehaviour
 {
-    public GameObject player;
-    public Jewel curJewel;
+    public CameraController cameraController;
+    public PlayerController playerController;
+    public MapController mapController;
+    public InputAction iaMine;
 
     private float elapsedTime = 0.0f;
     private float targetTime = 0.0f;
+    private ulong minedBlocks = 0;
+    private bool isMining = false;
+
+    public ulong MinedBlocks { get { return minedBlocks; } }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Debug.Log(JewelData.instance.Get(Jewels.Diamond).name);
-        Debug.Log(PickaxeData.instance.Get(Pickaxes.ForceOfNature).name);
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         
     }
 
+    // Update is called once per frame
+    private void Update()
+    {
+        int idxJewel = (int)(minedBlocks % (ulong)mapController.mapWidth);
 
+        // idle -> mining
+        if (iaMine.WasPressedThisFrame() && !isMining)
+        {
+            Jewel jewel = mapController.GetJewelData(idxJewel);
+            if (jewel == null)
+            {
+                Debug.LogWarning("jewel at " + idxJewel + " is null!");
+            }
+
+            //targetTime = jewel.registance / 30;
+            targetTime = Mathf.Pow(2,
+                (jewel.registance - 10.0f *
+                    (1.0f + playerController.statBonus / 100.0f + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
+                ) / 10.0f
+            );
+            elapsedTime = 0;
+
+            isMining = true;
+
+            return;
+        }
+
+        if (isMining)
+        {
+            Debug.Log("Mining... elapsed: " + elapsedTime + ", target time: " + targetTime);
+            elapsedTime += Time.deltaTime;
+
+            // mining -> idle
+            if (elapsedTime > targetTime)
+            {
+                Jewel jewel = mapController.GetJewelData(idxJewel);
+                Debug.Log("Mined " + jewel.name + "!");
+                mapController.UpdateRocks(minedBlocks);
+                mapController.UpdateJewel(idxJewel);
+                ++minedBlocks;
+
+                elapsedTime = 0;
+                isMining = false;
+            }
+        }
+    }
+
+    public void ClearMining()
+    {
+        minedBlocks = 0;
+        elapsedTime = 0;
+        targetTime = 0;
+        isMining = false;
+    }
+
+    private void OnEnable()
+    {
+        iaMine.Enable();
+    }
+
+    private void OnDisable()
+    {
+        iaMine.Disable();
+    }
 }

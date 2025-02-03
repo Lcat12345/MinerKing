@@ -330,15 +330,33 @@ public class StageData : SingletonLazy<StageData>
 
 public class MapController : MonoBehaviour
 {
-    public int idxMap;
-    public int idxStage;
+    public bool isFirstMap = false;
+    public int mapWidth = 121;
+    public int idxMap = 0;
+    public int idxStage = 0;
     public CameraController cc;
+    public GameObject mining;
     public GameObject player;
     public GameObject rockPrefab; // 바위 프리팹 연결용
 
     private Dictionary<Jewels, float> probabilities;
     private List<Jewels> jewels;
+    private List<GameObject> instancedRocks;
 
+    private void Start()
+    {
+        probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
+        jewels = new List<Jewels>();
+        instancedRocks = new List<GameObject>();
+        GenerateRocks();
+        if (!isFirstMap)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
 
     public void ChangeMap(int idx)
     {
@@ -353,24 +371,18 @@ public class MapController : MonoBehaviour
             child.gameObject.SetActive(true);
         }
 
-        cc.minedBlocks = 0;
+        mining.GetComponent<Mining>().ClearMining();
         cc.idxMap = idx;
-
-        idxMap = idx;
-        // temporary
-        idxStage = 0;
-
-        jewels = new List<Jewels>();
-
-        probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
-        mapParent.GetComponent<MapController>().GenerateRocks();
     }
 
     public void GenerateRocks()
     {
+        Debug.Log("Generating Rocks...");
         // 현재 맵과 그 클론을 찾음
         GameObject map = GameObject.Find("Map" + (idxMap + 1));
         GameObject mapClone = GameObject.Find("Map" + (idxMap + 1) + "Clone");
+
+        Debug.Log(map.name + ", " + mapClone.name);
 
         // 맵들을 저장
         List<GameObject> maps = new List<GameObject> { map, mapClone };
@@ -389,27 +401,33 @@ public class MapController : MonoBehaviour
             }
 
             // 범위 지정
-            Vector2 leftTop = new Vector2(-5, -3);
-            Vector2 rightBottom = new Vector2(115, -5);
+            Vector2 leftTop = new Vector2(-5, -2);
+            Vector2 rightBottom = new Vector2(115, -4);
 
             // 바위 배치
             for (int x = Mathf.FloorToInt(leftTop.x); x <= Mathf.FloorToInt(rightBottom.x); x++)
             {
                 for (int y = Mathf.FloorToInt(leftTop.y); y >= Mathf.FloorToInt(rightBottom.y); y--)
                 {
-                    if (y == -4 && x < player.transform.position.x)
-                    {
-                        continue;
-                    }
-
                     // 바위 생성 및 부모 설정
                     GameObject rock = Instantiate(rockPrefab, rocksParent);
-                    rock.transform.position = new Vector3(x, y - idxMap * 15.0f, 0);
+                    rock.transform.position = new Vector3(x, y, 0);
+                    rock.transform.position = targetMap.transform.TransformPoint(rock.transform.position);
+
+                    // 플레이어가 캐는 줄의 바위들만 별도 자료구조에서 관리
+                    if (y == -3)
+                    {
+                        instancedRocks.Add(rock);
+                        if (rock.transform.position.x < player.transform.position.x)
+                        {
+                            rock.SetActive(false);
+                        }
+                    }
                 }
             }
 
             // 보석 부여
-            for ( int x = Mathf.FloorToInt(player.transform.position.x) + 1;
+            for (int x = Mathf.FloorToInt(leftTop.x);
                 x <= Mathf.FloorToInt(rightBottom.x); ++x
             )
             {
@@ -427,5 +445,37 @@ public class MapController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UpdateRocks(ulong minedBlocks)
+    {
+        // minedBlocks에 맞게 블록 파괴
+        instancedRocks[(int)((minedBlocks + 4ul) % (ulong)mapWidth)].SetActive(false);
+
+        // minedBlocks % 121이 90이라면 70까지의 블록들 생성
+
+        // minedBlocks % 121이 0이라면 120, 클론의 20까지의 블록들 생성
+    }
+
+    public void UpdateJewel(int idxJewel)
+    {
+        float rand = Random.Range(0f, 100f);
+        float cumulative = 0f;
+
+        foreach (var jewel in probabilities)
+        {
+            cumulative += jewel.Value;
+            if (rand <= cumulative)
+            {
+                jewels[idxJewel] = jewel.Key;
+                break;
+            }
+        }
+    }
+
+    public Jewel GetJewelData(int idxJewel)
+    {
+        Debug.Log("idxJewel: " + idxJewel);
+        return JewelData.instance.Get(jewels[idxJewel]);
     }
 }

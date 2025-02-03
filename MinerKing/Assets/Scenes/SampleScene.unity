@@ -7937,7 +7937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &220546788
 Transform:
   m_ObjectHideFlags: 0
@@ -22005,27 +22005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a334bb654c79ce45b959c27525d5add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mining: {fileID: 942258410}
   idxMap: 0
-  minedBlocks: 0
   yOffset: 0.14
-  mapWidth: 121
-  tmpInputProceedAction:
-    m_Name: Tmp Input Proceed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: d50e0640-dfba-4d88-8289-bae92c5e352f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0a9b53f7-963b-49f1-9513-6549adf1256c
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Proceed
-      m_Flags: 0
-    m_Flags: 0
   tmpInputMap1Action:
     m_Name: Tmp Input Map 1
     m_Type: 1
@@ -30327,8 +30309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e36c87201f9c6f43a92ee132431f1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstMap: 0
+  mapWidth: 121
   idxMap: 3
+  idxStage: 0
   cc: {fileID: 519420033}
+  mining: {fileID: 942258410}
+  player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
 --- !u!1001 &800669043
 PrefabInstance:
@@ -36836,8 +36823,8 @@ GameObject:
   m_Component:
   - component: {fileID: 942258412}
   - component: {fileID: 942258411}
-  - component: {fileID: 942258413}
   - component: {fileID: 942258414}
+  - component: {fileID: 942258413}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36927,6 +36914,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f00e7b77b94654fa421dd0a0b45249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 519420033}
+  playerController: {fileID: 942258414}
+  mapController: {fileID: 1310078032}
+  iaMine:
+    m_Name: Ia Mine
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 00ce0e2f-9d98-4f19-9292-ad9d3c62419e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6212b73a-b7b2-4378-9078-1cbd7fd27db3
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ia Mine
+      m_Flags: 0
+    m_Flags: 0
 --- !u!114 &942258414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36939,7 +36946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f8f0337b07b434fb74c4e99580bf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: 0
+  statBonus: 0
+  curPickaxe: 0
 --- !u!1001 &954747903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37203,7 +37211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &988286002
 Transform:
   m_ObjectHideFlags: 0
@@ -43877,7 +43885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1134686646
 Transform:
   m_ObjectHideFlags: 0
@@ -44729,7 +44737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1242550006
 Transform:
   m_ObjectHideFlags: 0
@@ -45737,8 +45745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e36c87201f9c6f43a92ee132431f1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstMap: 1
+  mapWidth: 121
   idxMap: 0
+  idxStage: 0
   cc: {fileID: 519420033}
+  mining: {fileID: 942258410}
+  player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
 --- !u!1001 &1310716967
 PrefabInstance:
@@ -57775,7 +57788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1499734675
 Transform:
   m_ObjectHideFlags: 0
@@ -64076,7 +64089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1653200821
 Transform:
   m_ObjectHideFlags: 0
@@ -64296,7 +64309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1675042398
 Transform:
   m_ObjectHideFlags: 0
@@ -64393,7 +64406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1681922509
 Transform:
   m_ObjectHideFlags: 0
@@ -64953,7 +64966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1712220214
 Transform:
   m_ObjectHideFlags: 0
@@ -65354,8 +65367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e36c87201f9c6f43a92ee132431f1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstMap: 0
+  mapWidth: 121
   idxMap: 1
+  idxStage: 0
   cc: {fileID: 519420033}
+  mining: {fileID: 942258410}
+  player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
 --- !u!1001 &1731875076
 PrefabInstance:
@@ -65899,8 +65917,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e36c87201f9c6f43a92ee132431f1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstMap: 0
+  mapWidth: 121
   idxMap: 4
+  idxStage: 0
   cc: {fileID: 519420033}
+  mining: {fileID: 942258410}
+  player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
 --- !u!1 &1799224136
 GameObject:
@@ -73511,8 +73534,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e36c87201f9c6f43a92ee132431f1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstMap: 0
+  mapWidth: 121
   idxMap: 2
+  idxStage: 0
   cc: {fileID: 519420033}
+  mining: {fileID: 942258410}
+  player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
 --- !u!1001 &2019215247
 PrefabInstance:

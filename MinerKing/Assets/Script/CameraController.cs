@@ -6,12 +6,10 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject mining;
     public int idxMap = 0;
-    public int minedBlocks = 0;
     public float yOffset = 0.14f;
-    public int mapWidth = 121;
 
-    public InputAction tmpInputProceedAction;
     public InputAction tmpInputMap1Action;
     public InputAction tmpInputMap2Action;
     public InputAction tmpInputMap3Action;
@@ -29,14 +27,16 @@ public class CameraController : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
-        curMapObject.GetComponent<MapController>().ChangeMap(idxMap);
     }
 
     void LateUpdate()
     {
-        int xOffset = -(minedBlocks / mapWidth) * mapWidth;
+        int mapWidth = curMapObject.GetComponent<MapController>().mapWidth;
+
+        ulong minedBlocks = mining.GetComponent<Mining>().MinedBlocks;
+        int xOffset = -(int)(minedBlocks / (ulong)mapWidth) * mapWidth;
         Vector3 curPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        Vector3 targetPos = new Vector3(minedBlocks + xOffset, curPos.y, curPos.z);
+        Vector3 targetPos = new Vector3((int)minedBlocks + xOffset, curPos.y, curPos.z);
 
         float epsilon = 0.001f;
 
@@ -63,11 +63,6 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (tmpInputProceedAction.WasPressedThisFrame())
-        {
-            ++minedBlocks;
-        }
-
         bool wasMapChanged = false;
 
         if (tmpInputMap1Action.WasPressedThisFrame())
@@ -106,11 +101,11 @@ public class CameraController : MonoBehaviour
     void SyncMapObjectWithIndex()
     {
         curMapObject = GameObject.Find("PMap" + (idxMap + 1));
+        mining.GetComponent<Mining>().mapController = curMapObject.GetComponent<MapController>();
     }
 
     void OnEnable()
     {
-        tmpInputProceedAction.Enable();
         tmpInputMap1Action.Enable();
         tmpInputMap2Action.Enable();
         tmpInputMap3Action.Enable();
@@ -121,7 +116,6 @@ public class CameraController : MonoBehaviour
 
     void OnDisable()
     {
-        tmpInputProceedAction.Disable();
         tmpInputMap1Action.Disable();
         tmpInputMap2Action.Disable();
         tmpInputMap3Action.Disable();
