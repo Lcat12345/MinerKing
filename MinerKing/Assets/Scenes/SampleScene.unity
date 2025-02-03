@@ -36926,8 +36926,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 6212b73a-b7b2-4378-9078-1cbd7fd27db3
-      m_Path: <Touchscreen>/Press
+      m_Id: eaab723f-5d43-446a-9ce7-83549723581c
+      m_Path: <Keyboard>/k
       m_Interactions: 
       m_Processors: 
       m_Groups: 

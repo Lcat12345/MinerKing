@@ -449,12 +449,33 @@ public class MapController : MonoBehaviour
 
     public void UpdateRocks(ulong minedBlocks)
     {
+        int idxRock = (int)((minedBlocks + 4ul) % (ulong)(mapWidth));
+        bool isOnCloneMap = (int)(minedBlocks % (ulong)(mapWidth)) > idxRock;
+        if (isOnCloneMap)
+        {
+            instancedRocks[idxRock + mapWidth].SetActive(false);
+        }
+
         // minedBlocks에 맞게 블록 파괴
-        instancedRocks[(int)((minedBlocks + 4ul) % (ulong)mapWidth)].SetActive(false);
+        instancedRocks[idxRock].SetActive(false);
 
-        // minedBlocks % 121이 90이라면 70까지의 블록들 생성
+        // minedBlocks % mapWidth가 90이라면 70까지의 블록들 생성
+        if (idxRock == 90)
+        {
+            for (int i = 0; i < 70; ++i)
+            {
+                instancedRocks[i].SetActive(true);
+            }
+        }
 
-        // minedBlocks % 121이 0이라면 120, 클론의 20까지의 블록들 생성
+        // minedBlocks % mapWidth가 5라면 120, 클론의 4까지의 블록들 생성
+        if (idxRock == 5)
+        {
+            for (int i = 70; i < mapWidth + 5; ++i)
+            {
+                instancedRocks[i].SetActive(true);
+            }
+        }
     }
 
     public void UpdateJewel(int idxJewel)
