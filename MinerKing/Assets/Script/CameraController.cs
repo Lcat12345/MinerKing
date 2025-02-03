@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
-        curMapObject.GetComponent<MapController>().GenerateRocks();
+        curMapObject.GetComponent<MapController>().ChangeMap(idxMap);
     }
 
     void LateUpdate()

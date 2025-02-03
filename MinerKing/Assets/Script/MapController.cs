@@ -20,13 +20,6 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Sapphire, 15.0f);
         probabilities.Add(Jewels.Emerald, 5.0f);
 
-        stageData.TryGetValue((0, 0), out probabilities);
-        foreach (KeyValuePair<Jewels, float> pair in probabilities)
-        {
-            Debug.Log(pair.Key + ": " + pair.Value);
-        }
-
-
         // 1-2
         stageData.Add((0, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 1), out probabilities);
@@ -64,8 +57,8 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Aquamarine, 1.0f);
 
         // 1-6
-        stageData.Add((0, 4), new Dictionary<Jewels, float>());
-        stageData.TryGetValue((0, 4), out probabilities);
+        stageData.Add((0, 5), new Dictionary<Jewels, float>());
+        stageData.TryGetValue((0, 5), out probabilities);
         probabilities.Add(Jewels.Peridot, 36.0f);
         probabilities.Add(Jewels.Tanzanite, 27.0f);
         probabilities.Add(Jewels.Spinel, 19.0f);
@@ -325,34 +318,52 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Orichalcum, 36.0f);
         probabilities.Add(Jewels.HeartOfSolaris, 52.0f);
     }
+
+    public Dictionary<Jewels, float> GetProbabilities(int idxMap, int idxStage)
+    {
+        Dictionary<Jewels, float> probabilities = new Dictionary<Jewels, float>();
+        stageData.TryGetValue((idxMap, idxStage), out probabilities);
+
+        return probabilities;
+    }
 }
 
 public class MapController : MonoBehaviour
 {
     public int idxMap;
+    public int idxStage;
     public CameraController cc;
+    public GameObject player;
     public GameObject rockPrefab; // 바위 프리팹 연결용
 
-    private List<Jewel> jewels;
+    private Dictionary<Jewels, float> probabilities;
+    private List<Jewels> jewels;
 
 
     public void ChangeMap(int idx)
     {
         GameObject mapParent = GameObject.Find("PMap" + (idx + 1));
 
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         foreach (Transform child in mapParent.transform)
         {
             child.gameObject.SetActive(true);
         }
 
-        foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-        mapParent.GetComponent<MapController>().GenerateRocks();
-
         cc.minedBlocks = 0;
         cc.idxMap = idx;
+
+        idxMap = idx;
+        // temporary
+        idxStage = 0;
+
+        jewels = new List<Jewels>();
+
+        probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
+        mapParent.GetComponent<MapController>().GenerateRocks();
     }
 
     public void GenerateRocks()
@@ -386,9 +397,33 @@ public class MapController : MonoBehaviour
             {
                 for (int y = Mathf.FloorToInt(leftTop.y); y >= Mathf.FloorToInt(rightBottom.y); y--)
                 {
+                    if (y == -4 && x < player.transform.position.x)
+                    {
+                        continue;
+                    }
+
                     // 바위 생성 및 부모 설정
                     GameObject rock = Instantiate(rockPrefab, rocksParent);
                     rock.transform.position = new Vector3(x, y - idxMap * 15.0f, 0);
+                }
+            }
+
+            // 보석 부여
+            for ( int x = Mathf.FloorToInt(player.transform.position.x) + 1;
+                x <= Mathf.FloorToInt(rightBottom.x); ++x
+            )
+            {
+                float rand = Random.Range(0f, 100f);
+                float cumulative = 0f;
+
+                foreach (var jewel in probabilities)
+                {
+                    cumulative += jewel.Value;
+                    if (rand <= cumulative)
+                    {
+                        jewels.Add(jewel.Key);
+                        break;
+                    }
                 }
             }
         }

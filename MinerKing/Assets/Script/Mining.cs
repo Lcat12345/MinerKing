@@ -90,7 +90,7 @@ public class JewelData : SingletonLazy<JewelData>
         data.Add(new Jewel("½ºÄíÆú¶óÀÌÆ®", 850000000, 305));
         data.Add(new Jewel("ÇÇ´Ð½ºÀÇ ´«¹°", 1200000000, 314));
         data.Add(new Jewel("µå·¡°ï½ºÅæ", 3300000000, 332));
-        data.Add(new Jewel("¿ù±¤", 4000000000, 340));
+        data.Add(new Jewel("¿ù±¤¼®", 4000000000, 340));
         data.Add(new Jewel("¸¶³ª Å©¸®½ºÅ»", 6400000000, 350));
         data.Add(new Jewel("ÀÎÇÇ´ÏÆ¼ ½ºÅæ", 7500000000, 365));
         data.Add(new Jewel("¿À¸®Ä®Äñ", 11000000000, 386));
@@ -158,6 +158,9 @@ public class PickaxeData : SingletonLazy<PickaxeData>
 
 public class Mining : MonoBehaviour
 {
+    public GameObject player;
+    public Jewel curJewel;
+
     private float elapsedTime = 0.0f;
     private float targetTime = 0.0f;
 
