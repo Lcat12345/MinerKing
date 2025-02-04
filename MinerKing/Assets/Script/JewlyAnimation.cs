@@ -11,15 +11,21 @@ public class JewlyAnimation : MonoBehaviour
     // Used For Inventory Animations ==========
     // 인벤토리 UI 위치 (예시 값, 실제 UI 위치에 맞게 설정)
     public Vector3 inventoryPosition;
+    public int maxCollisionCnt;
     private float acceleration;
     private float maxSpeed;
     private float angularAcceleration;
     private float angularSpeed;
     private float maxAngularSpeed;
+    private int collisionCnt;
+    private int collisionResetCounter;
     // ========================================
     private bool isMoving = true;       // 땅 위 애니메이션 진행 여부
     private Vector3 lastCameraPosition;
     float randomX;
+
+    private bool physicalAnimation = false;      // temporary
+    private Rigidbody2D rb;
 
     // 인벤토리 애니메이션 여부 플래그
     private bool isInventoryAnimation = false;
@@ -41,13 +47,42 @@ public class JewlyAnimation : MonoBehaviour
         angularAcceleration = 200.0f;
         angularSpeed = 80.0f;
         maxAngularSpeed = 500.0f;
+        collisionCnt = 0;
+        collisionResetCounter = 0;
+
+        if (physicalAnimation)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
     }
 
     private void FixedUpdate()
     {
         if (!isInventoryAnimation)
         {
-            UpdateGroundMovement();
+            if (!physicalAnimation)
+            {
+                UpdateGroundMovement();
+            }
+            else
+            {
+                AdjustPosition();
+
+                if (rb.linearVelocity.sqrMagnitude > 225.0f)
+                {
+                    rb.linearVelocity *= 0.95f;
+                }
+
+                if (rb.linearVelocity.sqrMagnitude < 0.025f)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                }
+
+                if (Mathf.Abs(rb.angularVelocity) > 360.0f)
+                {
+                    rb.angularVelocity *= 0.95f;
+                }
+            }
         }
         else
         {
@@ -91,6 +126,31 @@ public class JewlyAnimation : MonoBehaviour
         lastCameraPosition = cameraTransform.position;
     }
 
+    private void AdjustPosition()
+    {
+        Transform cameraTransform = Camera.main.transform;
+
+        if (Vector3.Distance(cameraTransform.position, lastCameraPosition) > 0.025f)
+        {
+            if (collisionResetCounter == 0)
+            {
+                ResetCollisions();
+            }
+            collisionResetCounter = (collisionResetCounter + 1) % 3;
+        }
+
+        float epsilon = 10.0f;
+        if (lastCameraPosition.x > cameraTransform.position.x + epsilon)
+        {
+            rb.position = new Vector2(
+                rb.position.x - mapController.mapWidth,
+                rb.position.y
+            );
+        }
+
+        lastCameraPosition = cameraTransform.position;
+    }
+
     private void UpdateInventoryMovement()
     {
         Vector3 direction = (inventoryPosition - transform.position).normalized;
@@ -123,5 +183,31 @@ public class JewlyAnimation : MonoBehaviour
     {
         speed = 200.0f;
         isInventoryAnimation = true;
+    }
+
+    private void ResetCollisions()
+    {
+        collisionCnt = 0;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ++collisionCnt;
+
+
+        if (collisionCnt >= maxCollisionCnt)
+        {
+            collisionCnt = maxCollisionCnt;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+        }
+
+        rb.linearVelocity += new Vector2(0.03f, 0.03f);
+        rb.linearVelocity *= Mathf.Sqrt(maxCollisionCnt / collisionCnt * 0.32f) * 0.8f;
+        float maxVelocityComponent = 10.0f;
+        rb.linearVelocity = Vector2.Max(
+            Vector2.Min(rb.linearVelocity, new Vector2(maxVelocityComponent, maxVelocityComponent)),
+            new Vector2(-maxVelocityComponent, -maxVelocityComponent)   
+        );
     }
 }

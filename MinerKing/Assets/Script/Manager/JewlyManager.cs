@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class JewlyManager : MonoBehaviour
 {
+    public PhysicsMaterial2D physMat;
     public InputAction iaCollect;
     public GameObject gameUI;
     public GameObject inventoryIcon;
@@ -15,10 +16,13 @@ public class JewlyManager : MonoBehaviour
     // 생성된 순서를 저장할 리스트
     private List<GameObject> jewelInstances = new List<GameObject>();
     private Mining mining;
-    int maxDroppedJewly = 100000;
+    public int maxShownJewelCnt = 160;
 
     // 제거 코루틴 중복 실행을 막기 위한 플래그
     private bool isRemovingJewels = false;
+
+    private bool physicalAnimation = false;      // temporary
+    public int maxCollisionCnt = 8;
 
     void Start()
     {
@@ -89,9 +93,10 @@ public class JewlyManager : MonoBehaviour
 
     public void GenerateJewly(string name, float speed)
     {
-        if (jewelInstances.Count == maxDroppedJewly)
+        if (jewelInstances.Count == maxShownJewelCnt)
         {
-            return;
+            Destroy(jewelInstances[0]);
+            jewelInstances.RemoveAt(0);
         }
 
         MapController mapController = mining.mapController;
@@ -114,6 +119,24 @@ public class JewlyManager : MonoBehaviour
         ja.speed = speed;
         ja.mapController = mapController;
         ja.inventoryPosition = inventoryIcon.transform.position;
+
+        if (physicalAnimation)
+        {
+            ja.maxCollisionCnt = maxCollisionCnt;
+            BoxCollider2D collider = go.AddComponent<BoxCollider2D>();
+
+            collider.sharedMaterial = physMat;
+            collider.size = new Vector2(
+                collider.size.x * 0.65f,
+                collider.size.y * 0.3f
+            );
+
+            Rigidbody2D rb = go.AddComponent<Rigidbody2D>() as Rigidbody2D;
+
+            rb.gravityScale = 1.0f;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        }
 
         if (!isOnCloneMap)
             go.transform.position = new Vector3(idxRock - 4.5f, -3.8f + idxMap * -15.0f, 0.0f);
