@@ -49,32 +49,23 @@ public class CameraController : MonoBehaviour
 
         if (curPos.x > targetPos.x + epsilon)
         {
-            int xOffset = -(minedBlocks / mapWidth) * mapWidth;
-            Vector3 curPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            Vector3 targetPos = new Vector3(minedBlocks + xOffset, curPos.y, curPos.z);
-
-            float epsilon = 0.001f;
-
-            if (curPos.x > targetPos.x + epsilon)
-            {
-                curPos.x -= mapWidth;
-            }
-            Vector3 velocity = Vector3.zero;
-
-            if (lastIdxMap == idxMap)
-            {
-                transform.position = Vector3.SmoothDamp(
-                    curPos, targetPos, ref velocity, 0.02f
-                );
-            }
-            else
-            {
-                targetPos.y = idxMap * -15.0f + yOffset;
-                transform.position = targetPos;
-            }
-
-            lastIdxMap = idxMap;
+            curPos.x -= mapWidth;
         }
+        Vector3 velocity = Vector3.zero;
+
+        if (lastIdxMap == idxMap)
+        {
+            transform.position = Vector3.SmoothDamp(
+                curPos, targetPos, ref velocity, 0.02f
+            );
+        }
+        else
+        {
+            targetPos.y = idxMap * -15.0f + yOffset;
+            transform.position = targetPos;
+        }
+
+        lastIdxMap = idxMap;
     }
 
     void Update()
