@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Unity Project\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|d:\\unity project\\minerking\\minerking\\assets\\script\\popupclosearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|D:\\Unity Project\\MinerKing\\MinerKing\\assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|d:\\unity project\\minerking\\minerking\\assets\\script\\cancelbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\cancelbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|D:\\Unity Project\\MinerKing\\MinerKing\\assets\\script\\popupclosearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\popupclosearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|d:\\unity project\\minerking\\minerking\\assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|D:\\Unity Project\\MinerKing\\MinerKing\\assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|d:\\unity project\\minerking\\minerking\\assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|D:\\Unity Project\\MinerKing\\MinerKing\\assets\\script\\calculatepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,37 +38,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CameraController.cs",
-              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\CameraController.cs",
-              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
-              "RelativeToolTip": "Assets\\Script\\CameraController.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAgwHgAAAAkAAAAAAAAAA==",
+              "Title": "CancelButton.cs",
+              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CancelButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CancelButton.cs",
+              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CancelButton.cs",
+              "RelativeToolTip": "Assets\\Script\\CancelButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T20:18:27.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PopupCloseArea.cs",
-              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\PopupCloseArea.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\PopupCloseArea.cs",
-              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\PopupCloseArea.cs",
-              "RelativeToolTip": "Assets\\Script\\PopupCloseArea.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T20:17:43.433Z",
+              "WhenOpened": "2025-02-04T21:45:56.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CameraController.cs",
+              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Script\\CameraController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwHcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T20:18:27.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PopupCloseArea.cs",
+              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\PopupCloseArea.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\PopupCloseArea.cs",
+              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\PopupCloseArea.cs",
+              "RelativeToolTip": "Assets\\Script\\PopupCloseArea.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T20:17:43.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CalculatePopup.cs",
               "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CalculatePopup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CalculatePopup.cs",
@@ -76,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ChangePickaxePopup.cs",
               "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\ChangePickaxePopup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ChangePickaxePopup.cs",
@@ -88,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CloseArea.cs",
               "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CloseArea.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CloseArea.cs",
@@ -100,13 +115,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameUI.cs",
               "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\GameUI.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameUI.cs",
               "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\GameUI.cs",
               "RelativeToolTip": "Assets\\Script\\GameUI.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCYAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T14:19:46.801Z",
               "EditorCaption": ""
