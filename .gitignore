@@ -2,6 +2,6 @@
 /MinerKing/Library
 /MinerKing/Logs
 /MinerKing/Temp
-Assembly-CSharp.csproj
-Assembly-CSharp-Editor.csproj
-UserSettings/Layouts/default-6000.dwlt
+MinerKing/Assembly-CSharp.csproj
+MinerKing/Assembly-CSharp-Editor.csproj
+MinerKing/UserSettings/Layouts/default-6000.dwlt
