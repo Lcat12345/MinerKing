@@ -166,8 +166,8 @@ public class Mining : MonoBehaviour
 
     private float elapsedTime = 0.0f;
     private float targetTime = 0.0f;
+    private int shownParticleCnt = 0;
     private ulong minedBlocks = 0;
-    private bool isMining = false;
 
     public ulong MinedBlocks { get { return minedBlocks; } }
 
@@ -182,10 +182,11 @@ public class Mining : MonoBehaviour
     {
         int idxJewel = (int)(minedBlocks % (ulong)mapController.mapWidth);
 
+        Jewel jewel = mapController.GetJewelData(idxJewel);
+
         // idle -> mining
-        if (iaMine.WasPressedThisFrame() && !isMining)
+        if (iaMine.WasPressedThisFrame() && playerController.State == PlayerState.IdleState)
         {
-            Jewel jewel = mapController.GetJewelData(idxJewel);
             if (jewel == null)
             {
                 Debug.LogWarning("jewel at " + idxJewel + " is null!");
@@ -194,32 +195,44 @@ public class Mining : MonoBehaviour
             //targetTime = jewel.registance / 30;
             targetTime = Mathf.Pow(2,
                 (jewel.registance - 10.0f *
-                    (1.0f + playerController.statBonus / 100.0f + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
+                    (1.0f + playerController.calcMiningBonus() / 100.0f + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
                 ) / 10.0f
             );
             elapsedTime = 0;
 
-            isMining = true;
+            mapController.OnMiningStart(minedBlocks, 8.0f / Mathf.Sqrt(targetTime));
+            playerController.ChangeState(PlayerState.MiningState);
 
             return;
         }
 
-        if (isMining)
+        if (playerController.State == PlayerState.MiningState)
         {
+            int particleCnt = (int)(
+                ( Mathf.Sqrt((float)jewel.registance - 9.0f) + 5.0f )
+                * elapsedTime / targetTime
+            ) - shownParticleCnt;
+            mapController.GenerateParticles(particleCnt, minedBlocks);
+            shownParticleCnt += particleCnt;
+
             Debug.Log("Mining... elapsed: " + elapsedTime + ", target time: " + targetTime);
             elapsedTime += Time.deltaTime;
 
-            // mining -> idle
+            // mining -> moving
             if (elapsedTime > targetTime)
             {
-                Jewel jewel = mapController.GetJewelData(idxJewel);
+                mapController.GenerateParticles(10, minedBlocks);    // when finishing mining, show 10 additional particles.
+                shownParticleCnt = 0;
+
                 Debug.Log("Mined " + jewel.name + "!");
                 mapController.UpdateRocks(minedBlocks);
                 mapController.UpdateJewel(idxJewel);
                 ++minedBlocks;
 
                 elapsedTime = 0;
-                isMining = false;
+                mapController.OnMiningEnd();
+                playerController.ChangeState(PlayerState.MovingState);
+                cameraController.Shake();
             }
         }
     }
@@ -229,7 +242,7 @@ public class Mining : MonoBehaviour
         minedBlocks = 0;
         elapsedTime = 0;
         targetTime = 0;
-        isMining = false;
+        playerController.ChangeState(PlayerState.IdleState);
     }
 
     private void OnEnable()

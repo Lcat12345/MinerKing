@@ -1,137 +1,87 @@
 using UnityEngine;
 
-// temporary
-using UnityEngine.InputSystem;
-//
-
 public class CameraController : MonoBehaviour
 {
-    public GameObject mining;
-    public int idxMap = 0;
-    public float yOffset = 0.14f;
+    public Vector3 offset = new Vector3(1.7f, 3.4f + 0.14f, -10.0f);
 
-    public InputAction tmpInputMap1Action;
-    public InputAction tmpInputMap2Action;
-    public InputAction tmpInputMap3Action;
-    public InputAction tmpInputMap4Action;
-    public InputAction tmpInputMap5Action;
-
-    private GameObject curMapObject;
-    private int lastIdxMap;
+    private GameObject attachedObject;
+    private MapController mapController;
+    private bool isShaking = false;
+    private float shakeIntensity = 8.0f;
+    private float shakeElapsed = 0.0f;
+    private float shakeDuration = 0.2f;
+    private Vector3 velocity;
 
     public bool start = false;
+    private bool hasChangedMap = false;
+    private bool hasWrappedAround = false;
 
-    void Start()
+    private void Start()
     {
-        lastIdxMap = idxMap;
-        SyncMapObjectWithIndex();
-        foreach (Transform child in curMapObject.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
+        velocity = Vector3.zero;
     }
 
     void LateUpdate()
     {
-        if (!start)
+        if (hasChangedMap)
         {
-            return;
-        }
-
-        int mapWidth = curMapObject.GetComponent<MapController>().mapWidth;
-
-        ulong minedBlocks = mining.GetComponent<Mining>().MinedBlocks;
-        int xOffset = -(int)(minedBlocks / (ulong)mapWidth) * mapWidth;
-        Vector3 curPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        Vector3 targetPos = new Vector3((int)minedBlocks + xOffset, curPos.y, curPos.z);
-
-        float epsilon = 0.001f;
-
-        if (curPos.x > targetPos.x + epsilon)
-        {
-            curPos.x -= mapWidth;
-        }
-        Vector3 velocity = Vector3.zero;
-
-        if (lastIdxMap == idxMap)
-        {
-            transform.position = Vector3.SmoothDamp(
-                curPos, targetPos, ref velocity, 0.02f
-            );
+            transform.position = attachedObject.transform.position + offset;
+            hasChangedMap = false;
         }
         else
         {
-            targetPos.y = idxMap * -15.0f + yOffset;
-            transform.position = targetPos;
-        }
+            if (hasWrappedAround)
+            {
+                transform.position -= new Vector3(mapController.mapWidth, 0, 0);
+                hasWrappedAround = false;
+            }
 
-        lastIdxMap = idxMap;
-    }
+            transform.position = Vector3.SmoothDamp(
+                transform.position,
+                attachedObject.transform.position + offset,
+                ref velocity,
+                0.1f
+            );
+        }
+        
 
-    void Update()
-    {
-        if (!start)
+        if (isShaking)
         {
-            return;
-        }
+            shakeElapsed += Time.deltaTime;
+            if (shakeElapsed > shakeDuration)
+            {
+                shakeElapsed = 0.0f;
+                isShaking = false;
+                return;
+            }
 
-        bool wasMapChanged = false;
-
-        if (tmpInputMap1Action.WasPressedThisFrame())
-        {
-            idxMap = 0;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap2Action.WasPressedThisFrame())
-        {
-            idxMap = 1;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap3Action.WasPressedThisFrame())
-        {
-            idxMap = 2;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap4Action.WasPressedThisFrame())
-        {
-            idxMap = 3;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap5Action.WasPressedThisFrame())
-        {
-            idxMap = 4;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-
-        if (wasMapChanged)
-        {
-            curMapObject.GetComponent<MapController>().ChangeMap(idxMap);
-            SyncMapObjectWithIndex();
+            Vector2 rand = Random.insideUnitSphere * Time.deltaTime * shakeIntensity;
+            transform.position = new Vector3(
+                transform.position.x + rand.x,
+                transform.position.y + rand.y,
+                transform.position.z
+            );
         }
     }
 
-    void SyncMapObjectWithIndex()
+    public void Shake()
     {
-        curMapObject = GameObject.Find("PMap" + (idxMap + 1));
-        mining.GetComponent<Mining>().mapController = curMapObject.GetComponent<MapController>();
+        isShaking = true;
     }
 
-    void OnEnable()
+    public void Attach(GameObject obj)
     {
-        tmpInputMap1Action.Enable();
-        tmpInputMap2Action.Enable();
-        tmpInputMap3Action.Enable();
-        tmpInputMap4Action.Enable();
-        tmpInputMap5Action.Enable();
+        attachedObject = obj;
     }
 
-
-    void OnDisable()
+    public void SetMapController(MapController controller)
     {
-        tmpInputMap1Action.Disable();
-        tmpInputMap2Action.Disable();
-        tmpInputMap3Action.Disable();
-        tmpInputMap4Action.Disable();
-        tmpInputMap5Action.Disable();
+        mapController = controller;
+        hasChangedMap = true;
+    }
+
+    public void ReportMapWrapAround()
+    {
+        hasWrappedAround = true;
     }
 }

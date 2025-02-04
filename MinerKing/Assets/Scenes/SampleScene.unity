@@ -14881,12 +14881,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285623069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.733, y: -3.34, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.032999992, y: 0.06000018, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 942258412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &285623073
 Animator:
@@ -22827,94 +22827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a334bb654c79ce45b959c27525d5add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mining: {fileID: 942258410}
-  idxMap: 0
-  yOffset: 0.14
-  tmpInputMap1Action:
-    m_Name: Tmp Input Map 1
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 454b0d70-8b5b-4bdd-8b8f-5792439c7637
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c073073a-2ea3-46e6-916b-fd2435e9ca46
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Map 1
-      m_Flags: 0
-    m_Flags: 0
-  tmpInputMap2Action:
-    m_Name: Tmp Input Map 2
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 2a2db3f3-7912-4850-a010-3d2741e2b34d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 63c5aac2-e93f-4b99-bc71-617ca47396ac
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Map 2
-      m_Flags: 0
-    m_Flags: 0
-  tmpInputMap3Action:
-    m_Name: Tmp Input Map 3
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 8858b837-5ebe-4e89-9bbf-e9748341a0d8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 9797048b-7661-4081-89e8-80b237fb9f77
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Map 3
-      m_Flags: 0
-    m_Flags: 0
-  tmpInputMap4Action:
-    m_Name: Tmp Input Map 4
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 5073f0dd-b7c4-4327-a7ed-2e0950fad0c7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7ed3e4c6-5744-4772-951c-b29cc83e5bd0
-      m_Path: <Keyboard>/r
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Map 4
-      m_Flags: 0
-    m_Flags: 0
-  tmpInputMap5Action:
-    m_Name: Tmp Input Map 5
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 016c4568-a72b-412e-a430-a992b3319572
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 9958dd24-de4b-4287-adcb-0073b535dfe2
-      m_Path: <Keyboard>/t
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tmp Input Map 5
-      m_Flags: 0
-    m_Flags: 0
+  offset: {x: 1.7, y: 3.54, z: -10}
   start: 0
 --- !u!1001 &524835987
 PrefabInstance:
@@ -31301,14 +31214,13 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 3
   idxStage: 0
-  cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 2424892283635003609, guid: 8977b158ef77e5d4792ebae3d9ad04aa, type: 3}
-  particle1Prefab: {fileID: 0}
-  particle2Prefab: {fileID: 0}
-  particle3Prefab: {fileID: 0}
-  particle4Prefab: {fileID: 0}
+  particle1Prefab: {fileID: 632244840444289391, guid: 0f7f67a096697c44fa86a9a18dc85cda, type: 3}
+  particle2Prefab: {fileID: 2186289332388061549, guid: fb8eff318d08c884680ff00a4ca8b204, type: 3}
+  particle3Prefab: {fileID: 3398589094924375992, guid: 2900386c23691dc42bb40570c9984b59, type: 3}
+  particle4Prefab: {fileID: 8915627891133954814, guid: 9cccaff549d04564d963479bd764052b, type: 3}
 --- !u!1001 &800669043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38158,7 +38070,8 @@ Transform:
   m_LocalPosition: {x: -1.7, y: -3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 285623072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &942258413
@@ -38227,8 +38140,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f8f0337b07b434fb74c4e99580bf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statBonus: 0
+  playerAnimator: {fileID: 942258413}
+  weaponAnimator: {fileID: 285623073}
+  mining: {fileID: 942258410}
+  cameraController: {fileID: 519420033}
+  tmpInputMap1Action:
+    m_Name: Tmp Input Map 1
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 0dd8668f-9971-457c-85e8-90c06cedfc71
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cbd426d2-970d-48cf-95e6-e331d8b4577d
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tmp Input Map 1
+      m_Flags: 0
+    m_Flags: 0
+  tmpInputMap2Action:
+    m_Name: Tmp Input Map 2
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: bf5ee299-dd8c-4d28-aba8-73d2b98166d6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 86fe55cd-3873-4aa4-bfa0-d0a0567638c5
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tmp Input Map 2
+      m_Flags: 0
+    m_Flags: 0
+  tmpInputMap3Action:
+    m_Name: Tmp Input Map 3
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: f14ef6b7-b57a-47fd-a275-86d620ffa10e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 706f1b66-f2db-4ad2-805b-9d4a574f2fd4
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tmp Input Map 3
+      m_Flags: 0
+    m_Flags: 0
+  tmpInputMap4Action:
+    m_Name: Tmp Input Map 4
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: cc1e6344-ea4d-4f21-9be6-fa071e6c9afa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8f845f55-149a-43f8-b3e7-787a0c61389a
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tmp Input Map 4
+      m_Flags: 0
+    m_Flags: 0
+  tmpInputMap5Action:
+    m_Name: Tmp Input Map 5
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: adf9ba5a-126a-419e-987a-bc5ed2f6544d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9269c587-1b22-4139-841c-859a1043d8e2
+      m_Path: <Keyboard>/t
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Tmp Input Map 5
+      m_Flags: 0
+    m_Flags: 0
   curPickaxe: 13
+  idxMap: 0
+  offset: {x: -1.4, y: -3.4}
+  start: 0
 --- !u!1001 &954747903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47360,14 +47364,13 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 0
   idxStage: 0
-  cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
-  particle1Prefab: {fileID: 0}
-  particle2Prefab: {fileID: 0}
-  particle3Prefab: {fileID: 0}
-  particle4Prefab: {fileID: 0}
+  particle1Prefab: {fileID: 4700554978858393598, guid: 5c6f2dcf71001c442afefa899e208334, type: 3}
+  particle2Prefab: {fileID: 2996589142294648928, guid: a1beb36a35806134ebf4b8b4af858629, type: 3}
+  particle3Prefab: {fileID: 2664837750411989962, guid: 10f306052113bee44863fe8accf2af3e, type: 3}
+  particle4Prefab: {fileID: 628674758506154658, guid: 296d5627ed8384043bda3b1d7473bfb1, type: 3}
 --- !u!1001 &1310716967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67137,14 +67140,13 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 1
   idxStage: 0
-  cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 587270091750463822, guid: cae110c150641da4caeea13024a09411, type: 3}
-  particle1Prefab: {fileID: 0}
-  particle2Prefab: {fileID: 0}
-  particle3Prefab: {fileID: 0}
-  particle4Prefab: {fileID: 0}
+  particle1Prefab: {fileID: 9027199284220326181, guid: beeccae85dd93e3438146b59b93e6ac2, type: 3}
+  particle2Prefab: {fileID: 4519969590205631451, guid: 429f3358ff71ce443b9bf3a22d76f5e4, type: 3}
+  particle3Prefab: {fileID: 8353218151522971891, guid: 255166af25f31274191a9e5e9552ee78, type: 3}
+  particle4Prefab: {fileID: 3831846105928233296, guid: 412fbc801074bdf4d828b2d1673b657a, type: 3}
 --- !u!1001 &1731875076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67779,14 +67781,13 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 4
   idxStage: 0
-  cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 1031354575364956993, guid: ac884842238c5ad418697cb652100089, type: 3}
-  particle1Prefab: {fileID: 0}
-  particle2Prefab: {fileID: 0}
-  particle3Prefab: {fileID: 0}
-  particle4Prefab: {fileID: 0}
+  particle1Prefab: {fileID: 4114875654548935838, guid: 5ebcf3be6af8f9648b557dbe84ef115f, type: 3}
+  particle2Prefab: {fileID: 6907031003122394913, guid: 34072c8447d7026498b1d31794bc97ee, type: 3}
+  particle3Prefab: {fileID: 8331532698719967264, guid: c3723e006264a6447b8d2981f30df1f3, type: 3}
+  particle4Prefab: {fileID: 6085467109825608124, guid: 2879f3cdedd248545bbfc9b907377059, type: 3}
 --- !u!1 &1799224136
 GameObject:
   m_ObjectHideFlags: 0
@@ -74751,101 +74752,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3564026850829729314, guid: 70e4f80265d902443a6249697d613d81, type: 3}
   m_PrefabInstance: {fileID: 1957006405}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1959745782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1959745784}
-  - component: {fileID: 1959745783}
-  m_Layer: 0
-  m_Name: AnimationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1959745783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959745782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f9b64c3b894c834e9766e713cfea4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oneInputAction:
-    m_Name: One Input
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 9b26e33e-a124-44d0-8072-404eaeb823cb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 8f68661f-25b1-41ae-be91-09c5939ccf98
-      m_Path: <Keyboard>/1
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: One Input
-      m_Flags: 0
-    m_Flags: 0
-  twoInputAction:
-    m_Name: Two Input
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 4ed6f45d-ba25-4891-8415-bcc4f33684bb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: fa67cb58-13ae-426e-bba2-a333a3846267
-      m_Path: <Keyboard>/2
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Two Input
-      m_Flags: 0
-    m_Flags: 0
-  threeInputAction:
-    m_Name: Three Input
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 8ab7f666-b91c-40b1-92ca-8df6abfd95bb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: d95822fe-2e5f-4e32-baab-aa17dd2397ec
-      m_Path: <Keyboard>/3
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Three Input
-      m_Flags: 0
-    m_Flags: 0
---- !u!4 &1959745784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959745782}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963240208
 GameObject:
   m_ObjectHideFlags: 0
@@ -75989,14 +75895,13 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 2
   idxStage: 0
-  cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 7203253608387490513, guid: cfcf01727d6e12a45a267ea628d36bde, type: 3}
-  particle1Prefab: {fileID: 0}
-  particle2Prefab: {fileID: 0}
-  particle3Prefab: {fileID: 0}
-  particle4Prefab: {fileID: 0}
+  particle1Prefab: {fileID: 6772306475534498347, guid: b17f19b9be9626641a6cfa796811d6f9, type: 3}
+  particle2Prefab: {fileID: 3414989213148712577, guid: 81e8f1512f8ff3f4db798c6eb0b5f143, type: 3}
+  particle3Prefab: {fileID: 6459799393987194937, guid: b7d59da64f69ce84f941206668e27a42, type: 3}
+  particle4Prefab: {fileID: 8876317001379038930, guid: 95f3c042ead7344469231e18e7c0bb8c, type: 3}
 --- !u!1001 &2019215247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77927,6 +77832,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7184930944650437906, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 519420033}
+    - target: {fileID: 7184930944650437906, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 942258415}
     - target: {fileID: 8222908179068456210, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -78183,7 +78096,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1959745784}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 332322972}
@@ -78193,5 +78105,4 @@ SceneRoots:
   - {fileID: 130808620}
   - {fileID: 1025621452}
   - {fileID: 480945564}
-  - {fileID: 285623072}
   - {fileID: 942258412}

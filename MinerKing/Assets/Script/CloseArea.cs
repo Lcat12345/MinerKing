@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CloseArea : MonoBehaviour
 {
-    CameraController cc;
+    public CameraController cameraController;
+    public PlayerController playerController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +19,8 @@ public class CloseArea : MonoBehaviour
 
     public void OnClickScreen()
     {
-        cc = GameObject.Find("Main Camera").GetComponent<CameraController>();
-        cc.start = true;
+        cameraController.start = true;
+        playerController.start = true;
 
         gameObject.SetActive(false);
     }

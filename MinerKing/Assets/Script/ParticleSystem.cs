@@ -6,7 +6,7 @@ public class ParticleSystem : SingletonLazy<JewelData>
 {
     private Vector2[] sphereVectors;
 
-    ParticleSystem()
+    public ParticleSystem()
     {
         sphereVectors = new Vector2[360];
 
@@ -16,7 +16,7 @@ public class ParticleSystem : SingletonLazy<JewelData>
         }
     }
 
-    Vector2[] Sample(int cnt)
+    public Vector2[] Sample(int cnt)
     {
         Vector2[] ret = new Vector2[cnt];
 

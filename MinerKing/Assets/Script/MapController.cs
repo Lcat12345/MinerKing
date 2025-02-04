@@ -334,7 +334,6 @@ public class MapController : MonoBehaviour
     public int mapWidth = 121;
     public int idxMap = 0;
     public int idxStage = 0;
-    public CameraController cc;
     public GameObject mining;
     public GameObject player;
     public GameObject rockPrefab; // 바위 프리팹 연결용
@@ -346,12 +345,19 @@ public class MapController : MonoBehaviour
     private Dictionary<Jewels, float> probabilities;
     private List<Jewels> jewels;
     private List<GameObject> instancedRocks;
+    private List<GameObject> instancedParticles;
+    private GameObject rockShaking;
+    private Vector3 rockShakingOriginalPos;
+    private float shakeIntensity;
 
     private void Start()
     {
         probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
         jewels = new List<Jewels>();
         instancedRocks = new List<GameObject>();
+        instancedParticles = new List<GameObject>();
+        rockShaking = null;
+
         GenerateRocks();
         if (!isFirstMap)
         {
@@ -362,14 +368,50 @@ public class MapController : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-
+        if (rockShaking != null)
+        {
+            Vector2 rand = Random.insideUnitSphere * Time.deltaTime * shakeIntensity;
+            rockShaking.transform.position = new Vector3(
+                rockShakingOriginalPos.x + rand.x,
+                rockShakingOriginalPos.y + rand.y,
+                rockShakingOriginalPos.z
+            );
+        }
     }
 
-    public void ChangeMap(int idx)
+    private void Update()
+    {
+        while (true)
+        {
+            if (instancedParticles.Count == 0)
+            {
+                return;
+            }
+
+            if (instancedParticles[0].transform.localPosition.y < -1 - 5)
+            {
+                Destroy(instancedParticles[0]);
+                instancedParticles.RemoveAt(0);
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    public GameObject ChangeMap(int idx)
     {
         GameObject mapParent = GameObject.Find("PMap" + (idx + 1));
+
+        OnMiningEnd();
+        for (int i = 0; i < instancedParticles.Count; ++i)
+        {
+            Destroy(instancedParticles[i]);
+        }
+        instancedParticles.Clear();
 
         foreach (Transform child in transform)
         {
@@ -380,8 +422,23 @@ public class MapController : MonoBehaviour
             child.gameObject.SetActive(true);
         }
 
+        MapController mapController = mapParent.GetComponent<MapController>();
+        for (int i = 0; i < mapController.instancedRocks.Count; ++i)
+        {
+            GameObject rock = instancedRocks[i];
+            if (rock.transform.position.x < player.transform.position.x)
+            {
+                rock.SetActive(false);
+            }
+            else
+            {
+                mapController.instancedRocks[i].SetActive(true);
+            }
+        }
+
         mining.GetComponent<Mining>().ClearMining();
-        cc.idxMap = idx;
+
+        return mapParent;
     }
 
     public void GenerateRocks()
@@ -505,12 +562,86 @@ public class MapController : MonoBehaviour
 
     public Jewel GetJewelData(int idxJewel)
     {
-        Debug.Log("idxJewel: " + idxJewel);
         return JewelData.instance.Get(jewels[idxJewel]);
     }
 
-    public void GenerateParticles(int particleCnt)
+    public void GenerateParticles(int particleCnt, ulong minedBlocks)
     {
+        int idxRock = (int)((minedBlocks + 4ul) % (ulong)(mapWidth));
+        bool isOnCloneMap = (int)(minedBlocks % (ulong)(mapWidth)) > idxRock;
 
+        GameObject map;
+        if (!isOnCloneMap)
+        {
+            map = GameObject.Find("Map" + (idxMap + 1));
+        }
+        else
+        {
+            map = GameObject.Find("Map" + (idxMap + 1) + "Clone");
+        }
+
+
+        for (int i = 0; i < particleCnt; ++i)
+        {
+            GameObject particle;
+
+            float rand = Random.Range(0, 4);
+            if (rand < 1.0f)
+            {
+                particle = Instantiate(particle1Prefab, map.transform);
+            }
+            else if (rand < 2.0f)
+            {
+                particle = Instantiate(particle2Prefab, map.transform);
+            }
+            else if (rand < 3.0f)
+            {
+                particle = Instantiate(particle3Prefab, map.transform);
+            }
+            else
+            {
+                particle = Instantiate(particle4Prefab, map.transform);
+            }
+
+            particle.transform.position = new Vector3((float)idxRock - 4.5f, -2.5f, 0);
+            particle.transform.position = map.transform.TransformPoint(particle.transform.position);
+            float scale = Random.Range(0.15f, 0.45f);
+            particle.transform.localScale = new Vector2(scale, scale);
+            particle.GetComponent<Rigidbody2D>().linearVelocity = (Vector2)(Random.onUnitSphere) * 5.0f + new Vector2(0.0f, 2.5f);
+
+            instancedParticles.Add(particle);
+        }
+    }
+
+    public void OnMiningStart(ulong minedBlocks, float shake)
+    {
+        int idxRock = (int)((minedBlocks + 4ul) % (ulong)(mapWidth));
+        bool isOnCloneMap = (int)(minedBlocks % (ulong)(mapWidth)) > idxRock;
+
+        if (!isOnCloneMap)
+        {
+            rockShaking = instancedRocks[idxRock];
+        }
+        else
+        {
+            rockShaking = instancedRocks[idxRock + mapWidth];
+        }
+
+        rockShakingOriginalPos = new Vector3(
+            rockShaking.transform.position.x,
+            rockShaking.transform.position.y,
+            rockShaking.transform.position.z
+        );
+        shakeIntensity = shake;
+    }
+
+    public void OnMiningEnd()
+    {
+        if (rockShaking != null)
+        {
+            rockShaking.transform.position = rockShakingOriginalPos;
+        }
+        rockShaking = null;
+        shakeIntensity = 0.0f;
     }
 }
