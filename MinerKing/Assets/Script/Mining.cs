@@ -197,7 +197,6 @@ public class Mining : MonoBehaviour
                 Debug.LogWarning("jewel at " + idxJewel + " is null!");
             }
 
-            //targetTime = jewel.registance / 30;
             targetTime = Mathf.Pow(2,
                 (jewel.registance - 10.0f *
                     (1.0f + playerController.calcMiningBonus() / 100.0f + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
@@ -205,7 +204,7 @@ public class Mining : MonoBehaviour
             );
             elapsedTime = 0;
 
-            mapController.OnMiningStart(minedBlocks, 8.0f / Mathf.Sqrt(targetTime));
+            mapController.OnMiningStart(minedBlocks, 4.0f / Mathf.Sqrt(targetTime));
             playerController.ChangeState(PlayerState.MiningState);
 
             return;
