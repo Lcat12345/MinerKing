@@ -2202,6 +2202,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bd06dd27e0a8649b1417630015c037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iaCollect:
+    m_Name: Ia Collect
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 31623fbd-498a-4964-998b-98dab065d6ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cc8b0958-cb97-4d32-a9c7-20bc01a09bab
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ia Collect
+      m_Flags: 0
+    m_Flags: 0
+  gameUI: {fileID: 931886590}
+  inventoryIcon: {fileID: 201733066}
+  cam: {fileID: 519420031}
 --- !u!1001 &175840941
 PrefabInstance:
   m_ObjectHideFlags: 0

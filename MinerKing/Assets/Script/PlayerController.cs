@@ -126,6 +126,7 @@ public class PlayerController : MonoBehaviour
 
                 float endurance = 0.05f;
 
+                // moving -> idle
                 if (Mathf.Abs(curPos.x - targetPos.x) < endurance)
                 {
                     ChangeState(PlayerState.IdleState);

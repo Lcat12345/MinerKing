@@ -173,7 +173,6 @@ public class Mining : MonoBehaviour
 
     private JewlyManager jewlyManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         GameObject go = GameObject.Find("JewlyManager");
@@ -182,7 +181,6 @@ public class Mining : MonoBehaviour
         jewlyManager = go.GetComponent<JewlyManager>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         int idxJewel = (int)(minedBlocks % (ulong)mapController.mapWidth);
@@ -231,7 +229,7 @@ public class Mining : MonoBehaviour
                 Debug.Log("Mined " + jewel.name + "!");
                 mapController.UpdateRocks(minedBlocks);
                 mapController.UpdateJewel(idxJewel);
-                jewlyManager.GenerateJewly(jewel.name);
+                jewlyManager.GenerateJewly(jewel.name, Mathf.Clamp(5.0f / Mathf.Sqrt(targetTime), 3.5f, 15.0f));
                 ++minedBlocks;
 
                 elapsedTime = 0;
