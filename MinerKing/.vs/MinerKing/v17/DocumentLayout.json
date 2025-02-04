@@ -1,10 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Unity Project\\MinerKing\\MinerKing\\",
+  "WorkspaceRootPath": "G:\\MinerKingProject\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|d:\\unity project\\minerking\\minerking\\assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\jewlyanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\jewlyanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\manager\\jewlymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\jewlymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +38,100 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Mining.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
+              "RelativeToolTip": "Assets\\Script\\Mining.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T04:56:45.471Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "JewlyAnimation.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\JewlyAnimation.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs",
+              "RelativeToolTip": "Assets\\Script\\JewlyAnimation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T10:58:38.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JewlyManager.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\JewlyManager.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\JewlyManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T10:05:22.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDataManager.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAE4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T09:41:12.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Script\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T04:55:50.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MapController.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
+              "RelativeToolTip": "Assets\\Script\\MapController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0BAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T04:50:52.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CameraController.cs",
-              "DocumentMoniker": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CameraController.cs",
-              "ToolTip": "D:\\Unity Project\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
               "RelativeToolTip": "Assets\\Script\\CameraController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwEAAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T09:46:42.188Z",
               "EditorCaption": ""
