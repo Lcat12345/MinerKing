@@ -171,7 +171,7 @@ public class Mining : MonoBehaviour
 
     public ulong MinedBlocks { get { return minedBlocks; } }
 
-    private JewlyManager jewlyManager;
+    public JewlyManager jewlyManager;
 
     private void Start()
     {
@@ -246,6 +246,7 @@ public class Mining : MonoBehaviour
         elapsedTime = 0;
         targetTime = 0;
         playerController.ChangeState(PlayerState.IdleState);
+        jewlyManager.CollectJewels();
     }
 
     private void OnEnable()

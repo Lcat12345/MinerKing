@@ -21,7 +21,7 @@ public class JewlyManager : MonoBehaviour
     // 제거 코루틴 중복 실행을 막기 위한 플래그
     private bool isRemovingJewels = false;
 
-    private bool physicalAnimation = false;      // temporary
+    private bool physicalAnimation = true;      // temporary
     public int maxCollisionCnt = 8;
 
     void Start()
@@ -187,43 +187,48 @@ public class JewlyManager : MonoBehaviour
     {
         if (iaCollect.WasPressedThisFrame())
         {
-            for (int i = 0; i < jewelInstances.Count; ++i)
-            {
-                jewelInstances[i].GetComponent<JewlyAnimation>().StartInventoryAnimation();
-
-                Vector3 normalizedPos = cam.WorldToViewportPoint(jewelInstances[i].transform.position);
-
-                jewelInstances[i].transform.SetParent(gameUI.transform);
-
-                RectTransform rt = jewelInstances[i].AddComponent(typeof(RectTransform)) as RectTransform;
-                rt.anchorMin = rt.anchorMax = normalizedPos;
-                rt.anchoredPosition = Vector2.zero;
-
-                RectTransform uiRect = gameUI.GetComponent<RectTransform>();
-                float uiWidth = uiRect.rect.width;
-                float uiHeight = uiRect.rect.height;
-
-                float vpHeight = cam.orthographicSize * 2;
-                float vpWidth = vpHeight * cam.aspect;
-
-                float scaleX = uiWidth / vpWidth;
-                float scaleY = uiHeight / vpHeight;
-                rt.localScale = new Vector3(scaleX * 0.5f, scaleY * 0.5f, 1.0f);
-
-                jewelInstances[i].AddComponent(typeof(CanvasRenderer));
-
-                SpriteRenderer sr = jewelInstances[i].GetComponent<SpriteRenderer>();
-                if (sr != null)
-                {
-                    Image img = jewelInstances[i].AddComponent<Image>();
-                    img.sprite = sr.sprite; // 기존 Sprite 적용
-
-                    Destroy(sr);
-                }
-            }
-
-            jewelInstances.Clear();
+            CollectJewels();
         }
+    }
+
+    public void CollectJewels()
+    {
+        for (int i = 0; i < jewelInstances.Count; ++i)
+        {
+            jewelInstances[i].GetComponent<JewlyAnimation>().StartInventoryAnimation();
+
+            Vector3 normalizedPos = cam.WorldToViewportPoint(jewelInstances[i].transform.position);
+
+            jewelInstances[i].transform.SetParent(gameUI.transform);
+
+            RectTransform rt = jewelInstances[i].AddComponent(typeof(RectTransform)) as RectTransform;
+            rt.anchorMin = rt.anchorMax = normalizedPos;
+            rt.anchoredPosition = Vector2.zero;
+
+            RectTransform uiRect = gameUI.GetComponent<RectTransform>();
+            float uiWidth = uiRect.rect.width;
+            float uiHeight = uiRect.rect.height;
+
+            float vpHeight = cam.orthographicSize * 2;
+            float vpWidth = vpHeight * cam.aspect;
+
+            float scaleX = uiWidth / vpWidth;
+            float scaleY = uiHeight / vpHeight;
+            rt.localScale = new Vector3(scaleX * 0.5f, scaleY * 0.5f, 1.0f);
+
+            jewelInstances[i].AddComponent(typeof(CanvasRenderer));
+
+            SpriteRenderer sr = jewelInstances[i].GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                Image img = jewelInstances[i].AddComponent<Image>();
+                img.sprite = sr.sprite; // 기존 Sprite 적용
+
+                Destroy(sr);
+            }
+        }
+
+        jewelInstances.Clear();
     }
 
     private void OnEnable()

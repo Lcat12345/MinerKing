@@ -24,7 +24,7 @@ public class JewlyAnimation : MonoBehaviour
     private Vector3 lastCameraPosition;
     float randomX;
 
-    private bool physicalAnimation = false;      // temporary
+    private bool physicalAnimation = true;      // temporary
     private Rigidbody2D rb;
 
     // 인벤토리 애니메이션 여부 플래그
@@ -53,6 +53,7 @@ public class JewlyAnimation : MonoBehaviour
         if (physicalAnimation)
         {
             rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = new Vector2(randomX * 3.0f, 0.0f);
         }
     }
 
