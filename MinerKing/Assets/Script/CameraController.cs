@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     private GameObject curMapObject;
     private int lastIdxMap;
 
+    public bool start = false;
+
     void Start()
     {
         lastIdxMap = idxMap;
@@ -31,6 +33,11 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!start)
+        {
+            return;
+        }
+
         int mapWidth = curMapObject.GetComponent<MapController>().mapWidth;
 
         ulong minedBlocks = mining.GetComponent<Mining>().MinedBlocks;
@@ -42,27 +49,41 @@ public class CameraController : MonoBehaviour
 
         if (curPos.x > targetPos.x + epsilon)
         {
-            curPos.x -= mapWidth;
-        }
-        Vector3 velocity = Vector3.zero;
+            int xOffset = -(minedBlocks / mapWidth) * mapWidth;
+            Vector3 curPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            Vector3 targetPos = new Vector3(minedBlocks + xOffset, curPos.y, curPos.z);
 
-        if (lastIdxMap == idxMap)
-        {
-            transform.position = Vector3.SmoothDamp(
-                curPos, targetPos, ref velocity, 0.02f
-            );
-        }
-        else
-        {
-            targetPos.y = idxMap * -15.0f + yOffset;
-            transform.position = targetPos;
-        }
+            float epsilon = 0.001f;
 
-        lastIdxMap = idxMap;
+            if (curPos.x > targetPos.x + epsilon)
+            {
+                curPos.x -= mapWidth;
+            }
+            Vector3 velocity = Vector3.zero;
+
+            if (lastIdxMap == idxMap)
+            {
+                transform.position = Vector3.SmoothDamp(
+                    curPos, targetPos, ref velocity, 0.02f
+                );
+            }
+            else
+            {
+                targetPos.y = idxMap * -15.0f + yOffset;
+                transform.position = targetPos;
+            }
+
+            lastIdxMap = idxMap;
+        }
     }
 
     void Update()
     {
+        if (!start)
+        {
+            return;
+        }
+
         bool wasMapChanged = false;
 
         if (tmpInputMap1Action.WasPressedThisFrame())

@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: b1d2168806ffd1a4d92609732987a21d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5477408592535526743
+    second: touch_screen_0
+  - first:
+      213: 6651774647688709792
+    second: touch_screen_1
+  - first:
+      213: 7513204746703878784
+    second: touch_screen_2
+  - first:
+      213: 604871591350331002
+    second: touch_screen_3
+  - first:
+      213: 7648912144246088177
+    second: touch_screen_4
+  - first:
+      213: 6930890548746649619
+    second: touch_screen_5
+  - first:
+      213: -4205384451562840234
+    second: touch_screen_6
+  - first:
+      213: 2643817250808785110
+    second: touch_screen_7
+  - first:
+      213: 7445806231740547201
+    second: touch_screen_8
+  - first:
+      213: 2137180634010689636
+    second: touch_screen_9
+  - first:
+      213: -7704383124674978266
+    second: touch_screen_10
+  - first:
+      213: 3499699824871374843
+    second: touch_screen_11
+  - first:
+      213: -3553667727240912895
+    second: touch_screen_12
+  - first:
+      213: 5482158054810977176
+    second: touch_screen_13
+  - first:
+      213: 1571337125283273838
+    second: touch_screen_14
+  - first:
+      213: -2947352225029813747
+    second: touch_screen_15
+  - first:
+      213: -2208144101729341248
+    second: touch_screen_16
+  - first:
+      213: -8543618737021074904
+    second: touch_screen_17
+  - first:
+      213: 7282257419582851148
+    second: touch_screen_18
+  - first:
+      213: -1768307311010964189
+    second: touch_screen_19
+  - first:
+      213: -1474602562161832788
+    second: touch_screen_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: touch_screen_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 68
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a26f38d7e55cf3b0800000000000000
+      internalID: -5477408592535526743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 20
+        width: 25
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a64f69acc9df4c50800000000000000
+      internalID: 6651774647688709792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 20
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a301419e3444860800000000000000
+      internalID: 7513204746703878784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 20
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a766921f18fe46800800000000000000
+      internalID: 604871591350331002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_4
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 20
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1a5fbc115662a60800000000000000
+      internalID: 7648912144246088177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 20
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310082f8b387f2060800000000000000
+      internalID: 6930890548746649619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_6
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 20
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f55a45f1973a5c0800000000000000
+      internalID: -4205384451562840234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 20
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8e18538c9b0b420800000000000000
+      internalID: 2643817250808785110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_8
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 20
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18009457151d45760800000000000000
+      internalID: 7445806231740547201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_9
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 20
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4602d0f967ac8ad10800000000000000
+      internalID: 2137180634010689636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_10
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 20
+        width: 58
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62edb302e58841590800000000000000
+      internalID: -7704383124674978266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_11
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 20
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff74f1d27e619030800000000000000
+      internalID: 3499699824871374843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_12
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 21
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100290cb706deaec0800000000000000
+      internalID: -3553667727240912895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_13
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 4
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8930e8384b9841c40800000000000000
+      internalID: 5482158054810977176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_14
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 20
+        width: 83
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c94e64ac28ec510800000000000000
+      internalID: 1571337125283273838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_15
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 20
+        width: 58
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a042f54c6e817d0800000000000000
+      internalID: -2947352225029813747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_16
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 20
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c07c8383a81b51e0800000000000000
+      internalID: -2208144101729341248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_17
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 20
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822cc735608fe6980800000000000000
+      internalID: -8543618737021074904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_18
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 20
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4840314a86cf0560800000000000000
+      internalID: 7282257419582851148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_19
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 46
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d17799ed5b577e0800000000000000
+      internalID: -1768307311010964189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touch_screen_20
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 20
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac867158c8298be0800000000000000
+      internalID: -1474602562161832788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      touch_screen_0: -5477408592535526743
+      touch_screen_1: 6651774647688709792
+      touch_screen_10: -7704383124674978266
+      touch_screen_11: 3499699824871374843
+      touch_screen_12: -3553667727240912895
+      touch_screen_13: 5482158054810977176
+      touch_screen_14: 1571337125283273838
+      touch_screen_15: -2947352225029813747
+      touch_screen_16: -2208144101729341248
+      touch_screen_17: -8543618737021074904
+      touch_screen_18: 7282257419582851148
+      touch_screen_19: -1768307311010964189
+      touch_screen_2: 7513204746703878784
+      touch_screen_20: -1474602562161832788
+      touch_screen_3: 604871591350331002
+      touch_screen_4: 7648912144246088177
+      touch_screen_5: 6930890548746649619
+      touch_screen_6: -4205384451562840234
+      touch_screen_7: 2643817250808785110
+      touch_screen_8: 7445806231740547201
+      touch_screen_9: 2137180634010689636
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
