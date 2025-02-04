@@ -338,6 +338,10 @@ public class MapController : MonoBehaviour
     public GameObject mining;
     public GameObject player;
     public GameObject rockPrefab; // 바위 프리팹 연결용
+    public GameObject particle1Prefab;  // 파티클 프리팹 연결용
+    public GameObject particle2Prefab;  // 파티클 프리팹 연결용
+    public GameObject particle3Prefab;  // 파티클 프리팹 연결용
+    public GameObject particle4Prefab;  // 파티클 프리팹 연결용
 
     private Dictionary<Jewels, float> probabilities;
     private List<Jewels> jewels;
@@ -356,6 +360,11 @@ public class MapController : MonoBehaviour
                 child.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void Update()
+    {
+
     }
 
     public void ChangeMap(int idx)
@@ -498,5 +507,10 @@ public class MapController : MonoBehaviour
     {
         Debug.Log("idxJewel: " + idxJewel);
         return JewelData.instance.Get(jewels[idxJewel]);
+    }
+
+    public void GenerateParticles(int particleCnt)
+    {
+
     }
 }

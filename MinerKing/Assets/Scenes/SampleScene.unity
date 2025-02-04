@@ -30316,7 +30316,7 @@ MonoBehaviour:
   cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
-  rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
+  rockPrefab: {fileID: 2424892283635003609, guid: 8977b158ef77e5d4792ebae3d9ad04aa, type: 3}
 --- !u!1001 &800669043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65374,7 +65374,7 @@ MonoBehaviour:
   cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
-  rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
+  rockPrefab: {fileID: 587270091750463822, guid: cae110c150641da4caeea13024a09411, type: 3}
 --- !u!1001 &1731875076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65924,7 +65924,7 @@ MonoBehaviour:
   cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
-  rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
+  rockPrefab: {fileID: 1031354575364956993, guid: ac884842238c5ad418697cb652100089, type: 3}
 --- !u!1 &1799224136
 GameObject:
   m_ObjectHideFlags: 0
@@ -73541,7 +73541,7 @@ MonoBehaviour:
   cc: {fileID: 519420033}
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
-  rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
+  rockPrefab: {fileID: 7203253608387490513, guid: cfcf01727d6e12a45a267ea628d36bde, type: 3}
 --- !u!1001 &2019215247
 PrefabInstance:
   m_ObjectHideFlags: 0
