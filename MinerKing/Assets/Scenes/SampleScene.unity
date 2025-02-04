@@ -30427,6 +30427,10 @@ MonoBehaviour:
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 2424892283635003609, guid: 8977b158ef77e5d4792ebae3d9ad04aa, type: 3}
+  particle1Prefab: {fileID: 0}
+  particle2Prefab: {fileID: 0}
+  particle3Prefab: {fileID: 0}
+  particle4Prefab: {fileID: 0}
 --- !u!1001 &800669043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36934,6 +36938,8 @@ GameObject:
   - component: {fileID: 942258412}
   - component: {fileID: 942258411}
   - component: {fileID: 942258413}
+  - component: {fileID: 942258415}
+  - component: {fileID: 942258414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -37033,6 +37039,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &942258414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942258410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f00e7b77b94654fa421dd0a0b45249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraController: {fileID: 519420033}
+  playerController: {fileID: 942258415}
+  mapController: {fileID: 1310078032}
+  iaMine:
+    m_Name: Ia Mine
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ce5106f0-97e5-4134-9510-7c881732518c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5c4245ae-907a-4780-8160-d39601e358c9
+      m_Path: <Keyboard>/k
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Ia Mine
+      m_Flags: 0
+    m_Flags: 0
+--- !u!114 &942258415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942258410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f8f0337b07b434fb74c4e99580bf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statBonus: 0
+  curPickaxe: 0
 --- !u!1001 &954747903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45838,6 +45890,10 @@ MonoBehaviour:
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 836859263663242448, guid: 3b0bf6473daf1014d9721a6059bb7615, type: 3}
+  particle1Prefab: {fileID: 0}
+  particle2Prefab: {fileID: 0}
+  particle3Prefab: {fileID: 0}
+  particle4Prefab: {fileID: 0}
 --- !u!1001 &1310716967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65460,6 +65516,10 @@ MonoBehaviour:
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 587270091750463822, guid: cae110c150641da4caeea13024a09411, type: 3}
+  particle1Prefab: {fileID: 0}
+  particle2Prefab: {fileID: 0}
+  particle3Prefab: {fileID: 0}
+  particle4Prefab: {fileID: 0}
 --- !u!1001 &1731875076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66010,6 +66070,10 @@ MonoBehaviour:
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 1031354575364956993, guid: ac884842238c5ad418697cb652100089, type: 3}
+  particle1Prefab: {fileID: 0}
+  particle2Prefab: {fileID: 0}
+  particle3Prefab: {fileID: 0}
+  particle4Prefab: {fileID: 0}
 --- !u!1 &1799224136
 GameObject:
   m_ObjectHideFlags: 0
@@ -73722,6 +73786,10 @@ MonoBehaviour:
   mining: {fileID: 942258410}
   player: {fileID: 942258410}
   rockPrefab: {fileID: 7203253608387490513, guid: cfcf01727d6e12a45a267ea628d36bde, type: 3}
+  particle1Prefab: {fileID: 0}
+  particle2Prefab: {fileID: 0}
+  particle3Prefab: {fileID: 0}
+  particle4Prefab: {fileID: 0}
 --- !u!1001 &2019215247
 PrefabInstance:
   m_ObjectHideFlags: 0
