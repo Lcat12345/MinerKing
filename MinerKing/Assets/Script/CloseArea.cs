@@ -4,6 +4,7 @@ public class CloseArea : MonoBehaviour
 {
     public CameraController cameraController;
     public PlayerController playerController;
+    public GameUI gameUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class CloseArea : MonoBehaviour
     {
         cameraController.start = true;
         playerController.start = true;
+        gameUI.gameObject.SetActive(true);
 
         gameObject.SetActive(false);
     }
