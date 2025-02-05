@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\AdManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,11 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "AdManager.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\AdManager.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\AdManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T00:55:58.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MapController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
@@ -62,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
@@ -70,12 +87,11 @@
               "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAAAFIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T17:28:56.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T17:28:56.733Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "JewlyManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\JewlyManager.cs",
@@ -83,12 +99,11 @@
               "RelativeToolTip": "Assets\\Script\\Manager\\JewlyManager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T17:28:54.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T17:28:54.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "JewlyAnimation.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\JewlyAnimation.cs",
@@ -100,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CloseArea.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CloseArea.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CloseArea.cs",
@@ -112,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
@@ -124,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Mining.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
@@ -137,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ParticleSystem.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\ParticleSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ParticleSystem.cs",
@@ -149,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CameraController.cs",
