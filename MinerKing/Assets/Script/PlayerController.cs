@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private int lastIdxMap;
 
     private uint statMining = 0;
-    private uint statMoving = 1000;
+    private uint statMoving = 200;
     private PlayerState curState;
 
     public PlayerState State { get { return curState; } }
