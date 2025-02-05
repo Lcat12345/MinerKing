@@ -38430,7 +38430,8 @@ MonoBehaviour:
       m_Action: Ia Mine
       m_Flags: 0
     m_Flags: 0
-  jewlyManager: {fileID: 0}
+  userDataManager: {fileID: 1639681108}
+  jewlyManager: {fileID: 163533286}
 --- !u!114 &942258415
 MonoBehaviour:
   m_ObjectHideFlags: 0

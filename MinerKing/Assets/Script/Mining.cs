@@ -164,6 +164,8 @@ public class Mining : MonoBehaviour
     public PlayerController playerController;
     public MapController mapController;
     public InputAction iaMine;
+    public UserDataManager userDataManager;
+    public JewlyManager jewlyManager;
 
     private Dictionary<Jewels, int> minedCnts;
     private float elapsedTime = 0.0f;
@@ -175,7 +177,6 @@ public class Mining : MonoBehaviour
 
     public ulong MinedBlocks { get { return minedBlocks; } }
 
-    public JewlyManager jewlyManager;
 
     private void Start()
     {
@@ -338,6 +339,7 @@ public class Mining : MonoBehaviour
             if (cnt > 0)
             {
                 Debug.Log("Mined " + JewelData.instance.Get(key).name + ": " + cnt);
+                userDataManager.AddJewelCnt(key, cnt);
             }
             minedCnts[key] = 0;
         }
