@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.InputSystem;
 
 public enum Jewels
@@ -164,10 +165,13 @@ public class Mining : MonoBehaviour
     public MapController mapController;
     public InputAction iaMine;
 
+    private Dictionary<Jewels, int> minedCnts;
     private float elapsedTime = 0.0f;
     private float targetTime = 0.0f;
     private int shownParticleCnt = 0;
     private ulong minedBlocks = 0;
+    private float minedCntUpdateDelay = 0.0f;
+    private bool hasSetDelay = false;
 
     public ulong MinedBlocks { get { return minedBlocks; } }
 
@@ -179,10 +183,79 @@ public class Mining : MonoBehaviour
         if (go == null)
             return;
         jewlyManager = go.GetComponent<JewlyManager>();
+
+        minedCnts = new Dictionary<Jewels, int>();
+        minedCnts.Add(Jewels.Ruby, 0);
+        minedCnts.Add(Jewels.Sapphire, 0);
+        minedCnts.Add(Jewels.Emerald, 0);
+        minedCnts.Add(Jewels.Topaz, 0);
+        minedCnts.Add(Jewels.Amethyst, 0);
+        minedCnts.Add(Jewels.Garnet, 0);
+        minedCnts.Add(Jewels.Opal, 0);
+        minedCnts.Add(Jewels.Turquoise, 0);
+        minedCnts.Add(Jewels.Peridot, 0);
+        minedCnts.Add(Jewels.Tanzanite, 0);
+        minedCnts.Add(Jewels.Spinel, 0);
+        minedCnts.Add(Jewels.Alexandrite, 0);
+        minedCnts.Add(Jewels.Aquamarine, 0);
+        minedCnts.Add(Jewels.Morganite, 0);
+        minedCnts.Add(Jewels.Rhodolite, 0);
+        minedCnts.Add(Jewels.Tsavorite, 0);
+        minedCnts.Add(Jewels.Jadeite, 0);
+        minedCnts.Add(Jewels.Labradorite, 0);
+        minedCnts.Add(Jewels.Moonstone, 0);
+        minedCnts.Add(Jewels.Bloodstone, 0);
+        minedCnts.Add(Jewels.Diamond, 0);
+        minedCnts.Add(Jewels.LapisLazuli, 0);
+        minedCnts.Add(Jewels.Onyx, 0);
+        minedCnts.Add(Jewels.Moldavite, 0);
+        minedCnts.Add(Jewels.Iolite, 0);
+        minedCnts.Add(Jewels.Citrine, 0);
+        minedCnts.Add(Jewels.Ametrine, 0);
+        minedCnts.Add(Jewels.Coral, 0);
+        minedCnts.Add(Jewels.Amber, 0);
+        minedCnts.Add(Jewels.Chrysoberyl, 0);
+        minedCnts.Add(Jewels.Carnelian, 0);
+        minedCnts.Add(Jewels.Agate, 0);
+        minedCnts.Add(Jewels.Kyanite, 0);
+        minedCnts.Add(Jewels.Andesine, 0);
+        minedCnts.Add(Jewels.Hematite, 0);
+        minedCnts.Add(Jewels.Sugilite, 0);
+        minedCnts.Add(Jewels.Malachite, 0);
+        minedCnts.Add(Jewels.Charoite, 0);
+        minedCnts.Add(Jewels.ZebraJasper, 0);
+        minedCnts.Add(Jewels.PinkTourmaline, 0);
+        minedCnts.Add(Jewels.BlueTourmaline, 0);
+        minedCnts.Add(Jewels.BlueJasper, 0);
+        minedCnts.Add(Jewels.Unakite, 0);
+        minedCnts.Add(Jewels.TigerEye, 0);
+        minedCnts.Add(Jewels.Howlite, 0);
+        minedCnts.Add(Jewels.Rhodochrosite, 0);
+        minedCnts.Add(Jewels.Azurite, 0);
+        minedCnts.Add(Jewels.Fluorite, 0);
+        minedCnts.Add(Jewels.Scapolite, 0);
+        minedCnts.Add(Jewels.PhoenixTear, 0);
+        minedCnts.Add(Jewels.DragonStone, 0);
+        minedCnts.Add(Jewels.MoonlightGem, 0);
+        minedCnts.Add(Jewels.ManaCrystal, 0);
+        minedCnts.Add(Jewels.InfinityStone, 0);
+        minedCnts.Add(Jewels.Orichalcum, 0);
+        minedCnts.Add(Jewels.HeartOfSolaris, 0);
     }
 
     private void Update()
     {
+        if (hasSetDelay)
+        {
+            minedCntUpdateDelay -= Time.deltaTime;
+            if (minedCntUpdateDelay <= 0.0f)
+            {
+                hasSetDelay = false;
+                minedCntUpdateDelay = 0.0f;
+                UpdateMinedJewels();
+            }
+        }
+
         int idxJewel = (int)(minedBlocks % (ulong)mapController.mapWidth);
 
         Jewel jewel = mapController.GetJewelData(idxJewel);
@@ -226,7 +299,8 @@ public class Mining : MonoBehaviour
                 mapController.GenerateParticles(10, minedBlocks);    // when finishing mining, show 10 additional particles.
                 shownParticleCnt = 0;
 
-                Debug.Log("Mined " + jewel.name + "!");
+                Jewels jewelKey = mapController.GetJewelKey(idxJewel);
+                ++minedCnts[jewelKey];
                 mapController.UpdateRocks(minedBlocks);
                 mapController.UpdateJewel(idxJewel);
                 jewlyManager.GenerateJewly(jewel.name, Mathf.Clamp(5.0f / Mathf.Sqrt(targetTime), 3.5f, 15.0f));
@@ -242,11 +316,31 @@ public class Mining : MonoBehaviour
 
     public void ClearMining()
     {
+        ReflectMinedJewelsWithDelay();
         minedBlocks = 0;
         elapsedTime = 0;
         targetTime = 0;
         playerController.ChangeState(PlayerState.IdleState);
         jewlyManager.CollectJewels();
+    }
+
+    public void ReflectMinedJewelsWithDelay()
+    {
+        minedCntUpdateDelay = 1.0f;
+        hasSetDelay = true;
+    }
+
+    public void UpdateMinedJewels()
+    {
+        foreach (Jewels key in minedCnts.Keys.ToList<Jewels>())
+        {
+            int cnt = minedCnts[key];
+            if (cnt > 0)
+            {
+                Debug.Log("Mined " + JewelData.instance.Get(key).name + ": " + cnt);
+            }
+            minedCnts[key] = 0;
+        }
     }
 
     private void OnEnable()

@@ -229,6 +229,7 @@ public class JewlyManager : MonoBehaviour
         }
 
         jewelInstances.Clear();
+        mining.ReflectMinedJewelsWithDelay();
     }
 
     private void OnEnable()

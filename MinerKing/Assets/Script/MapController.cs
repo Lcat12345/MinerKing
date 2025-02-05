@@ -560,6 +560,11 @@ public class MapController : MonoBehaviour
         }
     }
 
+    public Jewels GetJewelKey(int idxJewel)
+    {
+        return jewels[idxJewel];
+    }
+
     public Jewel GetJewelData(int idxJewel)
     {
         return JewelData.instance.Get(jewels[idxJewel]);
