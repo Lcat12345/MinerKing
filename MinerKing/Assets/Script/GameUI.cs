@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameUI : MonoBehaviour
@@ -6,16 +7,27 @@ public class GameUI : MonoBehaviour
     public ChangePickaxePopup changePickaxePopup;
     public CalculatePopup calculatePopup;
 
+    private UserDataManager userInfo;
+
+    TextMeshProUGUI CurrencySumText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameObject.SetActive(false);
-    }
 
-    // Update is called once per frame
-    void Update()
+        userInfo = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
+
+        // µ· ¼³Á¤
+        GameObject Currency = transform.Find("Currency").gameObject;
+        GameObject Sum = Currency.transform.Find("Sum").gameObject;
+        CurrencySumText = Sum.GetComponent<TextMeshProUGUI>();
+        CurrencySumText.text = userInfo.FormatNumber(userInfo.Money);
+
+    }
+    public void UpdateMoney()
     {
-        
+        CurrencySumText.text = userInfo.FormatNumber(userInfo.Money);
     }
 
     public void OnClickUpgradeStat()
