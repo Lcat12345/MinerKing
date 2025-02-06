@@ -155,6 +155,11 @@ public class PickaxeData : SingletonLazy<PickaxeData>
         return data[(int)ePickaxe];
     }
 
+    public int DataCount()
+    {
+        return data.Count;
+    }
+
     private List<Pickaxe> data;
 }
 
