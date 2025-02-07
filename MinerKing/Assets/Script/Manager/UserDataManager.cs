@@ -63,7 +63,7 @@ public class UserDataManager : MonoBehaviour
 
     void Awake()
     {
-        money = ulong.MaxValue;
+        money = 12345;
         statMining = 0;
         statMoving = 0;
 
@@ -171,6 +171,6 @@ public class UserDataManager : MonoBehaviour
             suffixIndex++;
         }
 
-        return $"{doubleValue:0.#}{suffixes[suffixIndex]}";
+        return $"{doubleValue:0.###}{suffixes[suffixIndex]}";
     }
 }

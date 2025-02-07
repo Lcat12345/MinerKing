@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "G:\\MinerKingProject\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\upgradestatpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\upgradestatpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\upgradestatpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\closearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\closearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\changepickaxepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\changepickaxepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\closearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\closearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,20 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UpgradeStatPopup.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UpgradeStatPopup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UpgradeStatPopup.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UpgradeStatPopup.cs",
               "RelativeToolTip": "Assets\\Script\\UpgradeStatPopup.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwBMAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T13:09:46.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ResourceManager.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\ResourceManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\ResourceManager.cs",
@@ -71,23 +71,25 @@
               "RelativeToolTip": "Assets\\Script\\Manager\\ResourceManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T04:52:11.726Z"
+              "WhenOpened": "2025-02-06T04:52:11.726Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Mining.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeToolTip": "Assets\\Script\\Mining.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYBAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAABYBAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T16:56:46.512Z"
+              "WhenOpened": "2025-02-05T16:56:46.512Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
@@ -99,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAwwCsAAABoAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAAK0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T16:56:08.823Z",
               "EditorCaption": ""
@@ -118,13 +120,14 @@
               "RelativeDocumentMoniker": "Assets\\Script\\ChangePickaxePopup.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\ChangePickaxePopup.cs",
               "RelativeToolTip": "Assets\\Script\\ChangePickaxePopup.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAAL4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T19:30:17.125Z"
+              "WhenOpened": "2025-02-04T19:30:17.125Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "CloseArea.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\CloseArea.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CloseArea.cs",
@@ -132,7 +135,8 @@
               "RelativeToolTip": "Assets\\Script\\CloseArea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T14:22:53.677Z"
+              "WhenOpened": "2025-02-04T14:22:53.677Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -142,9 +146,10 @@
               "RelativeDocumentMoniker": "Assets\\Script\\GameUI.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\GameUI.cs",
               "RelativeToolTip": "Assets\\Script\\GameUI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwB4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T14:19:46.801Z"
+              "WhenOpened": "2025-02-04T14:19:46.801Z",
+              "EditorCaption": ""
             }
           ]
         }
