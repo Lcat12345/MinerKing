@@ -41,6 +41,12 @@ public class UserDataManager : MonoBehaviour
         set { statMoving = value; }
     }
 
+    public Dictionary<Jewels, ulong> JewlyInfo
+    {
+        get { return jewelInventory; }
+        set { jewelInventory = value; }
+    }
+
     //save & load가 필요한 데이터 끝 ========================================================================== 
 
     private GameObject player;

@@ -5246,7 +5246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &130808617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120986,6 +120986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollRect: {fileID: 1223363408}
+  userDataManager: {fileID: 2026981555}
 --- !u!1001 &2128190026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122056,7 +122057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462914410741519435, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019027494443184476, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
       propertyPath: m_Pivot.x
