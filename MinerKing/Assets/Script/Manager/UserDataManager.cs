@@ -17,7 +17,8 @@ public class UserDataManager : MonoBehaviour
     public class JewelEntry
     {
         public Jewels key;
-        public ulong value;
+        public ulong cnt;
+        public bool unlocked;
     }
 
     [System.Serializable]
@@ -44,7 +45,7 @@ public class UserDataManager : MonoBehaviour
         }
     }
 
-    private Dictionary<Jewels, ulong> jewelInventory;
+    private Dictionary<Jewels, (ulong, bool)> jewelInventory;
     private Dictionary<Pickaxes, bool> pickAxesUnlockInfo;
 
 
@@ -101,7 +102,7 @@ public class UserDataManager : MonoBehaviour
     void Awake()
     {
         binaryDataBundle = new BinaryDataBundle();
-        jewelInventory = new Dictionary<Jewels, ulong>();
+        jewelInventory = new Dictionary<Jewels, (ulong, bool)>();
         pickAxesUnlockInfo = new Dictionary<Pickaxes, bool>();
 
         Load();
@@ -123,62 +124,62 @@ public class UserDataManager : MonoBehaviour
 
     private void InitJewelInventory()
     {
-        jewelInventory.Add(Jewels.Ruby, 0);
-        jewelInventory.Add(Jewels.Sapphire, 0);
-        jewelInventory.Add(Jewels.Emerald, 0);
-        jewelInventory.Add(Jewels.Topaz, 0);
-        jewelInventory.Add(Jewels.Amethyst, 0);
-        jewelInventory.Add(Jewels.Garnet, 0);
-        jewelInventory.Add(Jewels.Opal, 0);
-        jewelInventory.Add(Jewels.Turquoise, 0);
-        jewelInventory.Add(Jewels.Peridot, 0);
-        jewelInventory.Add(Jewels.Tanzanite, 0);
-        jewelInventory.Add(Jewels.Spinel, 0);
-        jewelInventory.Add(Jewels.Alexandrite, 0);
-        jewelInventory.Add(Jewels.Aquamarine, 0);
-        jewelInventory.Add(Jewels.Morganite, 0);
-        jewelInventory.Add(Jewels.Rhodolite, 0);
-        jewelInventory.Add(Jewels.Tsavorite, 0);
-        jewelInventory.Add(Jewels.Jadeite, 0);
-        jewelInventory.Add(Jewels.Labradorite, 0);
-        jewelInventory.Add(Jewels.Moonstone, 0);
-        jewelInventory.Add(Jewels.Bloodstone, 0);
-        jewelInventory.Add(Jewels.Diamond, 0);
-        jewelInventory.Add(Jewels.LapisLazuli, 0);
-        jewelInventory.Add(Jewels.Onyx, 0);
-        jewelInventory.Add(Jewels.Moldavite, 0);
-        jewelInventory.Add(Jewels.Iolite, 0);
-        jewelInventory.Add(Jewels.Citrine, 0);
-        jewelInventory.Add(Jewels.Ametrine, 0);
-        jewelInventory.Add(Jewels.Coral, 0);
-        jewelInventory.Add(Jewels.Amber, 0);
-        jewelInventory.Add(Jewels.Chrysoberyl, 0);
-        jewelInventory.Add(Jewels.Carnelian, 0);
-        jewelInventory.Add(Jewels.Agate, 0);
-        jewelInventory.Add(Jewels.Kyanite, 0);
-        jewelInventory.Add(Jewels.Andesine, 0);
-        jewelInventory.Add(Jewels.Hematite, 0);
-        jewelInventory.Add(Jewels.Sugilite, 0);
-        jewelInventory.Add(Jewels.Malachite, 0);
-        jewelInventory.Add(Jewels.Charoite, 0);
-        jewelInventory.Add(Jewels.ZebraJasper, 0);
-        jewelInventory.Add(Jewels.PinkTourmaline, 0);
-        jewelInventory.Add(Jewels.BlueTourmaline, 0);
-        jewelInventory.Add(Jewels.BlueJasper, 0);
-        jewelInventory.Add(Jewels.Unakite, 0);
-        jewelInventory.Add(Jewels.TigerEye, 0);
-        jewelInventory.Add(Jewels.Howlite, 0);
-        jewelInventory.Add(Jewels.Rhodochrosite, 0);
-        jewelInventory.Add(Jewels.Azurite, 0);
-        jewelInventory.Add(Jewels.Fluorite, 0);
-        jewelInventory.Add(Jewels.Scapolite, 0);
-        jewelInventory.Add(Jewels.PhoenixTear, 0);
-        jewelInventory.Add(Jewels.DragonStone, 0);
-        jewelInventory.Add(Jewels.MoonlightGem, 0);
-        jewelInventory.Add(Jewels.ManaCrystal, 0);
-        jewelInventory.Add(Jewels.InfinityStone, 0);
-        jewelInventory.Add(Jewels.Orichalcum, 0);
-        jewelInventory.Add(Jewels.HeartOfSolaris, 0);
+        jewelInventory.Add(Jewels.Ruby, (0, false));
+        jewelInventory.Add(Jewels.Sapphire, (0, false));
+        jewelInventory.Add(Jewels.Emerald, (0, false));
+        jewelInventory.Add(Jewels.Topaz, (0, false));
+        jewelInventory.Add(Jewels.Amethyst, (0, false));
+        jewelInventory.Add(Jewels.Garnet, (0, false));
+        jewelInventory.Add(Jewels.Opal, (0, false));
+        jewelInventory.Add(Jewels.Turquoise, (0, false));
+        jewelInventory.Add(Jewels.Peridot, (0, false));
+        jewelInventory.Add(Jewels.Tanzanite, (0, false));
+        jewelInventory.Add(Jewels.Spinel, (0, false));
+        jewelInventory.Add(Jewels.Alexandrite, (0, false));
+        jewelInventory.Add(Jewels.Aquamarine, (0, false));
+        jewelInventory.Add(Jewels.Morganite, (0, false));
+        jewelInventory.Add(Jewels.Rhodolite, (0, false));
+        jewelInventory.Add(Jewels.Tsavorite, (0, false));
+        jewelInventory.Add(Jewels.Jadeite, (0, false));
+        jewelInventory.Add(Jewels.Labradorite, (0, false));
+        jewelInventory.Add(Jewels.Moonstone, (0, false));
+        jewelInventory.Add(Jewels.Bloodstone, (0, false));
+        jewelInventory.Add(Jewels.Diamond, (0, false));
+        jewelInventory.Add(Jewels.LapisLazuli, (0, false));
+        jewelInventory.Add(Jewels.Onyx, (0, false));
+        jewelInventory.Add(Jewels.Moldavite, (0, false));
+        jewelInventory.Add(Jewels.Iolite, (0, false));
+        jewelInventory.Add(Jewels.Citrine, (0, false));
+        jewelInventory.Add(Jewels.Ametrine, (0, false));
+        jewelInventory.Add(Jewels.Coral, (0, false));
+        jewelInventory.Add(Jewels.Amber, (0, false));
+        jewelInventory.Add(Jewels.Chrysoberyl, (0, false));
+        jewelInventory.Add(Jewels.Carnelian, (0, false));
+        jewelInventory.Add(Jewels.Agate, (0, false));
+        jewelInventory.Add(Jewels.Kyanite, (0, false));
+        jewelInventory.Add(Jewels.Andesine, (0, false));
+        jewelInventory.Add(Jewels.Hematite, (0, false));
+        jewelInventory.Add(Jewels.Sugilite, (0, false));
+        jewelInventory.Add(Jewels.Malachite, (0, false));
+        jewelInventory.Add(Jewels.Charoite, (0, false));
+        jewelInventory.Add(Jewels.ZebraJasper, (0, false));
+        jewelInventory.Add(Jewels.PinkTourmaline, (0, false));
+        jewelInventory.Add(Jewels.BlueTourmaline, (0, false));
+        jewelInventory.Add(Jewels.BlueJasper, (0, false));
+        jewelInventory.Add(Jewels.Unakite, (0, false));
+        jewelInventory.Add(Jewels.TigerEye, (0, false));
+        jewelInventory.Add(Jewels.Howlite, (0, false));
+        jewelInventory.Add(Jewels.Rhodochrosite, (0, false));
+        jewelInventory.Add(Jewels.Azurite, (0, false));
+        jewelInventory.Add(Jewels.Fluorite, (0, false));
+        jewelInventory.Add(Jewels.Scapolite, (0, false));
+        jewelInventory.Add(Jewels.PhoenixTear, (0, false));
+        jewelInventory.Add(Jewels.DragonStone, (0, false));
+        jewelInventory.Add(Jewels.MoonlightGem, (0, false));
+        jewelInventory.Add(Jewels.ManaCrystal, (0, false));
+        jewelInventory.Add(Jewels.InfinityStone, (0, false));
+        jewelInventory.Add(Jewels.Orichalcum, (0, false));
+        jewelInventory.Add(Jewels.HeartOfSolaris, (0, false));
     }
 
     private void InitPickaxeUnlockInfo()
@@ -235,7 +236,7 @@ public class UserDataManager : MonoBehaviour
         binaryDataBundle.lastUsedPickAxe = pc.curPickaxe;
 
         binaryDataBundle.jewelInventory = jewelInventory
-            .Select(kv => new JewelEntry { key = kv.Key, value = kv.Value }).ToList();
+            .Select(kv => new JewelEntry { key = kv.Key, cnt = kv.Value.Item1, unlocked = kv.Value.Item2 }).ToList();
 
         binaryDataBundle.pickAxesUnlockInfo = pickAxesUnlockInfo
             .Select(kv => new PickaxeEntry { key = kv.Key, value = kv.Value }).ToList();
@@ -284,7 +285,7 @@ public class UserDataManager : MonoBehaviour
         binaryDataBundle = JsonUtility.FromJson<BinaryDataBundle>(json);
 
         jewelInventory = binaryDataBundle.jewelInventory
-            .ToDictionary(entry => entry.key, entry => entry.value);
+            .ToDictionary(entry => entry.key, entry => (entry.cnt, entry.unlocked));
         pickAxesUnlockInfo = binaryDataBundle.pickAxesUnlockInfo
             .ToDictionary(entry => entry.key, entry => entry.value);
 
@@ -293,7 +294,7 @@ public class UserDataManager : MonoBehaviour
 
     public void AddJewelCnt(Jewels jewelKey, int jewelCnt)
     {
-        jewelInventory[jewelKey] += (ulong)jewelCnt;
+        jewelInventory[jewelKey] = ( jewelInventory[jewelKey].Item1 + (ulong)jewelCnt, true );
     }
 
     public string FormatNumber(ulong value)
