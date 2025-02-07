@@ -276,7 +276,7 @@ public class Mining : MonoBehaviour
 
             targetTime = Mathf.Pow(2,
                 (jewel.registance - 10.0f *
-                    (1.0f + playerController.calcMiningBonus() / 100.0f + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
+                    (1.0f + playerController.calcMiningBonus() + PickaxeData.instance.Get(playerController.curPickaxe).miningVelocity / 100.0f)
                 ) / 10.0f
             );
             elapsedTime = 0;
