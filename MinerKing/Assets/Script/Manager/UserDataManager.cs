@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class UserDataManager : MonoBehaviour
@@ -9,42 +12,76 @@ public class UserDataManager : MonoBehaviour
      * 돈, 마지막으로 쓰고 있던 곡괭이, 보석 해금 정보, 곡괭이 해금 정보, 스테이지와 맵 해금 정보, 가지고 있는 보석 정보, 스탯 정보 등이 save & load 되어야 합니다.
      */
     // save & load가 필요한 데이터 시작 =======================================================
-    private ulong money;
-    public ulong Money
+
+    [System.Serializable]
+    public class JewelEntry
     {
-        get { return money; }
-        set { money = value; }
+        public Jewels key;
+        public ulong value;
+    }
+
+    [System.Serializable]
+    public class PickaxeEntry
+    {
+        public Pickaxes key;
+        public bool value;
+    }
+
+    [System.Serializable]
+    public class BinaryDataBundle
+    {
+        public List<JewelEntry> jewelInventory;
+        public List<PickaxeEntry> pickAxesUnlockInfo;
+        public ulong money;
+        public Pickaxes lastUsedPickAxe;
+        public uint statMining;
+        public uint statMoving;
+
+        public BinaryDataBundle()
+        {
+            jewelInventory = new List<JewelEntry>();
+            pickAxesUnlockInfo = new List<PickaxeEntry>();
+        }
     }
 
     private Dictionary<Jewels, ulong> jewelInventory;
     private Dictionary<Pickaxes, bool> pickAxesUnlockInfo;
 
-    private Pickaxes lastUsedPickAxe;
+
+    public ulong Money
+    {
+        get { return binaryDataBundle.money; }
+        set { binaryDataBundle.money = value; }
+    }
 
     public Pickaxes LastUsedPickAxe
     {
-        get { return lastUsedPickAxe; }
-        set { lastUsedPickAxe = value; }
+        get { return binaryDataBundle.lastUsedPickAxe; }
+        set { binaryDataBundle.lastUsedPickAxe = value; }
     }
-
-    private uint statMining;
     public uint StatMining
     {
-        get { return statMining; }
-        set { statMining = value; }
+        get { return binaryDataBundle.statMining; }
+        set { binaryDataBundle.statMining = value; }
     }
 
-    private uint statMoving;
     public uint StatMoving
     {
-        get { return statMoving; }
-        set { statMoving = value; }
+        get { return binaryDataBundle.statMoving; }
+        set { binaryDataBundle.statMoving = value; }
     }
+
+    private BinaryDataBundle binaryDataBundle;
 
     //save & load가 필요한 데이터 끝 ========================================================================== 
 
+    public float autoSavePeriod = 60.0f;
+    private float accTimeForAutoSave;
+
     private GameObject player;
     private PlayerController pc;
+
+
     public bool IsUnlockedPickAxe(string name)
     {
         if (Enum.TryParse(name, out Pickaxes pickaxe))
@@ -63,11 +100,29 @@ public class UserDataManager : MonoBehaviour
 
     void Awake()
     {
-        money = ulong.MaxValue;
-        statMining = 0;
-        statMoving = 0;
-
+        binaryDataBundle = new BinaryDataBundle();
         jewelInventory = new Dictionary<Jewels, ulong>();
+        pickAxesUnlockInfo = new Dictionary<Pickaxes, bool>();
+
+        Load();
+
+        player = GameObject.Find("Player");
+        pc = player.GetComponent<PlayerController>();
+        pc.curPickaxe = binaryDataBundle.lastUsedPickAxe;
+    }
+
+    private void InitAllUserData()
+    {
+        binaryDataBundle.money = ulong.MaxValue;
+        binaryDataBundle.statMining = 0;
+        binaryDataBundle.statMoving = 0;
+
+        InitJewelInventory();
+        InitPickaxeUnlockInfo();
+    }
+
+    private void InitJewelInventory()
+    {
         jewelInventory.Add(Jewels.Ruby, 0);
         jewelInventory.Add(Jewels.Sapphire, 0);
         jewelInventory.Add(Jewels.Emerald, 0);
@@ -124,8 +179,10 @@ public class UserDataManager : MonoBehaviour
         jewelInventory.Add(Jewels.InfinityStone, 0);
         jewelInventory.Add(Jewels.Orichalcum, 0);
         jewelInventory.Add(Jewels.HeartOfSolaris, 0);
+    }
 
-        pickAxesUnlockInfo = new Dictionary<Pickaxes, bool>();
+    private void InitPickaxeUnlockInfo()
+    {
         pickAxesUnlockInfo.Add(Pickaxes.HonedPickaxe, true);
         pickAxesUnlockInfo.Add(Pickaxes.SteelPickaxe, false);
         pickAxesUnlockInfo.Add(Pickaxes.StoneSplitter, false);
@@ -140,10 +197,6 @@ public class UserDataManager : MonoBehaviour
         pickAxesUnlockInfo.Add(Pickaxes.PickaxeOfMana, false);
         pickAxesUnlockInfo.Add(Pickaxes.VisionCleaver, false);
         pickAxesUnlockInfo.Add(Pickaxes.FantasticPickaxe, false);
-
-        player = GameObject.Find("Player");
-        pc = player.GetComponent<PlayerController>();
-        pc.curPickaxe = lastUsedPickAxe;
     }
 
     private void Start()
@@ -152,6 +205,90 @@ public class UserDataManager : MonoBehaviour
         Animator weapon = player.transform.Find("Weapon").gameObject.GetComponent<Animator>();
         string path = "Animator/Weapon/" + pc.curPickaxe.ToString();
         weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
+
+        accTimeForAutoSave = 0.0f;
+    }
+
+    private void Update()
+    {
+        accTimeForAutoSave += Time.deltaTime;
+
+        if (accTimeForAutoSave > autoSavePeriod)
+        {
+            Save();
+            Debug.Log("Auto Save Completed");
+
+            accTimeForAutoSave = 0.0f;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Save();
+    }
+
+    public void Save()
+    {
+        String saveFileName = "UserData.bin";
+        String savePath = Application.persistentDataPath + "/" + saveFileName;
+
+        binaryDataBundle.lastUsedPickAxe = pc.curPickaxe;
+
+        binaryDataBundle.jewelInventory = jewelInventory
+            .Select(kv => new JewelEntry { key = kv.Key, value = kv.Value }).ToList();
+
+        binaryDataBundle.pickAxesUnlockInfo = pickAxesUnlockInfo
+            .Select(kv => new PickaxeEntry { key = kv.Key, value = kv.Value }).ToList();
+
+        String json = JsonUtility.ToJson(binaryDataBundle);
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+
+        FileStream fileStream = new FileStream(savePath + ".tmp", FileMode.Create);
+
+        binaryFormatter.Serialize(fileStream, json);
+        fileStream.Close();
+
+        if (File.Exists(savePath))
+        {
+            File.Replace(savePath + ".tmp", savePath, savePath + ".bak");
+        }
+        else
+        {
+            File.Move(savePath + ".tmp", savePath);
+        }
+
+        Debug.Log("Game saved successfully.");
+    }
+
+    public void Load()
+    {
+        String loadFileName = "UserData.bin";
+        String loadPath = Application.persistentDataPath + "/" + loadFileName;
+
+        if (!File.Exists(loadPath))
+        {
+            InitAllUserData();
+            Debug.Log("initalized user data as no save file has been found.");
+            return;
+        }
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream fileStream = new FileStream(loadPath, FileMode.Open);
+
+        String json = binaryFormatter.Deserialize(fileStream) as String;
+
+        fileStream.Close();
+
+        binaryDataBundle = JsonUtility.FromJson<BinaryDataBundle>(json);
+
+        jewelInventory = binaryDataBundle.jewelInventory
+            .ToDictionary(entry => entry.key, entry => entry.value);
+        pickAxesUnlockInfo = binaryDataBundle.pickAxesUnlockInfo
+            .ToDictionary(entry => entry.key, entry => entry.value);
+
+        Debug.Log("loaded save data.");
     }
 
     public void AddJewelCnt(Jewels jewelKey, int jewelCnt)

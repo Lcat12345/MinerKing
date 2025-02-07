@@ -5246,7 +5246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &130808617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118394,6 +118394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268841d37902a184680d4ee5dedddee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoSavePeriod: 30
 --- !u!4 &2026981556
 Transform:
   m_ObjectHideFlags: 0
@@ -122056,7 +122057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462914410741519435, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019027494443184476, guid: 4a69aeaf2ff7dd3459f9a3bb784bb558, type: 3}
       propertyPath: m_Pivot.x
