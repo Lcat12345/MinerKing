@@ -73,6 +73,11 @@ public class UserDataManager : MonoBehaviour
     }
 
     private BinaryDataBundle binaryDataBundle;
+    public Dictionary<Jewels, ulong> JewlyInfo
+    {
+        get { return jewelInventory; }
+        set { jewelInventory = value; }
+    }
 
     //save & load가 필요한 데이터 끝 ========================================================================== 
 
