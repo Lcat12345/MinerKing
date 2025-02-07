@@ -8,6 +8,7 @@ public class UserDataManager : MonoBehaviour
      * 유저가 게임을 껐다 켰다 할 때 남는 정보들 입니다.
      * 돈, 마지막으로 쓰고 있던 곡괭이, 보석 해금 정보, 곡괭이 해금 정보, 스테이지와 맵 해금 정보, 가지고 있는 보석 정보, 스탯 정보 등이 save & load 되어야 합니다.
      */
+    // save & load가 필요한 데이터 시작 =======================================================
     private ulong money;
     public ulong Money
     {
@@ -26,7 +27,22 @@ public class UserDataManager : MonoBehaviour
         set { lastUsedPickAxe = value; }
     }
 
-    //=================== 
+    private uint statMining;
+    public uint StatMining
+    {
+        get { return statMining; }
+        set { statMining = value; }
+    }
+
+    private uint statMoving;
+    public uint StatMoving
+    {
+        get { return statMoving; }
+        set { statMoving = value; }
+    }
+
+    //save & load가 필요한 데이터 끝 ========================================================================== 
+
     private GameObject player;
     private PlayerController pc;
     public bool IsUnlockedPickAxe(string name)
@@ -48,6 +64,8 @@ public class UserDataManager : MonoBehaviour
     void Awake()
     {
         money = ulong.MaxValue;
+        statMining = 0;
+        statMoving = 0;
 
         jewelInventory = new Dictionary<Jewels, ulong>();
         jewelInventory.Add(Jewels.Ruby, 0);
@@ -126,6 +144,14 @@ public class UserDataManager : MonoBehaviour
         player = GameObject.Find("Player");
         pc = player.GetComponent<PlayerController>();
         pc.curPickaxe = lastUsedPickAxe;
+    }
+
+    private void Start()
+    {
+        // 올바른 무기 이미지로 바꾸기
+        Animator weapon = player.transform.Find("Weapon").gameObject.GetComponent<Animator>();
+        string path = "Animator/Weapon/" + pc.curPickaxe.ToString();
+        weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
     }
 
     public void AddJewelCnt(Jewels jewelKey, int jewelCnt)

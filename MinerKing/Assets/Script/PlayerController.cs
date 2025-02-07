@@ -27,8 +27,8 @@ public class PlayerController : MonoBehaviour
     private GameObject curMapObject;
     private int lastIdxMap;
 
-    private uint statMining = 0;
-    private uint statMoving = 200;
+    private UserDataManager userInfo;
+
     private PlayerState curState;
 
     public PlayerState State { get { return curState; } }
@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
         cameraController.SetMapController( curMapObject.GetComponent<MapController>() );
         velocity = Vector3.zero;
         transform.position = new Vector3(offset.x, offset.y, 0.0f);
+
+        userInfo = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
     }
 
     private void Update()
@@ -144,12 +146,12 @@ public class PlayerController : MonoBehaviour
 
     public float calcMiningBonus()
     {
-        return (float)statMining / 100.0f;
+        return (float)userInfo.StatMining / 100.0f;
     }
 
     public float calcMovingBonus()
     {
-        return (float)statMoving / 100.0f;
+        return (float)userInfo.StatMoving / 100.0f;
     }
 
     private float calcMovingTime()
