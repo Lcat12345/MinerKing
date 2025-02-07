@@ -73,7 +73,7 @@ public class UserDataManager : MonoBehaviour
     }
 
     private BinaryDataBundle binaryDataBundle;
-    public Dictionary<Jewels, ulong> JewlyInfo
+    public Dictionary<Jewels, (ulong, bool)> JewlyInfo
     {
         get { return jewelInventory; }
         set { jewelInventory = value; }
