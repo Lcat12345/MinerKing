@@ -19,12 +19,12 @@ public class PlayerController : MonoBehaviour
     public InputAction tmpInputMap5Action;
 
     public Pickaxes curPickaxe;
-    private Vector3 velocity;
     public int idxMap = 0;
     public Vector2 offset = new Vector2(-1.6f, -3.4f);
     public bool start = false;
 
     private GameObject curMapObject;
+    private Vector3 velocity;
     private int lastIdxMap;
 
     private UserDataManager userInfo;
