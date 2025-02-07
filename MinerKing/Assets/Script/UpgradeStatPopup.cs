@@ -39,7 +39,7 @@ public class UpgradeStatPopup : MonoBehaviour
         MiningSpeedRateText = StatField.Find("RateText").GetComponent<TextMeshProUGUI>();
         MiningSpeedPriceText = UpBtn.GetComponentInChildren<TextMeshProUGUI>();
 
-        currentMiningStat = CurrentStat.GetComponentInChildren
+        // currentMiningStat = CurrentStat.GetComponentInChildren
 
         UpdateMiningStat();
         UpdateMovingStat();
