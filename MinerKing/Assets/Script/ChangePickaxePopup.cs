@@ -176,9 +176,13 @@ public class ChangePickaxePopup : MonoBehaviour
     {
         pc.curPickaxe = pickaxe;
 
-        string path = "Animator/Weapon/"+ pickaxe.ToString();
+        AnimatorStateInfo currentState = weapon.GetCurrentAnimatorStateInfo(0);
+        float normalizedTime = currentState.normalizedTime;
 
+        string path = "Animator/Weapon/"+ pickaxe.ToString();
         weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
+
+        weapon.Play(currentState.fullPathHash, 0, normalizedTime);
     }
 
     public void OnPurchaseBtn(Pickaxes pickaxe)

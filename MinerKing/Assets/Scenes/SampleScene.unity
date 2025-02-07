@@ -121036,6 +121036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollRect: {fileID: 1223363408}
   userDataManager: {fileID: 2026981555}
+  contents: {fileID: 465200286}
 --- !u!1001 &2128190026
 PrefabInstance:
   m_ObjectHideFlags: 0
