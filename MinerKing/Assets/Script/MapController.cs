@@ -334,6 +334,10 @@ public class MapController : MonoBehaviour
     public int mapWidth = 121;
     public int idxMap = 0;
     public int idxStage = 0;
+    public BGMManager bgmManager;
+    public AudioClip bgm1;
+    public AudioClip bgm2;
+    public AudioClip bgm3;
     public GameObject mining;
     public GameObject player;
     public GameObject rockPrefab; // 바위 프리팹 연결용
@@ -405,6 +409,10 @@ public class MapController : MonoBehaviour
     public GameObject ChangeMap(int idx)
     {
         GameObject mapParent = GameObject.Find("PMap" + (idx + 1));
+        MapController mapController = mapParent.GetComponent<MapController>();
+
+        AudioClip[] newBGMSet = { mapController.bgm1, mapController.bgm2, mapController.bgm3 };
+        bgmManager.PlayNewBGMSet(newBGMSet);
 
         OnMiningEnd();
         for (int i = 0; i < instancedParticles.Count; ++i)
@@ -422,7 +430,6 @@ public class MapController : MonoBehaviour
             child.gameObject.SetActive(true);
         }
 
-        MapController mapController = mapParent.GetComponent<MapController>();
         for (int i = 0; i < mapController.instancedRocks.Count; ++i)
         {
             GameObject rock = instancedRocks[i];

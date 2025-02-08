@@ -171,6 +171,7 @@ public class Mining : MonoBehaviour
     public InputAction iaMine;
     public UserDataManager userDataManager;
     public JewlyManager jewlyManager;
+    public SFXManager sfxManager;
 
     private Dictionary<Jewels, int> minedCnts;
     private float elapsedTime = 0.0f;
@@ -283,6 +284,7 @@ public class Mining : MonoBehaviour
 
             mapController.OnMiningStart(minedBlocks, 4.0f / Mathf.Sqrt(targetTime));
             playerController.ChangeState(PlayerState.MiningState);
+            sfxManager.PlaySFX(SoundKey.Pickaxe);
 
             return;
         }
@@ -316,6 +318,8 @@ public class Mining : MonoBehaviour
                 mapController.OnMiningEnd();
                 playerController.ChangeState(PlayerState.MovingState);
                 cameraController.Shake();
+                sfxManager.StopSFX(SoundKey.Pickaxe);
+                sfxManager.PlaySFX(SoundKey.Footstep);
             }
         }
     }
@@ -328,6 +332,8 @@ public class Mining : MonoBehaviour
         targetTime = 0;
         playerController.ChangeState(PlayerState.IdleState);
         jewlyManager.CollectJewels();
+        sfxManager.StopSFX(SoundKey.Pickaxe);
+        sfxManager.StopSFX(SoundKey.Footstep);
     }
 
     public void ReflectMinedJewelsWithDelay()

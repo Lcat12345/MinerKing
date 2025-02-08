@@ -8,6 +8,7 @@ public enum PlayerState
 
 public class PlayerController : MonoBehaviour
 {
+    public SFXManager sfxManager;
     public Animator playerAnimator;
     public Animator weaponAnimator;
     public GameObject mining;
@@ -171,8 +172,10 @@ public class PlayerController : MonoBehaviour
         case PlayerState.IdleState:
             break;
         case PlayerState.MiningState:
+            sfxManager.StopSFX(SoundKey.Pickaxe);
             break;
         case PlayerState.MovingState:
+            sfxManager.StopSFX(SoundKey.Footstep);
             break;
         }
 

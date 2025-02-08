@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class JewlyManager : MonoBehaviour
 {
     public PhysicsMaterial2D physMat;
+    public SFXManager sfxManager;
     public InputAction iaCollect;
     public GameObject gameUI;
     public GameObject inventoryIcon;
@@ -119,6 +120,7 @@ public class JewlyManager : MonoBehaviour
         ja.speed = speed;
         ja.mapController = mapController;
         ja.inventoryPosition = inventoryIcon.transform.position;
+        ja.sfxManager = sfxManager;
 
         if (physicalAnimation)
         {

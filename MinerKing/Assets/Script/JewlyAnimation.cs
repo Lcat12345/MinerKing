@@ -4,6 +4,7 @@ using UnityEngine;
 public class JewlyAnimation : MonoBehaviour
 {
     public MapController mapController;
+    public SFXManager sfxManager;
     public float speed;         // 이동 속도
     public float randomRange = 2.8f;    // 랜덤 위치 범위
 
@@ -172,6 +173,7 @@ public class JewlyAnimation : MonoBehaviour
             angularSpeed = Mathf.Max(angularSpeed * (1.0f - 0.5f * Time.deltaTime), 12.5f);
             if (distance < 50.0f)
             {
+                sfxManager.PlaySFX(SoundKey.Gem);
                 transform.position = inventoryPosition;
                 isInventoryAnimation = false; // 애니메이션 종료
                 Destroy(gameObject);
