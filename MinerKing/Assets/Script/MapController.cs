@@ -7,13 +7,18 @@ public class StageData : SingletonLazy<StageData>
     // { (map, stage): probabilities of jewels }
     // map and stage are zero-based here
     private Dictionary<(int, int), Dictionary<Jewels, float>> stageData;
+    // { (map, stage): probabilities of stages }
+    // map and stage are zero-based here
+    private Dictionary<(int, int), ulong> priceData;
 
     public StageData()
     {
         stageData = new Dictionary<(int, int), Dictionary<Jewels, float>>();
+        priceData = new Dictionary<(int, int), ulong>();
         Dictionary<Jewels, float> probabilities = new Dictionary<Jewels, float>();
 
         // 1-1
+        priceData.Add((0, 0), 0ul);
         stageData.Add((0, 0), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 0), out probabilities);
         probabilities.Add(Jewels.Ruby, 80.0f);
@@ -21,6 +26,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Emerald, 5.0f);
 
         // 1-2
+        priceData.Add((0, 1), 25000ul);
         stageData.Add((0, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 1), out probabilities);
         probabilities.Add(Jewels.Ruby, 30.0f);
@@ -30,6 +36,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Amethyst, 2.0f);
 
         // 1-3
+        priceData.Add((0, 2), 45000ul);
         stageData.Add((0, 2), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 2), out probabilities);
         probabilities.Add(Jewels.Emerald, 30.0f);
@@ -39,6 +46,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Opal, 2.0f);
 
         // 1-4
+        priceData.Add((0, 3), 100000ul);
         stageData.Add((0, 3), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 3), out probabilities);
         probabilities.Add(Jewels.Garnet, 45.0f);
@@ -47,6 +55,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Peridot, 7.0f);
 
         // 1-5
+        priceData.Add((0, 4), 300000ul);
         stageData.Add((0, 4), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 4), out probabilities);
         probabilities.Add(Jewels.Turquoise, 50.0f);
@@ -57,6 +66,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Aquamarine, 1.0f);
 
         // 1-6
+        priceData.Add((0, 5), 850000ul);
         stageData.Add((0, 5), new Dictionary<Jewels, float>());
         stageData.TryGetValue((0, 5), out probabilities);
         probabilities.Add(Jewels.Peridot, 36.0f);
@@ -67,6 +77,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Morganite, 1.0f);
 
         // 2-1
+        priceData.Add((1, 0), 1800000ul);
         stageData.Add((1, 0), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 0), out probabilities);
         probabilities.Add(Jewels.Alexandrite, 70.0f);
@@ -75,6 +86,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Rhodolite, 3.0f);
 
         // 2-2
+        priceData.Add((1, 1), 3300000ul);
         stageData.Add((1, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 1), out probabilities);
         probabilities.Add(Jewels.Alexandrite, 26.0f);
@@ -85,6 +97,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Jadeite, 1.0f);
 
         // 2-3
+        priceData.Add((1, 2), 4800000ul);
         stageData.Add((1, 2), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 2), out probabilities);
         probabilities.Add(Jewels.Morganite, 35.0f);
@@ -94,6 +107,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Labradorite, 5.0f);
 
         // 2-4
+        priceData.Add((1, 3), 7000000ul);
         stageData.Add((1, 3), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 3), out probabilities);
         probabilities.Add(Jewels.Jadeite, 27.0f);
@@ -103,6 +117,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Diamond, 2.0f);
 
         // 2-5
+        priceData.Add((1, 4), 17000000ul);
         stageData.Add((1, 4), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 4), out probabilities);
         probabilities.Add(Jewels.Moonstone, 32.0f);
@@ -113,6 +128,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Moldavite, 4.0f);
 
         // 2-6
+        priceData.Add((1, 5), 36000000ul);
         stageData.Add((1, 5), new Dictionary<Jewels, float>());
         stageData.TryGetValue((1, 5), out probabilities);
         probabilities.Add(Jewels.Bloodstone, 22.0f);
@@ -123,6 +139,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Iolite, 1.0f);
 
         // 3-1
+        priceData.Add((2, 0), 60000000ul);
         stageData.Add((2, 0), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 0), out probabilities);
         probabilities.Add(Jewels.Onyx, 85.0f);
@@ -131,6 +148,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Citrine, 1.0f);
 
         // 3-2
+        priceData.Add((2, 1), 95000000ul);
         stageData.Add((2, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 1), out probabilities);
         probabilities.Add(Jewels.Onyx, 45.0f);
@@ -141,6 +159,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Coral, 1.0f);
 
         // 3-3
+        priceData.Add((2, 2), 140000000ul);
         stageData.Add((2, 2), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 2), out probabilities);
         probabilities.Add(Jewels.Iolite, 24.0f);
@@ -150,6 +169,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Amber, 8.0f);
 
         // 3-4
+        priceData.Add((2, 3), 240000000ul);
         stageData.Add((2, 3), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 3), out probabilities);
         probabilities.Add(Jewels.Coral, 42.0f);
@@ -158,6 +178,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Carnelian, 5.0f);
 
         // 3-5
+        priceData.Add((2, 4), 580000000ul);
         stageData.Add((2, 4), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 4), out probabilities);
         probabilities.Add(Jewels.Amber, 24.0f);
@@ -167,6 +188,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Kyanite, 10.0f);
 
         // 3-6
+        priceData.Add((2, 5), 800000000ul);
         stageData.Add((2, 5), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 5), out probabilities);
         probabilities.Add(Jewels.Carnelian, 21.0f);
@@ -176,6 +198,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Hematite, 4.0f);
 
         // 3-7
+        priceData.Add((2, 6), 1600000000ul);
         stageData.Add((2, 6), new Dictionary<Jewels, float>());
         stageData.TryGetValue((2, 6), out probabilities);
         probabilities.Add(Jewels.Carnelian, 4.0f);
@@ -186,6 +209,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Sugilite, 3.0f);
 
         // 4-1
+        priceData.Add((3, 0), 2200000000ul);
         stageData.Add((3, 0), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 0), out probabilities);
         probabilities.Add(Jewels.Kyanite, 65.0f);
@@ -194,6 +218,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Sugilite, 7.0f);
 
         // 4-2
+        priceData.Add((3, 1), 3000000000ul);
         stageData.Add((3, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 1), out probabilities);
         probabilities.Add(Jewels.Kyanite, 25.0f);
@@ -204,6 +229,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Charoite, 1.0f);
 
         // 4-3
+        priceData.Add((3, 2), 3800000000ul);
         stageData.Add((3, 2), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 2), out probabilities);
         probabilities.Add(Jewels.Sugilite, 30.0f);
@@ -213,6 +239,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.PinkTourmaline, 6.0f);
 
         // 4-4
+        priceData.Add((3, 3), 6500000000ul);
         stageData.Add((3, 3), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 3), out probabilities);
         probabilities.Add(Jewels.Charoite, 26.0f);
@@ -222,6 +249,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.BlueJasper, 14.0f);
 
         // 4-5
+        priceData.Add((3, 4), 12000000000ul);
         stageData.Add((3, 4), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 4), out probabilities);
         probabilities.Add(Jewels.BlueTourmaline, 38.0f);
@@ -230,6 +258,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.TigerEye, 14.0f);
 
         // 4-6
+        priceData.Add((3, 5), 17500000000ul);
         stageData.Add((3, 5), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 5), out probabilities);
         probabilities.Add(Jewels.Unakite, 58.0f);
@@ -237,6 +266,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Howlite, 3.0f);
 
         // 4-7
+        priceData.Add((3, 6), 22500000000ul);
         stageData.Add((3, 6), new Dictionary<Jewels, float>());
         stageData.TryGetValue((3, 6), out probabilities);
         probabilities.Add(Jewels.Unakite, 22.0f);
@@ -244,6 +274,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Howlite, 22.0f);
 
         // 5-1
+        priceData.Add((4, 0), 32000000000ul);
         stageData.Add((4, 0), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 0), out probabilities);
         probabilities.Add(Jewels.Unakite, 11.0f);
@@ -252,6 +283,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Rhodochrosite, 1.0f);
 
         // 5-2
+        priceData.Add((4, 1), 36000000000ul);
         stageData.Add((4, 1), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 1), out probabilities);
         probabilities.Add(Jewels.TigerEye, 28.0f);
@@ -260,6 +292,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Azurite, 15.0f);
 
         // 5-3
+        priceData.Add((4, 2), 45000000000ul);
         stageData.Add((4, 2), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 2), out probabilities);
         probabilities.Add(Jewels.Howlite, 18.0f);
@@ -269,6 +302,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.Scapolite, 3.0f);
 
         // 5-4
+        priceData.Add((4, 3), 56000000000ul);
         stageData.Add((4, 3), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 3), out probabilities);
         probabilities.Add(Jewels.Rhodochrosite, 20.0f);
@@ -278,6 +312,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.PhoenixTear, 1.0f);
 
         // 5-5
+        priceData.Add((4, 4), 84000000000ul);
         stageData.Add((4, 4), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 4), out probabilities);
         probabilities.Add(Jewels.Fluorite, 14.0f);
@@ -286,6 +321,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.DragonStone, 25.0f);
 
         // 5-6
+        priceData.Add((4, 5), 140000000000ul);
         stageData.Add((4, 5), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 5), out probabilities);
         probabilities.Add(Jewels.PhoenixTear, 21.0f);
@@ -295,6 +331,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.InfinityStone, 7.0f);
 
         // 5-7
+        priceData.Add((4, 6), 520000000000ul);
         stageData.Add((4, 6), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 6), out probabilities);
         probabilities.Add(Jewels.MoonlightGem, 38.0f);
@@ -304,6 +341,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.HeartOfSolaris, 5.0f);
 
         // 5-8
+        priceData.Add((4, 7), 1000000000000ul);
         stageData.Add((4, 7), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 7), out probabilities);
         probabilities.Add(Jewels.ManaCrystal, 16.0f);
@@ -312,6 +350,7 @@ public class StageData : SingletonLazy<StageData>
         probabilities.Add(Jewels.HeartOfSolaris, 20.0f);
 
         // 5-9
+        priceData.Add((4, 8), 1800000000000ul);
         stageData.Add((4, 8), new Dictionary<Jewels, float>());
         stageData.TryGetValue((4, 8), out probabilities);
         probabilities.Add(Jewels.InfinityStone, 12.0f);
@@ -325,6 +364,11 @@ public class StageData : SingletonLazy<StageData>
         stageData.TryGetValue((idxMap, idxStage), out probabilities);
 
         return probabilities;
+    }
+
+    public ulong GetPrice(int idxMap, int idxStage)
+    {
+        return priceData[(idxMap, idxStage)];
     }
 }
 

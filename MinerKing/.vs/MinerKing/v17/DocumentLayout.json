@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +23,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\SFXManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\BGMManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\BGMManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CalculatePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -71,15 +71,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAH8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAwJcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T06:56:05.597Z"
+              "WhenOpened": "2025-02-08T06:56:05.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -96,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BGMManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\BGMManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\BGMManager.cs",
@@ -114,22 +115,23 @@
               "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeToolTip": "Assets\\Script\\Mining.cs",
-              "ViewState": "AgIAAC0BAAAAAAAAAAAAAEcBAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAGUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T14:13:12.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "MapController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
               "RelativeToolTip": "Assets\\Script\\MapController.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAAAAAJgBAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAAAHYBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:11:46.098Z"
+              "WhenOpened": "2025-02-07T14:11:46.098Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -145,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
@@ -169,20 +171,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "JewlyManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\JewlyManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\JewlyManager.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAAAEBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAANgAAAAAAAAAAIBJwAEBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T02:18:20.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "JewlyAnimation.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\JewlyAnimation.cs",
@@ -190,8 +192,7 @@
               "RelativeToolTip": "Assets\\Script\\JewlyAnimation.cs",
               "ViewState": "AgIAAMcAAAAAAAAAAAAAANYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T02:20:21.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T02:20:21.188Z"
             }
           ]
         }

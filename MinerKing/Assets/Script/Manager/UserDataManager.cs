@@ -29,10 +29,18 @@ public class UserDataManager : MonoBehaviour
     }
 
     [System.Serializable]
+    public class StageEntry
+    {
+        public (int, int) key;
+        public bool value;
+    }
+
+    [System.Serializable]
     public class BinaryDataBundle
     {
         public List<JewelEntry> jewelInventory;
         public List<PickaxeEntry> pickAxesUnlockInfo;
+        public List<StageEntry> stagesUnlockInfo;
         public ulong money;
         public Pickaxes lastUsedPickAxe;
         public uint statMining;
@@ -42,11 +50,13 @@ public class UserDataManager : MonoBehaviour
         {
             jewelInventory = new List<JewelEntry>();
             pickAxesUnlockInfo = new List<PickaxeEntry>();
+            stagesUnlockInfo = new List<StageEntry>();
         }
     }
 
     private Dictionary<Jewels, (ulong, bool)> jewelInventory;
     private Dictionary<Pickaxes, bool> pickAxesUnlockInfo;
+    private Dictionary<(int, int), bool> stagesUnlockInfo;
 
 
     public ulong Money
@@ -104,11 +114,28 @@ public class UserDataManager : MonoBehaviour
         pickAxesUnlockInfo[pickaxe] = true;
     }
 
+    public bool IsUnlockedStage(int idxMap, int idxStage)
+    {
+        bool isUnlocked = false;
+        if (!stagesUnlockInfo.TryGetValue((idxMap, idxStage), out isUnlocked))
+        {
+            Debug.LogWarning("(" + idxMap + ", " + idxStage + ")는 올바른 스테이지 인덱스 값이 아닙니다. false가 반환됩니다.");
+            return false;
+        }
+        return isUnlocked;
+    }
+
+    public void UnlockStage(int idxMap, int idxStage)
+    {
+        stagesUnlockInfo[(idxMap, idxStage)] = true;
+    }
+
     void Awake()
     {
         binaryDataBundle = new BinaryDataBundle();
         jewelInventory = new Dictionary<Jewels, (ulong, bool)>();
         pickAxesUnlockInfo = new Dictionary<Pickaxes, bool>();
+        stagesUnlockInfo = new Dictionary<(int, int), bool>();
 
         Load();
 
@@ -125,6 +152,7 @@ public class UserDataManager : MonoBehaviour
 
         InitJewelInventory();
         InitPickaxeUnlockInfo();
+        InitStageUnlockInfo();
     }
 
     private void InitJewelInventory()
@@ -205,6 +233,45 @@ public class UserDataManager : MonoBehaviour
         pickAxesUnlockInfo.Add(Pickaxes.FantasticPickaxe, false);
     }
 
+    private void InitStageUnlockInfo()
+    {
+        stagesUnlockInfo.Add((0, 0), true);
+        stagesUnlockInfo.Add((0, 1), false);
+        stagesUnlockInfo.Add((0, 2), false);
+        stagesUnlockInfo.Add((0, 3), false);
+        stagesUnlockInfo.Add((0, 4), false);
+        stagesUnlockInfo.Add((0, 5), false);
+        stagesUnlockInfo.Add((1, 0), false);
+        stagesUnlockInfo.Add((1, 1), false);
+        stagesUnlockInfo.Add((1, 2), false);
+        stagesUnlockInfo.Add((1, 3), false);
+        stagesUnlockInfo.Add((1, 4), false);
+        stagesUnlockInfo.Add((1, 5), false);
+        stagesUnlockInfo.Add((2, 0), false);
+        stagesUnlockInfo.Add((2, 1), false);
+        stagesUnlockInfo.Add((2, 2), false);
+        stagesUnlockInfo.Add((2, 3), false);
+        stagesUnlockInfo.Add((2, 4), false);
+        stagesUnlockInfo.Add((2, 5), false);
+        stagesUnlockInfo.Add((2, 6), false);
+        stagesUnlockInfo.Add((3, 0), false);
+        stagesUnlockInfo.Add((3, 1), false);
+        stagesUnlockInfo.Add((3, 2), false);
+        stagesUnlockInfo.Add((3, 3), false);
+        stagesUnlockInfo.Add((3, 4), false);
+        stagesUnlockInfo.Add((3, 5), false);
+        stagesUnlockInfo.Add((3, 6), false);
+        stagesUnlockInfo.Add((4, 0), false);
+        stagesUnlockInfo.Add((4, 1), false);
+        stagesUnlockInfo.Add((4, 2), false);
+        stagesUnlockInfo.Add((4, 3), false);
+        stagesUnlockInfo.Add((4, 4), false);
+        stagesUnlockInfo.Add((4, 5), false);
+        stagesUnlockInfo.Add((4, 6), false);
+        stagesUnlockInfo.Add((4, 7), false);
+        stagesUnlockInfo.Add((4, 8), false);
+    }
+
     private void Start()
     {
         // 올바른 무기 이미지로 바꾸기
@@ -245,6 +312,9 @@ public class UserDataManager : MonoBehaviour
 
         binaryDataBundle.pickAxesUnlockInfo = pickAxesUnlockInfo
             .Select(kv => new PickaxeEntry { key = kv.Key, value = kv.Value }).ToList();
+
+        binaryDataBundle.stagesUnlockInfo = stagesUnlockInfo
+            .Select(kv => new StageEntry { key = kv.Key, value = kv.Value }).ToList();
 
         String json = JsonUtility.ToJson(binaryDataBundle);
 
@@ -292,6 +362,8 @@ public class UserDataManager : MonoBehaviour
         jewelInventory = binaryDataBundle.jewelInventory
             .ToDictionary(entry => entry.key, entry => (entry.cnt, entry.unlocked));
         pickAxesUnlockInfo = binaryDataBundle.pickAxesUnlockInfo
+            .ToDictionary(entry => entry.key, entry => entry.value);
+        stagesUnlockInfo = binaryDataBundle.stagesUnlockInfo
             .ToDictionary(entry => entry.key, entry => entry.value);
 
         Debug.Log("loaded save data.");
