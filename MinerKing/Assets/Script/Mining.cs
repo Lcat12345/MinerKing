@@ -172,6 +172,7 @@ public class Mining : MonoBehaviour
     public UserDataManager userDataManager;
     public JewlyManager jewlyManager;
     public SFXManager sfxManager;
+    public RectTransform targetUI;
 
     private Dictionary<Jewels, int> minedCnts;
     private float elapsedTime = 0.0f;
@@ -268,7 +269,7 @@ public class Mining : MonoBehaviour
         Jewel jewel = mapController.GetJewelData(idxJewel);
 
         // idle -> mining
-        if (iaMine.WasPressedThisFrame() && playerController.State == PlayerState.IdleState)
+        if (CheckMiningInput() && playerController.State == PlayerState.IdleState)
         {
             if (jewel == null)
             {
@@ -322,6 +323,16 @@ public class Mining : MonoBehaviour
                 sfxManager.PlaySFX(SoundKey.Footstep);
             }
         }
+    }
+
+    private bool CheckMiningInput()
+    {
+        if (!iaMine.WasPressedThisFrame()) return false;
+
+
+        return RectTransformUtility.RectangleContainsScreenPoint( targetUI,
+            Touchscreen.current.primaryTouch.position.ReadValue()
+        );
     }
 
     public void ClearMining()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class JewlyManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class JewlyManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject inventoryIcon;
     public Camera cam;
+    public RectTransform targetUI;
 
     private Dictionary<string, GameObject> jewelMap;
     // 생성된 순서를 저장할 리스트
@@ -187,7 +189,7 @@ public class JewlyManager : MonoBehaviour
 
     private void Update()
     {
-        if (iaCollect.WasPressedThisFrame())
+        if (CheckCollectingInput())
         {
             CollectJewels();
         }
@@ -242,5 +244,21 @@ public class JewlyManager : MonoBehaviour
     private void OnDisable()
     {
         iaCollect.Disable();
+    }
+
+    private bool CheckCollectingInput()
+    {
+        if (!iaCollect.WasPressedThisFrame()) return false;
+
+        // UI 클릭 감지: UI가 클릭되었으면 동작하지 않음
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Debug.Log("UI를 클릭했으므로 동작하지 않음");
+            return false;
+        }
+
+        return RectTransformUtility.RectangleContainsScreenPoint(targetUI,
+            Touchscreen.current.primaryTouch.position.ReadValue()
+        );
     }
 }
