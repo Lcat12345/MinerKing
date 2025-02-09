@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class ChangePickaxePopup : MonoBehaviour
 {
     public ScrollRect scrollRect;
+    public Mining mining;
 
     [SerializeField]
     private GameObject pickAxeContent;
@@ -183,6 +184,8 @@ public class ChangePickaxePopup : MonoBehaviour
         weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
 
         weapon.Play(currentState.fullPathHash, 0, normalizedTime);
+
+        mining.StopMining();
     }
 
     public void OnPurchaseBtn(Pickaxes pickaxe)

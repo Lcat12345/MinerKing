@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class UserDataManager : MonoBehaviour
@@ -104,6 +106,7 @@ public class UserDataManager : MonoBehaviour
 
     private GameObject player;
     private PlayerController pc;
+    private String cryptoKey = "IsN24JOasd8F";
 
     [SerializeField] CalculatePopup calculatePopup;
 
@@ -319,8 +322,29 @@ public class UserDataManager : MonoBehaviour
 
     public void Save()
     {
+        Save1();
+    }
+
+    public void Load()
+    {
+        String versionString = Load1();
+
+        if (versionString != null)
+        {
+            if (versionString == "1.0")
+            {
+                Load1();
+            }
+            // else ... (for other versions)
+        }
+    }
+
+    public void Save1()
+    {
         String saveFileName = "UserData.bin";
         String savePath = Application.persistentDataPath + "/" + saveFileName;
+
+        const String version = "1.0";
 
         binaryDataBundle.lastUsedPickAxe = pc.curPickaxe;
 
@@ -337,13 +361,13 @@ public class UserDataManager : MonoBehaviour
         binaryDataBundle.lastPlayedStage = lastPlayedStage.Item2;
 
         String json = JsonUtility.ToJson(binaryDataBundle);
+        String encryptedData = EncryptDecrypt(version + "\n" + json, cryptoKey);
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
-
         FileStream fileStream = new FileStream(savePath + ".tmp", FileMode.Create);
 
-        binaryFormatter.Serialize(fileStream, json);
+        binaryFormatter.Serialize(fileStream, encryptedData);
         fileStream.Close();
 
         if (File.Exists(savePath))
@@ -358,22 +382,37 @@ public class UserDataManager : MonoBehaviour
         Debug.Log("Game saved successfully.");
     }
 
-    public void Load()
+    public String Load1()
     {
         String loadFileName = "UserData.bin";
         String loadPath = Application.persistentDataPath + "/" + loadFileName;
 
+        const String version = "1.0";
+
         if (!File.Exists(loadPath))
         {
-            InitAllUserData();
             Debug.Log("initalized user data as no save file has been found.");
-            return;
+            InitAllUserData();
+            return null;
         }
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = new FileStream(loadPath, FileMode.Open);
 
-        String json = binaryFormatter.Deserialize(fileStream) as String;
+        String encryptedData = binaryFormatter.Deserialize(fileStream) as String;
+        String decryptedData = EncryptDecrypt(encryptedData, cryptoKey);
+
+        StringReader reader = new StringReader(decryptedData);
+        String versionString = reader.ReadLine();
+
+        if (versionString != version)
+        {
+            Debug.LogWarning("Mismatched version found for save file.");
+            InitAllUserData();
+            return versionString;
+        }
+
+        String json = reader.ReadToEnd();
 
         fileStream.Close();
 
@@ -389,6 +428,21 @@ public class UserDataManager : MonoBehaviour
         pc.SetStartingStage(lastPlayedStage.Item1, lastPlayedStage.Item2);
 
         Debug.Log("loaded save data.");
+
+        return null;
+    }
+
+    private string EncryptDecrypt(string data, string key)
+    {
+        int keyLen = key.Length;
+        char[] output = new char[data.Length];
+
+        for (int i = 0; i < data.Length; i++)
+        {
+            output[i] = (char)(data[i] ^ key[i % keyLen]); // XOR ¿¬»ê
+        }
+
+        return new string(output);
     }
 
     public void AddJewelCnt(Jewels jewelKey, int jewelCnt)
