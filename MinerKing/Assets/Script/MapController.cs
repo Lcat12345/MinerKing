@@ -10,7 +10,6 @@ public class StageData : SingletonLazy<StageData>
     // { (map, stage): probabilities of stages }
     // map and stage are zero-based here
     private Dictionary<(int, int), ulong> priceData;
-
     public StageData()
     {
         stageData = new Dictionary<(int, int), Dictionary<Jewels, float>>();
@@ -362,13 +361,29 @@ public class StageData : SingletonLazy<StageData>
     {
         Dictionary<Jewels, float> probabilities = new Dictionary<Jewels, float>();
         stageData.TryGetValue((idxMap, idxStage), out probabilities);
-
+        
         return probabilities;
     }
-
     public ulong GetPrice(int idxMap, int idxStage)
     {
         return priceData[(idxMap, idxStage)];
+    }
+
+    public int Count()
+    {
+        return stageData.Count;
+    }
+
+    public List<(int, int)> GetStageIndex()
+    {
+        List<(int, int)> stages = new List<(int, int)>();
+
+        foreach (var stage in stageData) 
+        {
+            stages.Add(stage.Key);
+        }
+
+        return stages;
     }
 }
 
