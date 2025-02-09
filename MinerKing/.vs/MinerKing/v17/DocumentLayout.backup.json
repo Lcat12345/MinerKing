@@ -1,12 +1,73 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Unity Project\\MinerKing\\MinerKing\\",
-  "Documents": [],
+  "WorkspaceRootPath": "G:\\MinerKingProject\\MinerKing\\MinerKing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\ui\\stagechangeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\stagechangeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDataManager.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T07:23:06.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StageChangeUI.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwBoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T07:12:36.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapController.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
+              "RelativeToolTip": "Assets\\Script\\MapController.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAAAAAFcBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T06:30:10.062Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

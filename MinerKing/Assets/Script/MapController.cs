@@ -7,7 +7,7 @@ public class StageData : SingletonLazy<StageData>
     // { (map, stage): probabilities of jewels }
     // map and stage are zero-based here
     private Dictionary<(int, int), Dictionary<Jewels, float>> stageData;
-
+    
     public StageData()
     {
         stageData = new Dictionary<(int, int), Dictionary<Jewels, float>>();
@@ -323,8 +323,25 @@ public class StageData : SingletonLazy<StageData>
     {
         Dictionary<Jewels, float> probabilities = new Dictionary<Jewels, float>();
         stageData.TryGetValue((idxMap, idxStage), out probabilities);
-
+        
         return probabilities;
+    }
+
+    public int Count()
+    {
+        return stageData.Count;
+    }
+
+    public List<(int, int)> GetStageIndex()
+    {
+        List<(int, int)> stages = new List<(int, int)>();
+
+        foreach (var stage in stageData) 
+        {
+            stages.Add(stage.Key);
+        }
+
+        return stages;
     }
 }
 
