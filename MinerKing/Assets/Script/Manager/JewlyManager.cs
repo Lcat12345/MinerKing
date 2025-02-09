@@ -82,7 +82,7 @@ public class JewlyManager : MonoBehaviour
         jewelMap.Add("타이거 아이", Resources.Load<GameObject>("Jewels/Prefabs/TigerEye"));
         jewelMap.Add("하울라이트", Resources.Load<GameObject>("Jewels/Prefabs/Howlite"));
         jewelMap.Add("로도크로사이트", Resources.Load<GameObject>("Jewels/Prefabs/Rhodochrosite"));
-        jewelMap.Add("아주라이트", Resources.Load<GameObject>("Jewels/Prefabs/Azurite"));
+        jewelMap.Add("아즈라이트", Resources.Load<GameObject>("Jewels/Prefabs/Azurite"));
         jewelMap.Add("플루오라이트", Resources.Load<GameObject>("Jewels/Prefabs/Fluorite"));
         jewelMap.Add("스쿠폴라이트", Resources.Load<GameObject>("Jewels/Prefabs/Scapolite"));
         jewelMap.Add("피닉스의 눈물", Resources.Load<GameObject>("Jewels/Prefabs/PhoenixTear"));

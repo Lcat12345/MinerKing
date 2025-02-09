@@ -416,7 +416,6 @@ public class MapController : MonoBehaviour
 
     private void Awake()
     {
-        probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
         jewels = new List<Jewels>();
         instancedRocks = new List<GameObject>();
         instancedParticles = new List<GameObject>();
@@ -475,6 +474,9 @@ public class MapController : MonoBehaviour
         Debug.Log("Changing Map to (" + aIdxMap + ", " + aIdxStage + ")");
         GameObject mapParent = GameObject.Find("PMap" + (aIdxMap + 1));
         MapController mapController = mapParent.GetComponent<MapController>();
+
+        mapController.idxStage = aIdxStage;
+        GenerateJewels();
 
         userDataManager.OnChangeMap(aIdxMap, aIdxStage);
 
@@ -564,23 +566,33 @@ public class MapController : MonoBehaviour
                     }
                 }
             }
+        }
+    }
 
-            // 보석 부여
-            for (int x = Mathf.FloorToInt(leftTop.x);
-                x <= Mathf.FloorToInt(rightBottom.x); ++x
-            )
+    public void GenerateJewels()
+    {
+        probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
+        jewels.Clear();
+
+        // 범위 지정
+        Vector2 leftTop = new Vector2(-5, -2);
+        Vector2 rightBottom = new Vector2(115, -4);
+
+        // 보석 부여
+        for (int x = Mathf.FloorToInt(leftTop.x);
+            x <= Mathf.FloorToInt(rightBottom.x); ++x
+        )
+        {
+            float rand = Random.Range(0f, 100f);
+            float cumulative = 0f;
+
+            foreach (var jewel in probabilities)
             {
-                float rand = Random.Range(0f, 100f);
-                float cumulative = 0f;
-
-                foreach (var jewel in probabilities)
+                cumulative += jewel.Value;
+                if (rand <= cumulative)
                 {
-                    cumulative += jewel.Value;
-                    if (rand <= cumulative)
-                    {
-                        jewels.Add(jewel.Key);
-                        break;
-                    }
+                    jewels.Add(jewel.Key);
+                    break;
                 }
             }
         }

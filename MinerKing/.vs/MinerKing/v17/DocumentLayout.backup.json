@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\stagechangeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,27 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserDataManager.cs",
-              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
-              "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Script\\PlayerController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAwGUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T07:23:06.932Z"
+              "WhenOpened": "2025-02-09T13:32:46.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StageChangeUI.cs",
-              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\UI\\StageChangeUI.cs",
-              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
-              "RelativeToolTip": "Assets\\Script\\UI\\StageChangeUI.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAuwBoAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Mining.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
+              "RelativeToolTip": "Assets\\Script\\Mining.cs",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAAAKkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T07:12:36.591Z",
+              "WhenOpened": "2025-02-09T13:31:05.687Z",
               "EditorCaption": ""
             },
             {
@@ -61,9 +70,36 @@
               "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
               "RelativeToolTip": "Assets\\Script\\MapController.cs",
-              "ViewState": "AgIAAE0BAAAAAAAAAAAAAFcBAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T06:30:10.062Z"
+              "WhenOpened": "2025-02-09T13:03:15.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDataManager.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAJsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T07:23:06.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StageChangeUI.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwHwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T07:12:36.591Z",
+              "EditorCaption": ""
             }
           ]
         }

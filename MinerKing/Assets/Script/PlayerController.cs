@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
     private GameObject curMapObject;
     private Vector3 velocity;
-    private int lastIdxMap;
 
     private UserDataManager userInfo;
 
@@ -48,9 +47,14 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Set Starting Stage to (" + aIdxMap + ", " + aIdxStage + ")");
         idxMap = aIdxMap;
-        lastIdxMap = idxMap;
         SyncMapObjectWithIndex();
-        curMapObject.GetComponent<MapController>().PlayOwnBGM();
+
+        MapController mapController = curMapObject.GetComponent<MapController>();
+
+        mapController.idxStage = aIdxStage;
+        mapController.PlayOwnBGM();
+        mapController.GenerateJewels();
+
         foreach (Transform child in curMapObject.transform)
         {
             child.gameObject.SetActive(true);
@@ -64,49 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-
-        bool wasMapChanged = false;
-
-        if (tmpInputMap1Action.WasPressedThisFrame())
-        {
-            idxMap = 0;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap2Action.WasPressedThisFrame())
-        {
-            idxMap = 1;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap3Action.WasPressedThisFrame())
-        {
-            idxMap = 2;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap4Action.WasPressedThisFrame())
-        {
-            idxMap = 3;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-        else if (tmpInputMap5Action.WasPressedThisFrame())
-        {
-            idxMap = 4;
-            wasMapChanged = lastIdxMap != idxMap;
-        }
-
-        if (wasMapChanged)
-        {
-            velocity = Vector3.zero;
-
-            curMapObject = curMapObject.GetComponent<MapController>().ChangeMap(idxMap, 0);
-            SyncMapObjectWithIndex();
-            ChangeState(PlayerState.IdleState);
-
-            cameraController.SetMapController(curMapObject.GetComponent<MapController>());
-
-            lastIdxMap = idxMap;
-            return;
-        }
-
 
         if (curState == PlayerState.MovingState)
         {
@@ -125,23 +86,32 @@ public class PlayerController : MonoBehaviour
                 cameraController.ReportMapWrapAround();
             }
 
-            if (lastIdxMap == idxMap)
+            velocity.x = Mathf.Clamp(velocity.x, 0.25f, 5.0f);
+
+            transform.position = Vector3.SmoothDamp(
+                curPos, targetPos, ref velocity, calcMovingTime()
+            );
+
+            float endurance = 0.05f;
+
+            // moving -> idle
+            if (Mathf.Abs(curPos.x - targetPos.x) < endurance)
             {
-                velocity.x = Mathf.Clamp(velocity.x, 0.25f, 5.0f);
-
-                transform.position = Vector3.SmoothDamp(
-                    curPos, targetPos, ref velocity, calcMovingTime()
-                );
-
-                float endurance = 0.05f;
-
-                // moving -> idle
-                if (Mathf.Abs(curPos.x - targetPos.x) < endurance)
-                {
-                    ChangeState(PlayerState.IdleState);
-                }
+                ChangeState(PlayerState.IdleState);
             }
         }
+    }
+
+    public void OnChangeMap(int aIdxMap)
+    {
+        velocity = Vector3.zero;
+        idxMap = aIdxMap;
+
+        curMapObject = curMapObject.GetComponent<MapController>().ChangeMap(idxMap, 0);
+        SyncMapObjectWithIndex();
+        ChangeState(PlayerState.IdleState);
+
+        cameraController.SetMapController(curMapObject.GetComponent<MapController>());
     }
 
     private void SyncMapObjectWithIndex()

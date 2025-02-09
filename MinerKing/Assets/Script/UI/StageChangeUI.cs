@@ -10,39 +10,58 @@ public class StageChangeUI : MonoBehaviour
     private TextMeshProUGUI currentStageText;
 
     private GameObject content;
-    private GameObject[] contents;
+    private GameObject[] stageLockImages;
 
     private GameObject stageUnlockPopupUI;
+    private GameObject stageUnlockPopupUIChangeButton;
     private TextMeshProUGUI stageUnlockPopupUIText;
+    private TextMeshProUGUI stageUnlockPopupUIPriceText;
     private GameObject stageUnlockPopupUIContent;
+
+    private int currentOpenedIdxMap;
+    private int currentOpenedIdxStage;
+    private int currentOpenedSubPopupIdx;
 
     private bool IsOpened = false;
     private Animator animator;
 
+    UserDataManager udm;
+    Mining mining;
     private void Awake()
     {
+        udm = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
+        mining = GameObject.Find("Player").GetComponent<Mining>();
+
         currentStageText = transform.Find("StageChangeButton/TextStageInfo").GetComponent<TextMeshProUGUI>();
+        UpdateCurrentStageInfoUI();
+
         content = transform.Find("StageChangeButton/Mask/Scroll View/Viewport/Content").gameObject;
+
         stageUnlockPopupUI = transform.Find("StageUnlockPopupUI").gameObject;
+
         stageUnlockPopupUIText = stageUnlockPopupUI.transform.Find("StageUnlockSubPopup/StageInfo").GetComponent<TextMeshProUGUI>();
+        stageUnlockPopupUIChangeButton = stageUnlockPopupUI.transform.Find("StageUnlockSubPopup/ChangeBtn").gameObject;
+        stageUnlockPopupUIPriceText = stageUnlockPopupUI.transform.Find("StageUnlockSubPopup/StagePrice/Price").GetComponent<TextMeshProUGUI>();
         stageUnlockPopupUIContent = stageUnlockPopupUI.transform.Find("StageUnlockSubPopup/Scroll View/Viewport/Content").gameObject;
 
         stageUnlockPopupUI.SetActive(false);
 
         animator = transform.Find("StageChangeButton").GetComponent<Animator>();
 
-        contents = new GameObject[StageData.instance.Count()];
+        stageLockImages = new GameObject[StageData.instance.Count()];
 
         List<(int, int)> stageIndexes = StageData.instance.GetStageIndex();
         GameObject stageChangeSubPopup = Resources.Load<GameObject>("UIPrefabs/StageChangeSubPopup");
 
-        for (int i = 0; i < contents.Length; ++i)
+        for (int i = 0; i < stageLockImages.Length; ++i)
         {
             GameObject clone = Instantiate(stageChangeSubPopup);
+            TextMeshProUGUI si = clone.transform.Find("Text").GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI stageInfo = clone.transform.Find("Lock/StageInfo").GetComponent<TextMeshProUGUI>();
 
             int idxMap = stageIndexes[i].Item1;
             int idxStage = stageIndexes[i].Item2;
+            int idxImage = i;
 
             // 스테이지 이름
             clone.name = $"{idxMap.ToString()}-{idxStage.ToString()}";
@@ -50,9 +69,18 @@ public class StageChangeUI : MonoBehaviour
             clone.transform.SetParent(content.transform, false);
             // 클릭하면 unlockPopup이 나오도록 이벤트 등록
             Button button = clone.GetComponent<Button>();
-            button.onClick.AddListener(() => OnClickUnlockStageButton(idxMap, idxStage));
+            button.onClick.AddListener(() => OnClickUnlockStageButton(idxMap, idxStage, idxImage));
             // 잠금 화면에 표시
-            stageInfo.text = $"Stage {idxMap.ToString()}-{idxStage.ToString()}";
+            stageInfo.text = $"Stage {(idxMap + 1).ToString()}-{(idxStage + 1).ToString()}";
+            // 논 잠금 화면에 표시
+            si.text = $"Stage {(idxMap + 1).ToString()}-{(idxStage + 1).ToString()}";
+
+            stageLockImages[i] = clone.transform.Find("Lock").gameObject;
+            // 만약 이미 해금한 스테이지면 표시해야함
+            if (udm.IsUnlockedStage(idxMap, idxStage)) 
+            {
+                stageLockImages[i].SetActive(false);
+            }
         }
 
         content.SetActive(false);
@@ -74,9 +102,12 @@ public class StageChangeUI : MonoBehaviour
         }
     }
 
-    public void OnClickUnlockStageButton(int idxMap, int idxStage)
+    public void OnClickUnlockStageButton(int idxMap, int idxStage, int index)
     {
         SetUnlockSubPopupContent(idxMap, idxStage);
+        currentOpenedIdxMap = idxMap;
+        currentOpenedIdxStage = idxStage;
+        currentOpenedSubPopupIdx = index;
         stageUnlockPopupUI.SetActive(true);
     }
 
@@ -86,12 +117,55 @@ public class StageChangeUI : MonoBehaviour
         stageUnlockPopupUI.SetActive(false);
     }
 
+    public void OnClickUnlockStagePurchaseButton()
+    {
+        ulong price = StageData.instance.GetPrice(currentOpenedIdxMap, currentOpenedIdxStage);
+
+        if(udm.Money >= price)
+        {
+            if(udm.Money == price)
+                udm.Money = 0;
+
+            udm.Money -= price;
+
+            udm.UnlockStage(currentOpenedIdxMap, currentOpenedIdxStage);
+            stageLockImages[currentOpenedSubPopupIdx].SetActive(false);
+            stageUnlockPopupUIChangeButton.SetActive(true);
+        }
+    }
+
+    public void OnClickUnlockStageChangeButton()
+    {
+        mining.playerController.OnChangeMap(currentOpenedIdxMap);
+        mining.mapController.ChangeMap(currentOpenedIdxMap, currentOpenedIdxStage);
+        UpdateCurrentStageInfoUI();
+        OnClickUnlockStageCancelButton();
+    }
+
+    public void UpdateCurrentStageInfoUI()
+    {
+        currentStageText.text = $"Stage {(udm.LastPlayedStage.Item1 + 1).ToString()}-{(udm.LastPlayedStage.Item2 + 1).ToString()}";
+    }
+
     private void SetUnlockSubPopupContent(int idxMap, int idxStage)
     {
-        stageUnlockPopupUIText.text = $"Stage {idxMap}-{idxStage}";
+        stageUnlockPopupUIText.text = $"Stage {idxMap+1}-{idxStage+1}";
+
+        // 스테이지 가격 표시
+        stageUnlockPopupUIPriceText.text = udm.FormatNumber(StageData.instance.GetPrice(idxMap, idxStage));
 
         // 스테이지에 어떤 보석이 나오는지...
         var stageData = StageData.instance.GetProbabilities(idxMap, idxStage);
+
+        // 해금한 스테이지가 아니면 스테이지 바꾸는 이미지가 안보여야함
+        if (!udm.IsUnlockedStage(idxMap, idxStage))
+        {
+            stageUnlockPopupUIChangeButton.SetActive(false);
+        }
+        else
+        {
+            stageUnlockPopupUIChangeButton.SetActive(true);
+        }
 
         RectTransform rt = stageUnlockPopupUIContent.GetComponent<RectTransform>();
 
