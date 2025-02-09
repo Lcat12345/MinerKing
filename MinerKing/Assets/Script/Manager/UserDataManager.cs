@@ -31,7 +31,8 @@ public class UserDataManager : MonoBehaviour
     [System.Serializable]
     public class StageEntry
     {
-        public (int, int) key;
+        public int idxMap;
+        public int idxStage;
         public bool value;
     }
 
@@ -41,6 +42,8 @@ public class UserDataManager : MonoBehaviour
         public List<JewelEntry> jewelInventory;
         public List<PickaxeEntry> pickAxesUnlockInfo;
         public List<StageEntry> stagesUnlockInfo;
+        public int lastPlayedMap;
+        public int lastPlayedStage;
         public ulong money;
         public Pickaxes lastUsedPickAxe;
         public uint statMining;
@@ -57,7 +60,12 @@ public class UserDataManager : MonoBehaviour
     private Dictionary<Jewels, (ulong, bool)> jewelInventory;
     private Dictionary<Pickaxes, bool> pickAxesUnlockInfo;
     private Dictionary<(int, int), bool> stagesUnlockInfo;
+    private (int, int) lastPlayedStage;
 
+    public (int, int) LastPlayedStage
+    {
+        get { return lastPlayedStage; }
+    }
 
     public ulong Money
     {
@@ -130,8 +138,16 @@ public class UserDataManager : MonoBehaviour
         stagesUnlockInfo[(idxMap, idxStage)] = true;
     }
 
+    public void OnChangeMap(int idxMap, int idxStage)
+    {
+        lastPlayedStage = (idxMap, idxStage);
+    }
+
     void Awake()
     {
+        player = GameObject.Find("Player");
+        pc = player.GetComponent<PlayerController>();
+
         binaryDataBundle = new BinaryDataBundle();
         jewelInventory = new Dictionary<Jewels, (ulong, bool)>();
         pickAxesUnlockInfo = new Dictionary<Pickaxes, bool>();
@@ -139,8 +155,6 @@ public class UserDataManager : MonoBehaviour
 
         Load();
 
-        player = GameObject.Find("Player");
-        pc = player.GetComponent<PlayerController>();
         pc.curPickaxe = binaryDataBundle.lastUsedPickAxe;
     }
 
@@ -149,6 +163,8 @@ public class UserDataManager : MonoBehaviour
         binaryDataBundle.money = ulong.MaxValue;
         binaryDataBundle.statMining = 0;
         binaryDataBundle.statMoving = 0;
+        lastPlayedStage = (0, 0);
+        pc.SetStartingStage(0, 0);
 
         InitJewelInventory();
         InitPickaxeUnlockInfo();
@@ -314,7 +330,10 @@ public class UserDataManager : MonoBehaviour
             .Select(kv => new PickaxeEntry { key = kv.Key, value = kv.Value }).ToList();
 
         binaryDataBundle.stagesUnlockInfo = stagesUnlockInfo
-            .Select(kv => new StageEntry { key = kv.Key, value = kv.Value }).ToList();
+            .Select(kv => new StageEntry { idxMap = kv.Key.Item1, idxStage = kv.Key.Item2, value = kv.Value }).ToList();
+
+        binaryDataBundle.lastPlayedMap = lastPlayedStage.Item1;
+        binaryDataBundle.lastPlayedStage = lastPlayedStage.Item2;
 
         String json = JsonUtility.ToJson(binaryDataBundle);
 
@@ -364,7 +383,9 @@ public class UserDataManager : MonoBehaviour
         pickAxesUnlockInfo = binaryDataBundle.pickAxesUnlockInfo
             .ToDictionary(entry => entry.key, entry => entry.value);
         stagesUnlockInfo = binaryDataBundle.stagesUnlockInfo
-            .ToDictionary(entry => entry.key, entry => entry.value);
+            .ToDictionary(entry => (entry.idxMap, entry.idxStage), entry => entry.value);
+        lastPlayedStage = (binaryDataBundle.lastPlayedMap, binaryDataBundle.lastPlayedStage);
+        pc.SetStartingStage(lastPlayedStage.Item1, lastPlayedStage.Item2);
 
         Debug.Log("loaded save data.");
     }

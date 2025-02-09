@@ -378,6 +378,7 @@ public class MapController : MonoBehaviour
     public int mapWidth = 121;
     public int idxMap = 0;
     public int idxStage = 0;
+    public UserDataManager userDataManager;
     public BGMManager bgmManager;
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -398,7 +399,7 @@ public class MapController : MonoBehaviour
     private Vector3 rockShakingOriginalPos;
     private float shakeIntensity;
 
-    private void Start()
+    private void Awake()
     {
         probabilities = StageData.instance.GetProbabilities(idxMap, idxStage);
         jewels = new List<Jewels>();
@@ -407,12 +408,10 @@ public class MapController : MonoBehaviour
         rockShaking = null;
 
         GenerateRocks();
-        if (!isFirstMap)
+
+        foreach (Transform child in transform)
         {
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-            }
+            child.gameObject.SetActive(false);
         }
     }
 
@@ -450,13 +449,21 @@ public class MapController : MonoBehaviour
         }
     }
 
-    public GameObject ChangeMap(int idx)
+    public void PlayOwnBGM()
     {
-        GameObject mapParent = GameObject.Find("PMap" + (idx + 1));
+        AudioClip[] newBGMSet = { bgm1, bgm2, bgm3 };
+        bgmManager.PlayNewBGMSet(newBGMSet);
+    }
+
+    public GameObject ChangeMap(int aIdxMap, int aIdxStage)
+    {
+        Debug.Log("Changing Map to (" + aIdxMap + ", " + aIdxStage + ")");
+        GameObject mapParent = GameObject.Find("PMap" + (aIdxMap + 1));
         MapController mapController = mapParent.GetComponent<MapController>();
 
-        AudioClip[] newBGMSet = { mapController.bgm1, mapController.bgm2, mapController.bgm3 };
-        bgmManager.PlayNewBGMSet(newBGMSet);
+        userDataManager.OnChangeMap(aIdxMap, aIdxStage);
+
+        mapController.PlayOwnBGM();
 
         OnMiningEnd();
         for (int i = 0; i < instancedParticles.Count; ++i)

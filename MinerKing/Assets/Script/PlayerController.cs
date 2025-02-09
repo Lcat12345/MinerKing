@@ -34,21 +34,28 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState State { get { return curState; } }
 
-    void Start()
+    void Awake()
     {
         curState = PlayerState.IdleState;
-        lastIdxMap = idxMap;
-        SyncMapObjectWithIndex();
-        foreach (Transform child in curMapObject.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
         cameraController.Attach(gameObject);
-        cameraController.SetMapController( curMapObject.GetComponent<MapController>() );
         velocity = Vector3.zero;
         transform.position = new Vector3(offset.x, offset.y, 0.0f);
 
         userInfo = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
+    }
+
+    public void SetStartingStage(int aIdxMap, int aIdxStage)
+    {
+        Debug.Log("Set Starting Stage to (" + aIdxMap + ", " + aIdxStage + ")");
+        idxMap = aIdxMap;
+        lastIdxMap = idxMap;
+        SyncMapObjectWithIndex();
+        curMapObject.GetComponent<MapController>().PlayOwnBGM();
+        foreach (Transform child in curMapObject.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        cameraController.SetMapController(curMapObject.GetComponent<MapController>());
     }
 
     private void Update()
@@ -88,10 +95,9 @@ public class PlayerController : MonoBehaviour
 
         if (wasMapChanged)
         {
-            transform.position = new Vector3(offset.x, offset.y - idxMap * 15.0f, 0.0f);
             velocity = Vector3.zero;
 
-            curMapObject = curMapObject.GetComponent<MapController>().ChangeMap(idxMap);
+            curMapObject = curMapObject.GetComponent<MapController>().ChangeMap(idxMap, 0);
             SyncMapObjectWithIndex();
             ChangeState(PlayerState.IdleState);
 
@@ -142,6 +148,7 @@ public class PlayerController : MonoBehaviour
     {
         curMapObject = GameObject.Find("PMap" + (idxMap + 1));
         mining.GetComponent<Mining>().mapController = curMapObject.GetComponent<MapController>();
+        transform.position = new Vector3(offset.x, offset.y - idxMap * 15.0f, 0.0f);
     }
 
 

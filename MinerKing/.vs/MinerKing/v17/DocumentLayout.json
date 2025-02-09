@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\MapController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\UserDataManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CloseArea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\CloseArea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\SFXManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\SFXManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Mining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\ChangePickaxePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\ChangePickaxePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\BGMManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\BGMManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CalculatePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\CalculatePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\JewlyManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\ChangePickaxePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\ChangePickaxePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\SFXManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\Manager\\SFXManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\JewlyAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CalculatePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\CalculatePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "SFXManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\SFXManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\SFXManager.cs",
@@ -66,18 +66,17 @@
               "RelativeToolTip": "Assets\\Script\\Manager\\SFXManager.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAgwBgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T07:07:11.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-08T07:07:11.196Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAwJcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGwBAAAAAAAAAADwv4MBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T06:56:05.597Z",
               "EditorCaption": ""
@@ -90,32 +89,33 @@
               "RelativeDocumentMoniker": "Assets\\Script\\CloseArea.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CloseArea.cs",
               "RelativeToolTip": "Assets\\Script\\CloseArea.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T06:55:16.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "BGMManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\BGMManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\BGMManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\BGMManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\BGMManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T06:47:09.077Z"
+              "WhenOpened": "2025-02-08T06:47:09.077Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Mining.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Mining.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Mining.cs",
               "RelativeToolTip": "Assets\\Script\\Mining.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAGUAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAEABAAAAAAAAAADwv0gBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T14:13:12.041Z",
               "EditorCaption": ""
@@ -128,14 +128,14 @@
               "RelativeDocumentMoniker": "Assets\\Script\\MapController.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\MapController.cs",
               "RelativeToolTip": "Assets\\Script\\MapController.cs",
-              "ViewState": "AgIAAIoBAAAAAAAAAAAAAHYBAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAL0BAAAAAAAAAADwv88BAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T14:11:46.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "ChangePickaxePopup.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\ChangePickaxePopup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ChangePickaxePopup.cs",
@@ -143,23 +143,25 @@
               "RelativeToolTip": "Assets\\Script\\ChangePickaxePopup.cs",
               "ViewState": "AgIAAJ0AAAAAAAAAAAAAALgAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T13:58:45.691Z"
+              "WhenOpened": "2025-02-07T13:58:45.691Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Script\\PlayerController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAALIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAADwv2MAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T13:58:07.049Z"
+              "WhenOpened": "2025-02-07T13:58:07.049Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CalculatePopup.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\CalculatePopup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CalculatePopup.cs",
@@ -171,20 +173,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "JewlyManager.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\JewlyManager.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\JewlyManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\JewlyManager.cs",
-              "ViewState": "AgIAANgAAAAAAAAAAIBJwAEBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAACYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T02:18:20.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "JewlyAnimation.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\3winter\\MinerKing\\MinerKing\\Assets\\Script\\JewlyAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\JewlyAnimation.cs",

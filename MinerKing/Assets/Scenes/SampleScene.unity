@@ -46688,6 +46688,7 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 3
   idxStage: 0
+  userDataManager: {fileID: 2026981555}
   bgmManager: {fileID: 176136214}
   bgm1: {fileID: 8300000, guid: 6c62ac30c91fd4f4dad3951ae12d941c, type: 3}
   bgm2: {fileID: 8300000, guid: 063c5a2f1f00c1f468e5282d38cd8c31, type: 3}
@@ -74431,6 +74432,7 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 0
   idxStage: 0
+  userDataManager: {fileID: 2026981555}
   bgmManager: {fileID: 176136214}
   bgm1: {fileID: 8300000, guid: dc233ac0ef69e224e86e139a69370d98, type: 3}
   bgm2: {fileID: 8300000, guid: fc9003e3c18bfbc49b97f2a64f9b5ce4, type: 3}
@@ -104064,6 +104066,7 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 1
   idxStage: 0
+  userDataManager: {fileID: 2026981555}
   bgmManager: {fileID: 176136214}
   bgm1: {fileID: 8300000, guid: 23bdf5fc71d361a438af6887b97f8278, type: 3}
   bgm2: {fileID: 8300000, guid: ed9bfda4d986b984cb7f62dd8a1061b3, type: 3}
@@ -105851,6 +105854,7 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 4
   idxStage: 0
+  userDataManager: {fileID: 2026981555}
   bgmManager: {fileID: 176136214}
   bgm1: {fileID: 8300000, guid: 2e69af5ebfb23ad4aa99f7ae96ba6926, type: 3}
   bgm2: {fileID: 8300000, guid: d20adea5b5f619b43816a423f12e0d74, type: 3}
@@ -118798,6 +118802,7 @@ MonoBehaviour:
   mapWidth: 121
   idxMap: 2
   idxStage: 0
+  userDataManager: {fileID: 2026981555}
   bgmManager: {fileID: 176136214}
   bgm1: {fileID: 8300000, guid: 5e5692a1cc661e541a7dd52e0bdf92e2, type: 3}
   bgm2: {fileID: 8300000, guid: 2a2d151689d1f904c95343a0136462bc, type: 3}
