@@ -335,6 +335,16 @@ public class Mining : MonoBehaviour
         );
     }
 
+    public void StopMining()
+    {
+        elapsedTime = 0;
+        targetTime = 0;
+        playerController.ChangeState(PlayerState.IdleState);
+        sfxManager.StopSFX(SoundKey.Pickaxe);
+        sfxManager.StopSFX(SoundKey.Footstep);
+        mapController.OnMiningStop();
+    }
+
     public void ClearMining()
     {
         ReflectMinedJewelsWithDelay();

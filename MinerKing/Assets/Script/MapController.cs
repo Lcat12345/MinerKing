@@ -722,4 +722,14 @@ public class MapController : MonoBehaviour
         rockShaking = null;
         shakeIntensity = 0.0f;
     }
+
+    public void OnMiningStop()
+    {
+        if (rockShaking != null)
+        {
+            rockShaking.transform.position = rockShakingOriginalPos;
+        }
+        rockShaking = null;
+        shakeIntensity = 0.0f;
+    }
 }
