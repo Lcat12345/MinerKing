@@ -24,6 +24,8 @@ public class JewlyManager : MonoBehaviour
     private bool physicalAnimation = true;      // temporary
     public int maxCollisionCnt = 8;
 
+    [SerializeField] UserDataManager userDataManager;
+
     void Start()
     {
         GameObject player = GameObject.Find("Player");
@@ -225,6 +227,14 @@ public class JewlyManager : MonoBehaviour
                 img.sprite = sr.sprite; // 기존 Sprite 적용
 
                 Destroy(sr);
+            }
+
+            // 해당 보석 인스턴스가 최초로 획득한 보석인지 검사하는 코드
+            string name = jewelInstances[i].name;
+            string result = name.Replace("(Clone)", "");
+            if (userDataManager.CheckFirst(result))
+            {
+                userDataManager.UnlockJewel(result);
             }
         }
 

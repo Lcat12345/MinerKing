@@ -73,7 +73,7 @@ public class UserDataManager : MonoBehaviour
     }
 
     private BinaryDataBundle binaryDataBundle;
-    public Dictionary<Jewels, ulong> JewlyInfo
+    public Dictionary<Jewels, (ulong,bool)> JewlyInfo
     {
         get { return jewelInventory; }
         set { jewelInventory = value; }
@@ -87,6 +87,7 @@ public class UserDataManager : MonoBehaviour
     private GameObject player;
     private PlayerController pc;
 
+    [SerializeField] CalculatePopup calculatePopup;
 
     public bool IsUnlockedPickAxe(string name)
     {
@@ -119,7 +120,7 @@ public class UserDataManager : MonoBehaviour
 
     private void InitAllUserData()
     {
-        binaryDataBundle.money = ulong.MaxValue;
+        binaryDataBundle.money = 0;
         binaryDataBundle.statMining = 0;
         binaryDataBundle.statMoving = 0;
 
@@ -315,5 +316,43 @@ public class UserDataManager : MonoBehaviour
         }
 
         return $"{doubleValue:0.###}{suffixes[suffixIndex]}";
+    }
+
+    public bool CheckFirst(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            if(jewelInventory[jewel].Item2)
+            {
+                return false;
+            }
+            else
+            {
+                jewelInventory[jewel] = (0, true);
+                return true;
+            }
+        }
+
+        Debug.LogWarning($"'{name}'은(는) 올바른 Jewels 값이 아닙니다. false가 반환됩니다.");
+        return false;
+    }
+
+    public void UnlockJewel(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            calculatePopup.initUI(jewel);
+        }
+    }
+
+    public bool IsUnlockedJewel(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            return jewelInventory[jewel].Item2;
+        }
+
+        Debug.LogWarning($"'{name}'은(는) 올바른 Jewels 값이 아닙니다. false가 반환됩니다.");
+        return false;
     }
 }
