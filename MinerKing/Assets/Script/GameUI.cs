@@ -11,10 +11,12 @@ public class GameUI : MonoBehaviour
 
     TextMeshProUGUI CurrencySumText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameObject.SetActive(false);
+        upgradeStatPopup.gameObject.SetActive(false);
+        changePickaxePopup.gameObject.SetActive(false);
+        calculatePopup.gameObject.SetActive(false);
 
         userInfo = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
 
@@ -64,5 +66,6 @@ public class GameUI : MonoBehaviour
     public void OnClickCCloseArea()
     {
         calculatePopup.gameObject.SetActive(false);
+
     }
 }

@@ -104,6 +104,11 @@ public class JewelData : SingletonLazy<JewelData>
         return data[(int)eJewel];
     }
 
+    public int DataCount()
+    {
+        return data.Count;
+    }
+
     private List<Jewel> data;
 }
 

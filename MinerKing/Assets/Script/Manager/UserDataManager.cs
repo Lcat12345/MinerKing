@@ -8,10 +8,10 @@ using UnityEngine;
 public class UserDataManager : MonoBehaviour
 {
     /*
-     * À¯Àú°¡ °ÔÀÓÀ» ²°´Ù Ä×´Ù ÇÒ ¶§ ³²´Â Á¤º¸µé ÀÔ´Ï´Ù.
-     * µ·, ¸¶Áö¸·À¸·Î ¾²°í ÀÖ´ø °î±ªÀÌ, º¸¼® ÇØ±Ý Á¤º¸, °î±ªÀÌ ÇØ±Ý Á¤º¸, ½ºÅ×ÀÌÁö¿Í ¸Ê ÇØ±Ý Á¤º¸, °¡Áö°í ÀÖ´Â º¸¼® Á¤º¸, ½ºÅÈ Á¤º¸ µîÀÌ save & load µÇ¾î¾ß ÇÕ´Ï´Ù.
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.
+     * ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½î±ªï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ø±ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½î±ªï¿½ï¿½ ï¿½Ø±ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø±ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ save & load ï¿½Ç¾ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
      */
-    // save & load°¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ ½ÃÀÛ =======================================================
+    // save & loadï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ =======================================================
 
     [System.Serializable]
     public class JewelEntry
@@ -97,7 +97,7 @@ public class UserDataManager : MonoBehaviour
         set { jewelInventory = value; }
     }
 
-    //save & load°¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ ³¡ ========================================================================== 
+    //save & loadï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ========================================================================== 
 
     public float autoSavePeriod = 60.0f;
     private float accTimeForAutoSave;
@@ -105,6 +105,7 @@ public class UserDataManager : MonoBehaviour
     private GameObject player;
     private PlayerController pc;
 
+    [SerializeField] CalculatePopup calculatePopup;
 
     public bool IsUnlockedPickAxe(string name)
     {
@@ -113,7 +114,7 @@ public class UserDataManager : MonoBehaviour
             return pickAxesUnlockInfo.TryGetValue(pickaxe, out bool isUnlocked) && isUnlocked;
         }
 
-        Debug.LogWarning($"'{name}'Àº(´Â) ¿Ã¹Ù¸¥ Pickaxes °ªÀÌ ¾Æ´Õ´Ï´Ù. false°¡ ¹ÝÈ¯µË´Ï´Ù.");
+        Debug.LogWarning($"'{name}'ï¿½ï¿½(ï¿½ï¿½) ï¿½Ã¹Ù¸ï¿½ Pickaxes ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½. falseï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ë´Ï´ï¿½.");
         return false;
     }
 
@@ -127,7 +128,7 @@ public class UserDataManager : MonoBehaviour
         bool isUnlocked = false;
         if (!stagesUnlockInfo.TryGetValue((idxMap, idxStage), out isUnlocked))
         {
-            Debug.LogWarning("(" + idxMap + ", " + idxStage + ")´Â ¿Ã¹Ù¸¥ ½ºÅ×ÀÌÁö ÀÎµ¦½º °ªÀÌ ¾Æ´Õ´Ï´Ù. false°¡ ¹ÝÈ¯µË´Ï´Ù.");
+            Debug.LogWarning("(" + idxMap + ", " + idxStage + ")ï¿½ï¿½ ï¿½Ã¹Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½. falseï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ë´Ï´ï¿½.");
             return false;
         }
         return isUnlocked;
@@ -160,7 +161,7 @@ public class UserDataManager : MonoBehaviour
 
     private void InitAllUserData()
     {
-        binaryDataBundle.money = ulong.MaxValue;
+        binaryDataBundle.money = 0;
         binaryDataBundle.statMining = 0;
         binaryDataBundle.statMoving = 0;
         lastPlayedStage = (0, 0);
@@ -290,7 +291,7 @@ public class UserDataManager : MonoBehaviour
 
     private void Start()
     {
-        // ¿Ã¹Ù¸¥ ¹«±â ÀÌ¹ÌÁö·Î ¹Ù²Ù±â
+        // ï¿½Ã¹Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù±ï¿½
         Animator weapon = player.transform.Find("Weapon").gameObject.GetComponent<Animator>();
         string path = "Animator/Weapon/" + pc.curPickaxe.ToString();
         weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
@@ -397,7 +398,7 @@ public class UserDataManager : MonoBehaviour
 
     public string FormatNumber(ulong value)
     {
-        string[] suffixes = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" }; // 10^3 ´ÜÀ§ Áõ°¡
+        string[] suffixes = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" }; // 10^3 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         int suffixIndex = 0;
         double doubleValue = value;
 
@@ -408,5 +409,43 @@ public class UserDataManager : MonoBehaviour
         }
 
         return $"{doubleValue:0.###}{suffixes[suffixIndex]}";
+    }
+
+    public bool CheckFirst(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            if(jewelInventory[jewel].Item2)
+            {
+                return false;
+            }
+            else
+            {
+                jewelInventory[jewel] = (0, true);
+                return true;
+            }
+        }
+
+        Debug.LogWarning($"'{name}'ï¿½ï¿½(ï¿½ï¿½) ï¿½Ã¹Ù¸ï¿½ Jewels ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½. falseï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ë´Ï´ï¿½.");
+        return false;
+    }
+
+    public void UnlockJewel(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            calculatePopup.initUI(jewel);
+        }
+    }
+
+    public bool IsUnlockedJewel(string name)
+    {
+        if (Enum.TryParse(name, out Jewels jewel))
+        {
+            return jewelInventory[jewel].Item2;
+        }
+
+        Debug.LogWarning($"'{name}'ï¿½ï¿½(ï¿½ï¿½) ï¿½Ã¹Ù¸ï¿½ Jewels ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½. falseï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ë´Ï´ï¿½.");
+        return false;
     }
 }
