@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -10,10 +10,10 @@ using UnityEngine;
 public class UserDataManager : MonoBehaviour
 {
     /*
-     * ������ ������ ���� �״� �� �� ���� ������ �Դϴ�.
-     * ��, ���������� ���� �ִ� ���, ���� �ر� ����, ��� �ر� ����, ���������� �� �ر� ����, ������ �ִ� ���� ����, ���� ���� ���� save & load �Ǿ�� �մϴ�.
+     * 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쌓댐옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쌉니댐옙.
+     * 占쏙옙, 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쌍댐옙 占쏘괭占쏙옙, 占쏙옙占쏙옙 占쌔깍옙 占쏙옙占쏙옙, 占쏘괭占쏙옙 占쌔깍옙 占쏙옙占쏙옙, 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙 占쌔깍옙 占쏙옙占쏙옙, 占쏙옙占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙, 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 save & load 占실억옙占?占쌌니댐옙.
      */
-    // save & load�� �ʿ��� ������ ���� =======================================================
+    // save & load占쏙옙 占십울옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 =======================================================
 
     [System.Serializable]
     public class JewelEntry
@@ -50,6 +50,8 @@ public class UserDataManager : MonoBehaviour
         public Pickaxes lastUsedPickAxe;
         public uint statMining;
         public uint statMoving;
+        public float rewardCoolTime;
+        public long lastConnectTime;
 
         public BinaryDataBundle()
         {
@@ -63,6 +65,7 @@ public class UserDataManager : MonoBehaviour
     private Dictionary<Pickaxes, bool> pickAxesUnlockInfo;
     private Dictionary<(int, int), bool> stagesUnlockInfo;
     private (int, int) lastPlayedStage;
+    private float rewardCoolTime;
 
     public (int, int) LastPlayedStage
     {
@@ -92,6 +95,18 @@ public class UserDataManager : MonoBehaviour
         set { binaryDataBundle.statMoving = value; }
     }
 
+    public float RewardCoolTime
+    {
+        get { return rewardCoolTime; }
+        set { rewardCoolTime = value; }
+    }
+
+    public long LastConnectTime
+    {
+        get { return binaryDataBundle.lastConnectTime; }
+        set { binaryDataBundle.lastConnectTime = value; }
+    }
+
     private BinaryDataBundle binaryDataBundle;
     public Dictionary<Jewels, (ulong, bool)> JewlyInfo
     {
@@ -99,10 +114,19 @@ public class UserDataManager : MonoBehaviour
         set { jewelInventory = value; }
     }
 
-    //save & load�� �ʿ��� ������ �� ========================================================================== 
+
+    //save & load占쏙옙 占십울옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 ========================================================================== 
 
     public float autoSavePeriod = 60.0f;
     private float accTimeForAutoSave;
+
+    private float maxRewardCoolTime = 1800.0f;
+
+    public float MaxRewardCoolTime
+    {
+        get { return maxRewardCoolTime; }
+        set { maxRewardCoolTime = value; }
+    }
 
     private GameObject player;
     private PlayerController pc;
@@ -117,7 +141,7 @@ public class UserDataManager : MonoBehaviour
             return pickAxesUnlockInfo.TryGetValue(pickaxe, out bool isUnlocked) && isUnlocked;
         }
 
-        Debug.LogWarning($"'{name}'��(��) �ùٸ� Pickaxes ���� �ƴմϴ�. false�� ��ȯ�˴ϴ�.");
+        Debug.LogWarning($"'{name}'占쏙옙(占쏙옙) 占시바몌옙 Pickaxes 占쏙옙占쏙옙 占싣닙니댐옙. false占쏙옙 占쏙옙환占싯니댐옙.");
         return false;
     }
 
@@ -131,7 +155,7 @@ public class UserDataManager : MonoBehaviour
         bool isUnlocked = false;
         if (!stagesUnlockInfo.TryGetValue((idxMap, idxStage), out isUnlocked))
         {
-            Debug.LogWarning("(" + idxMap + ", " + idxStage + ")�� �ùٸ� �������� �ε��� ���� �ƴմϴ�. false�� ��ȯ�˴ϴ�.");
+            Debug.LogWarning("(" + idxMap + ", " + idxStage + ")占쏙옙 占시바몌옙 占쏙옙占쏙옙占쏙옙占쏙옙 占싸듸옙占쏙옙 占쏙옙占쏙옙 占싣닙니댐옙. false占쏙옙 占쏙옙환占싯니댐옙.");
             return false;
         }
         return isUnlocked;
@@ -168,6 +192,8 @@ public class UserDataManager : MonoBehaviour
         binaryDataBundle.statMining = 0;
         binaryDataBundle.statMoving = 0;
         lastPlayedStage = (0, 0);
+        rewardCoolTime = maxRewardCoolTime;
+        binaryDataBundle.lastConnectTime = DateTime.Now.Ticks;
         pc.SetStartingStage(0, 0);
 
         InitJewelInventory();
@@ -294,7 +320,7 @@ public class UserDataManager : MonoBehaviour
 
     private void Start()
     {
-        // �ùٸ� ���� �̹����� �ٲٱ�
+        // 占시바몌옙 占쏙옙占쏙옙 占싱뱄옙占쏙옙占쏙옙 占쌕꾸깍옙
         Animator weapon = player.transform.Find("Weapon").gameObject.GetComponent<Animator>();
         string path = "Animator/Weapon/" + pc.curPickaxe.ToString();
         weapon.runtimeAnimatorController = ResourceManager.instance.GetResource<RuntimeAnimatorController>(path);
@@ -359,6 +385,8 @@ public class UserDataManager : MonoBehaviour
 
         binaryDataBundle.lastPlayedMap = lastPlayedStage.Item1;
         binaryDataBundle.lastPlayedStage = lastPlayedStage.Item2;
+        binaryDataBundle.lastConnectTime = DateTime.Now.Ticks;
+        binaryDataBundle.rewardCoolTime = rewardCoolTime;
 
         String json = JsonUtility.ToJson(binaryDataBundle);
         String encryptedData = EncryptDecrypt(version + "\n" + json, cryptoKey);
@@ -426,6 +454,7 @@ public class UserDataManager : MonoBehaviour
             .ToDictionary(entry => (entry.idxMap, entry.idxStage), entry => entry.value);
         lastPlayedStage = (binaryDataBundle.lastPlayedMap, binaryDataBundle.lastPlayedStage);
         pc.SetStartingStage(lastPlayedStage.Item1, lastPlayedStage.Item2);
+        rewardCoolTime = CalculateRewardCoolTime();
 
         Debug.Log("loaded save data.");
 
@@ -439,11 +468,51 @@ public class UserDataManager : MonoBehaviour
 
         for (int i = 0; i < data.Length; i++)
         {
-            output[i] = (char)(data[i] ^ key[i % keyLen]); // XOR ����
+            output[i] = (char)(data[i] ^ key[i % keyLen]); // XOR 연산
         }
 
         return new string(output);
     }
+
+    private float CalculateRewardCoolTime()
+    {
+        rewardCoolTime = binaryDataBundle.rewardCoolTime;
+
+        DateTime time = new DateTime(binaryDataBundle.lastConnectTime);
+
+        Debug.Log("마지막 접속 시간: " + time.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        Debug.Log("현재 접속 시간: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        long elapsedTicks = DateTime.Now.Ticks - binaryDataBundle.lastConnectTime;
+
+        Debug.Log("ElapsedTicks : " + elapsedTicks);
+
+        long elapsedSeconds = (elapsedTicks / TimeSpan.TicksPerSecond);
+
+        Debug.Log("ElapsedSecons : " + elapsedSeconds);
+
+        // 남은 쿨타임 계산
+        rewardCoolTime -= elapsedSeconds;
+        if (rewardCoolTime < 0)
+            rewardCoolTime = 0;
+
+        return rewardCoolTime;
+    }
+
+    public float ReCalculateRewardCoolTime()
+    {
+        long currentTime = DateTime.Now.Ticks;
+        long elapsedTicks = currentTime - binaryDataBundle.lastConnectTime;
+        long elapsedSeconds = elapsedTicks / TimeSpan.TicksPerSecond;
+
+        float newCoolTime = rewardCoolTime - elapsedSeconds;
+        if (newCoolTime < 0)
+            newCoolTime = 0;
+
+        return newCoolTime;
+    }
+        
 
     public void AddJewelCnt(Jewels jewelKey, int jewelCnt)
     {
@@ -452,7 +521,7 @@ public class UserDataManager : MonoBehaviour
 
     public string FormatNumber(ulong value)
     {
-        string[] suffixes = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" }; // 10^3 ���� ����
+        string[] suffixes = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" }; // 10^3 占쏙옙占쏙옙 占쏙옙占쏙옙
         int suffixIndex = 0;
         double doubleValue = value;
 
@@ -480,7 +549,7 @@ public class UserDataManager : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"'{name}'��(��) �ùٸ� Jewels ���� �ƴմϴ�. false�� ��ȯ�˴ϴ�.");
+        Debug.LogWarning($"'{name}'占쏙옙(占쏙옙) 占시바몌옙 Jewels 占쏙옙占쏙옙 占싣닙니댐옙. false占쏙옙 占쏙옙환占싯니댐옙.");
         return false;
     }
 
@@ -499,7 +568,30 @@ public class UserDataManager : MonoBehaviour
             return jewelInventory[jewel].Item2;
         }
 
-        Debug.LogWarning($"'{name}'��(��) �ùٸ� Jewels ���� �ƴմϴ�. false�� ��ȯ�˴ϴ�.");
+        Debug.LogWarning($"'{name}'占쏙옙(占쏙옙) 占시바몌옙 Jewels 占쏙옙占쏙옙 占싣닙니댐옙. false占쏙옙 占쏙옙환占싯니댐옙.");
         return false;
+    }
+
+    public int GetUnlockedJewelsCount()
+    {
+        int unlockedCount = 0;
+
+        foreach (var jewel in jewelInventory.Values)
+        {
+            if (jewel.Item2) // Item2는 bool 값으로, jewel이 해금되었는지를 나타냄
+            {
+                unlockedCount++;
+            }
+        }
+
+        return unlockedCount;
+    }
+
+    public List<Jewels> GetUnlockedJewels()
+    {
+        return jewelInventory
+            .Where(j => j.Value.Item2) // 해금된 보석만 필터링
+            .Select(j => j.Key)
+            .ToList();
     }
 }

@@ -1,12 +1,9 @@
 using UnityEngine;
 using GoogleMobileAds.Api;
-using UnityEngine.InputSystem;
 using System;
 
 public class AdManager : MonoBehaviour
 {
-    public InputAction iaAd;
-
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
@@ -18,21 +15,21 @@ public class AdManager : MonoBehaviour
 
     private RewardedAd _rewardedAd;
 
-    private void Start()
+    private GameUI gameUI;
+
+    private void Awake()
     {
+        gameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
+    }
+
+    private void Start()
+    {  
+
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
         });
-    }
-
-    private void Update()
-    {
-        if (iaAd.WasPressedThisFrame())
-        {
-            LoadAndShowRewardedAd();
-        }
     }
 
     public void LoadAndShowRewardedAd()
@@ -74,16 +71,6 @@ public class AdManager : MonoBehaviour
             });
     }
 
-    private void OnEnable()
-    {
-        iaAd.Enable();
-    }
-
-    private void OnDisable()
-    {
-        iaAd.Disable();
-    }
-
     private void ShowRewardedAd()
     {
         const string rewardMsg =
@@ -95,6 +82,8 @@ public class AdManager : MonoBehaviour
             {
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+
+                gameUI.OnClickCloseAd();
             });
         }
     }
