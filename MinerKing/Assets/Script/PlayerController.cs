@@ -13,11 +13,7 @@ public class PlayerController : MonoBehaviour
     public Animator weaponAnimator;
     public GameObject mining;
     public CameraController cameraController;
-    public InputAction tmpInputMap1Action;
-    public InputAction tmpInputMap2Action;
-    public InputAction tmpInputMap3Action;
-    public InputAction tmpInputMap4Action;
-    public InputAction tmpInputMap5Action;
+    public InputAction iaQuit;
 
     public Pickaxes curPickaxe;
     public int idxMap = 0;
@@ -25,9 +21,9 @@ public class PlayerController : MonoBehaviour
     public bool start = false;
 
     private GameObject curMapObject;
+    private UserDataManager userInfo;
     private Vector3 velocity;
 
-    private UserDataManager userInfo;
 
     private PlayerState curState;
 
@@ -64,6 +60,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (iaQuit.WasPressedThisFrame())
+        {
+            QuitGame();
+        }
+
         if (!start)
         {
             return;
@@ -100,6 +101,17 @@ public class PlayerController : MonoBehaviour
                 ChangeState(PlayerState.IdleState);
             }
         }
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // 에디터에서 실행 중지
+#elif UNITY_IOS
+        Debug.Log("iOS에서는 Application.Quit()이 작동하지 않습니다.");
+#else
+        Application.Quit();
+#endif
     }
 
     public void OnChangeMap(int aIdxMap)
@@ -179,20 +191,12 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        tmpInputMap1Action.Enable();
-        tmpInputMap2Action.Enable();
-        tmpInputMap3Action.Enable();
-        tmpInputMap4Action.Enable();
-        tmpInputMap5Action.Enable();
+        iaQuit.Enable();
     }
 
 
     void OnDisable()
     {
-        tmpInputMap1Action.Disable();
-        tmpInputMap2Action.Disable();
-        tmpInputMap3Action.Disable();
-        tmpInputMap4Action.Disable();
-        tmpInputMap5Action.Disable();
+        iaQuit.Disable();
     }
 }
