@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "G:\\MinerKingProject\\MinerKing\\MinerKing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\manager\\admanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\ui\\stagechangeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\stagechangeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\manager\\admanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\admanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|G:\\MinerKingProject\\MinerKing\\MinerKing\\assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|g:\\minerkingproject\\minerking\\minerking\\assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A39210B-12CC-E88B-F290-A4EB56740A25}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\manager\\userdatamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,41 +35,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdManager.cs",
-              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\AdManager.cs",
-              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
-              "RelativeToolTip": "Assets\\Script\\Manager\\AdManager.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCEAAAAYAAAAAAAAAA==",
+              "Title": "StageChangeUI.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\UI\\StageChangeUI.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\StageChangeUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T07:59:56.772Z",
+              "WhenOpened": "2025-02-10T09:59:57.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AdManager.cs",
+              "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Manager\\AdManager.cs",
+              "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\AdManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Manager\\AdManager.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T07:59:56.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UserDataManager.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Manager\\UserDataManager.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\Manager\\UserDataManager.cs",
               "RelativeToolTip": "Assets\\Script\\Manager\\UserDataManager.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAmwLkAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAiwHoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T05:51:19.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T05:51:19.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameUI.cs",
               "DocumentMoniker": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\GameUI.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GameUI.cs",
               "ToolTip": "G:\\MinerKingProject\\MinerKing\\MinerKing\\Assets\\Script\\GameUI.cs",
               "RelativeToolTip": "Assets\\Script\\GameUI.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAwHwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAtwFQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T03:58:37.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T03:58:37.053Z"
             }
           ]
         }
