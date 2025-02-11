@@ -226,7 +226,6 @@ GameObject:
   - component: {fileID: 5037428854516755160}
   - component: {fileID: 422177309656185808}
   - component: {fileID: 4572992664506070341}
-  - component: {fileID: 6510215600906340856}
   m_Layer: 5
   m_Name: StageChangeButton
   m_TagString: Untagged
@@ -337,7 +336,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6510215600906340856}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StageChangeButton, Assembly-CSharp
         m_MethodName: OnClickButtonClicked
         m_Mode: 1
@@ -371,18 +370,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6510215600906340856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4574851500873317320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7442a2ec50a4a47bbc76bb6e03f94e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4617517596344602329
 GameObject:
   m_ObjectHideFlags: 0

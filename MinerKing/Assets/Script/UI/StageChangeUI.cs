@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,10 +26,12 @@ public class StageChangeUI : MonoBehaviour
 
     UserDataManager udm;
     Mining mining;
+    GameUI gameUI;
     private void Awake()
     {
         udm = GameObject.Find("UserDataManager").GetComponent<UserDataManager>();
         mining = GameObject.Find("Player").GetComponent<Mining>();
+        gameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
 
         currentStageText = transform.Find("StageChangeButton/TextStageInfo").GetComponent<TextMeshProUGUI>();
         UpdateCurrentStageInfoUI();
@@ -131,6 +132,7 @@ public class StageChangeUI : MonoBehaviour
             udm.UnlockStage(currentOpenedIdxMap, currentOpenedIdxStage);
             stageLockImages[currentOpenedSubPopupIdx].SetActive(false);
             stageUnlockPopupUIChangeButton.SetActive(true);
+            gameUI.UpdateMoney();
         }
     }
 
