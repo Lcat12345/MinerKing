@@ -1,0 +1,23 @@
+# ninja log v5
+0	858	7609462907329727	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9663f684f6af2349
+31	223	7609462900958848	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5da44e635a88830d
+7	702	7609462905792746	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	efce86cd2ce89d0b
+27	616	7609462904889860	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ebb1c14b5a0950a2
+225	332	7609462902079095	C:/Users/PC/Desktop/3winter/MinerKing/MinerKing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z613d2s/obj/arm64-v8a/libswappywrapper.so	e9531724a737ac9
+11	601	7609462904716258	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc8ad77eda7f2672
+22	661	7609462905372417	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cd849d7879c5fba5
+4	603	7609462904761690	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	17c57ff7d652b74f
+15	604	7609462904741664	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	625528220c71a4b9
+18	782	7609462906592382	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	9faaa1deaa19ca47
+858	925	7609462908027256	C:/Users/PC/Desktop/3winter/MinerKing/MinerKing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z613d2s/obj/arm64-v8a/libgame.so	f319585891bb4570
+28	109	7609466826292955	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5da44e635a88830d
+110	197	7609466827209953	C:/Users/PC/Desktop/3winter/MinerKing/MinerKing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z613d2s/obj/arm64-v8a/libswappywrapper.so	e9531724a737ac9
+15	459	7609466829789339	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fc8ad77eda7f2672
+21	472	7609466829945252	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ebb1c14b5a0950a2
+7	474	7609466829985429	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	625528220c71a4b9
+3	484	7609466830092009	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	17c57ff7d652b74f
+24	531	7609466830543746	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cd849d7879c5fba5
+10	581	7609466831067328	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	efce86cd2ce89d0b
+18	680	7609466832040815	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	9faaa1deaa19ca47
+13	732	7609466832546456	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9663f684f6af2349
+732	802	7609466833275111	C:/Users/PC/Desktop/3winter/MinerKing/MinerKing/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4z613d2s/obj/arm64-v8a/libgame.so	f319585891bb4570

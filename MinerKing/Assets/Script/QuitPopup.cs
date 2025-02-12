@@ -13,4 +13,9 @@ public class QuitPopup : MonoBehaviour
     {
         subPopup.SetActive(true);
     }
+
+    public void OnClickCloseArea()
+    {
+        subPopup.SetActive(false);
+    }
 }
