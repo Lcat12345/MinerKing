@@ -127700,9 +127700,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1845995264}
-        m_TargetAssemblyTypeName: AdManager, Assembly-CSharp
-        m_MethodName: LoadAndShowRewardedAd
+      - m_Target: {fileID: 931886595}
+        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+        m_MethodName: OnClickCloseAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
