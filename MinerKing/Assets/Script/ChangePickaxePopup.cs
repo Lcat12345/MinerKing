@@ -197,8 +197,8 @@ public class ChangePickaxePopup : MonoBehaviour
         {
             if (userInfo.Money == price)
                 userInfo.Money = 0;
-
-            userInfo.Money = userInfo.Money - price;
+            else
+                userInfo.Money -= price;
 
             userInfo.UnlockPickaxe(pickaxe);
 

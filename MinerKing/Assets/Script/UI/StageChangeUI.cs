@@ -126,8 +126,8 @@ public class StageChangeUI : MonoBehaviour
         {
             if(udm.Money == price)
                 udm.Money = 0;
-
-            udm.Money -= price;
+            else
+                udm.Money -= price;
 
             udm.UnlockStage(currentOpenedIdxMap, currentOpenedIdxStage);
             stageLockImages[currentOpenedSubPopupIdx].SetActive(false);

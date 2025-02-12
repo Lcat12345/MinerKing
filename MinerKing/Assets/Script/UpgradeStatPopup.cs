@@ -98,8 +98,8 @@ public class UpgradeStatPopup : MonoBehaviour
         {
             if (userInfo.Money == price)
                 userInfo.Money = 0;
-
-            userInfo.Money = userInfo.Money - price;
+            else
+                userInfo.Money -= price;
 
             userInfo.StatMining += 1;
 
@@ -116,8 +116,8 @@ public class UpgradeStatPopup : MonoBehaviour
         {
             if (userInfo.Money == price)
                 userInfo.Money = 0;
-
-            userInfo.Money = userInfo.Money - price;
+            else
+                userInfo.Money -= price;
 
             userInfo.StatMoving += 1;
 
